@@ -1,21 +1,13 @@
 # Overview
 
-{Provide a description of your software}
+It prints to the console "Hello World."
 
-{Describe your purpose for creating this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
+It is a temporary placeholder for future projects to be added to my portfolio.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+I used VS Code on a Windows computer.
 
-{Describe the programming language that you used}
-
-# Useful Websites
-
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+I programmed it in Python.
