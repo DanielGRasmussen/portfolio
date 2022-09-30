@@ -1,13 +1,11 @@
 # Overview
 This is an example of me trying to learn C++ and figure out all of the little details of it.
 
-I made a number guessing game. You input some numbers to set the highest and lowest it can be and then you guess a number between those and it says if it is higher or lower.
+I made a number guessing game. You input some numbers to set the highest and lowest it can be and then you guess a number between those and it says if it is higher or lower. You can play multiple times and it will keep track of the amount of turns you took to play.
 
 I made it to learn basic C++.
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.  Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/Twj9Y8B16f4)
 
 # Development Environment
 
