@@ -2,14 +2,14 @@
 	"name": "portfolio",
 	"version": "0.0.0",
 	"scripts": {
-		"ng": "ng",
 		"start": "ng serve",
-		"build": "ng build",
 		"deploy": "ng deploy --base-href=/portfolio/ --repo=https://github.com/DanielGRasmussen/portfolio.git",
+		"deploy:local": "ng deploy --base-href=/ --repo=https://github.com/DanielGRasmussen/portfolio.git --dry-run",
+		"deploy:host": "npm run deploy:local && http-server ./dist/portfolio/browser -o -c-1",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
 		"lint": "ng lint --fix",
-		"lint-nofix": "ng lint"
+		"lint:nofix": "ng lint"
 	},
 	"private": true,
 	"dependencies": {
@@ -41,6 +41,7 @@
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.2.1",
+		"http-server": "^14.1.1",
 		"jasmine-core": "~5.1.0",
 		"karma": "~6.4.0",
 		"karma-chrome-launcher": "~3.2.0",
