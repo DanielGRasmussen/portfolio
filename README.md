@@ -1,27 +1,71 @@
-# Portfolio
+# Personal Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+**Note: This project is currently in progress.**
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This repository contains the source code for my personal portfolio website. The site showcases my skills, projects, and
+educational background in web development and design.
 
-## Code scaffolding
+## Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The portfolio is organized into the following main sections:
 
-## Build
+- About Me
+- Skills & Technologies
+- Projects
+- Education
+- Contact Info
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+- **Framework:** Angular
+- **Language:** TypeScript
+- **Styling:** SCSS
+- **Hosting:** GitHub Pages
+- **Animations:** Angular animations module
+- **Linting:** ESLint
+- **Formatting:** Prettier
+- **Content Management:** JSON files
+- **Icons:** Font Awesome, Material Icons, and svgrepo
+- **Testing:** Jasmine & Karma (for complex components only)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Key Features
 
-## Running end-to-end tests
+- Responsive design for various screen sizes
+- Dynamic content loading from JSON files for easy updates
+- Filter system for projects (All, Web Development, Design)
+- Detailed project views with expandable information
+- Downloadable resume
+- Professional photo in the About Me section
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Implementation Details
 
-## Further help
+- Uses Angular for the main framework
+- Content is loaded dynamically from JSON files
+- Implements Angular routing for smooth navigation
+- Utilizes reusable components for project cards and other elements
+- Applies a consistent color scheme and typography throughout the site
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Project Structure
+
+## Setup and Installation
+
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Use `npm run start` for local development
+
+## Deployment
+
+The site is deployed using GitHub Pages. The deployment process is automated through GitHub Actions, utilizing
+angular-cli-ghpages.
+
+**Note on angular-cli-ghpages:** As of the current development phase, angular-cli-ghpages has a known critical security
+vulnerability. However, a pull request addressing this issue has been submitted and is expected to be merged before this
+website is publicly shared. I am actively monitoring the situation and considering alternative deployment methods if a
+fix is not implemented by the time of project completion.
+
+## Contact
+
+For any inquiries or feedback, please reach out through the contact information provided on the portfolio website or
+DanielRasmussen42@gmail.com
