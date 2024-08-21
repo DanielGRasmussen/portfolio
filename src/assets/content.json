@@ -1,0 +1,19 @@
+{
+	"images": {
+		"logo": "/assets/images/logo.svg",
+		"email": "/assets/images/symbols/email.svg",
+		"linkedin": "/assets/images/logos/linkedin.svg",
+		"github": "/assets/images/logos/github.svg",
+		"resume": "/assets/images/symbols/resume.svg",
+		"profile": "/assets/images/profile.webp"
+	},
+	"info": {
+		"email": "danielrasmussen42@gmail.com",
+		"linkedin": "https://www.linkedin.com/in/daniel-rasmussen-3a7b87218/",
+		"github": "https://github.com/DanielGRasmussen",
+		"resume": "google.com"
+	},
+	"content": {
+
+	}
+}
