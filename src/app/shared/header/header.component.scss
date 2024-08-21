@@ -3,12 +3,24 @@
 
 header {
 	display: flex;
-	align-items: center;
+	width: 100%;
 	height: $header-height;
+	align-items: center;
+	z-index: 10;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
 	background-color: $primary-color;
 	box-shadow: $shadow-sm;
 
-	transition: background-color $background-transition;
+	transition: background-color $background-transition, transform 0.3s ease-in-out;
+
+	// Sticky header
+	&.hidden {
+		transform: translateY(-100%);
+	}
 
 	.logo a {
 		display: block;
@@ -64,6 +76,7 @@ header {
 			margin-left: 0;
 		}
 
+		// Underline effect for active link
 		.active-link-underline {
 			position: absolute;
 			width: 100px;
