@@ -1,0 +1,12 @@
+<div>
+	<label class="switch">
+		<input class="toggle" type="checkbox" [checked]="themeService.theme === Theme.DARK">
+		<span class="slider"></span>
+		<img
+			src="{{ themeService.theme === Theme.LIGHT ? content.images['light-mode'] : content.images['dark-mode'] }}"
+			alt="Current mode"
+			[class.right]="themeService.theme === Theme.LIGHT"
+		/>
+	</label>
+	<span class="label">{{ themeService.theme }}</span>
+</div>

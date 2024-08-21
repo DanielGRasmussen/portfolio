@@ -1,0 +1,9 @@
+<footer class="title">
+	<p>© {{ year }} - Daniel Rasmussen</p>
+	<span class="separator"></span>
+	<ul class="links">
+		<li *ngFor="let link of links">
+			<a [href]="link.url" target="_blank" [attr.class]="link.class" [attr.aria-label]="link.label"></a>
+		</li>
+	</ul>
+</footer>

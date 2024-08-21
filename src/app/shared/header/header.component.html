@@ -1,0 +1,18 @@
+<header>
+	<div class="logo"><a href="/" aria-label="Return to home"></a></div>
+	<nav>
+		<ul>
+			<li *ngFor="let link of links; index as i">
+				<a [routerLink]="link.url" routerLinkActive="active" #link>{{ link.name }}</a>
+			</li>
+			<div
+				class="active-link-underline"
+				[style.left]="getUnderlineOffset()"
+				[style.bottom]="getUnderlineBottom()"
+				[style.width]="getUnderlineWidth()"
+			></div>
+		</ul>
+	</nav>
+
+	<app-theme-toggle></app-theme-toggle>
+</header>

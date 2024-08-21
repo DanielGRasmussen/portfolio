@@ -5,7 +5,9 @@
 		"linkedin": "/assets/images/logos/linkedin.svg",
 		"github": "/assets/images/logos/github.svg",
 		"resume": "/assets/images/symbols/resume.svg",
-		"profile": "/assets/images/profile.webp"
+		"profile": "/assets/images/profile.webp",
+		"light-mode": "/assets/images/symbols/light-mode.svg",
+		"dark-mode": "/assets/images/symbols/dark-mode.svg"
 	},
 	"info": {
 		"email": "danielrasmussen42@gmail.com",

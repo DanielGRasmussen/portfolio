@@ -1,0 +1,82 @@
+@import "../../../styles/variables";
+@import "../../../styles/typography";
+
+header {
+	display: flex;
+	align-items: center;
+	height: $header-height;
+	background-color: $primary-color;
+	box-shadow: $shadow-sm;
+
+	transition: background-color $background-transition;
+
+	.logo a {
+		display: block;
+		height: $header-height;
+		width: $header-height;
+
+		// This allows the logo to have it's color set by the background-color property
+		mask-image: $logo-src;
+		mask-size: cover;
+		background-color: $text-inverse-color;
+
+		transition: background-color $text-transition; // Used as text rather than large background
+	}
+
+	nav ul {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		position: relative;
+
+		padding: 0;
+		margin: 0 0 0 $margin-xlg;
+
+		list-style: none;
+
+		li {
+			margin: 0 $margin-lg * 0.1;
+			transition: transform 0.3s;
+
+			a {
+				color: $text-inverse-color;
+				text-decoration: none;
+
+				padding: 0 $margin-lg * 0.45;
+				@include heading-3;
+
+				transition: color $text-transition, opacity 0.2s;
+
+				&.active {
+					text-decoration: none;
+					cursor: default;
+					pointer-events: none;
+				}
+
+				// Hover effect for all but active links
+				&:not(:has(.active)):hover {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		li:first-of-type {
+			margin-left: 0;
+		}
+
+		.active-link-underline {
+			position: absolute;
+			width: 100px;
+			height: 2px;
+			background-color: $text-inverse-color;
+			transition: background-color $text-transition, left 0.3s ease-in-out, width 0.3s; // Used as text rather than large background
+		}
+	}
+
+	app-theme-toggle {
+		margin-left: auto;
+		margin-right: $margin-md;
+
+		height: fit-content;
+	}
+}
