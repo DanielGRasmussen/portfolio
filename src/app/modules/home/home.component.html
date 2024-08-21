@@ -1,0 +1,14 @@
+<div class="home">
+	<h2 class="name">Daniel Rasmussen</h2>
+	<img src="{{ content.images['profile'] }}" alt="Picture of me" class="profile">
+	<div class="content">
+		<h1>About Me</h1>
+		<div class="bio">
+			<p *ngFor="let paragraph of content.content.home">
+				{{ paragraph }}
+			</p>
+		</div>
+
+		<button class="cta">See What I've Built</button>
+	</div>
+</div>

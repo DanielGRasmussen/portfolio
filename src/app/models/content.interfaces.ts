@@ -13,5 +13,7 @@ interface Info {
 }
 
 interface ContentItem {
-	home: string[];
+	home: HomeContent;
 }
+
+type HomeContent = string[];

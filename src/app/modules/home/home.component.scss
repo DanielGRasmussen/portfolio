@@ -1,0 +1,64 @@
+@import "../../../styles/variables";
+@import "../../../styles/typography";
+@import "../../../styles/themes";
+
+.home {
+	max-width: 800px;
+	width: 80%;
+	margin: $margin-lg auto $margin-xlg auto;
+
+	.name {
+		@include heading-1;
+		font-size: 2.5em;
+		letter-spacing: 0.15ch;
+		text-transform: uppercase;
+		text-align: center;
+
+		margin: 0 0 $margin-md 0;
+		color: $text-color;
+	}
+
+	.profile {
+		display: block;
+		width: 70%;
+		max-width: 500px;
+		margin: 0 auto;
+		border-radius: 50%;
+
+		box-shadow: $shadow-md;
+	}
+
+	.content {
+		margin: $margin-md 0 0 0;
+
+		h1 {
+			margin: 0;
+		}
+
+		.bio {
+			margin: $margin-sm 0 0 0;
+		}
+
+		p {
+			margin: $margin-xs 0 0 0;
+		}
+
+		p:first-of-type {
+			margin-top: 0;
+		}
+
+		.cta {
+			@include heading-3;
+			display: block;
+			margin: $margin-md auto 0 auto;
+			padding: $margin-md $margin-xlg;
+
+			background-color: $accent-color;
+			color: $theme-offwhite;
+
+			text-align: center;
+			border: 0;
+			border-radius: 15px;
+		}
+	}
+}
