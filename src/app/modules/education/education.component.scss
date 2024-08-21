@@ -1,0 +1,61 @@
+@import "../../../styles/variables";
+
+.education {
+	max-width: 800px;
+	width: 80%;
+
+	margin: $margin-lg auto $margin-xlg auto;
+
+	h1, h2, h3 {
+		margin: 0;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.degree {
+		margin-top: $margin-sm;
+
+		div {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			p {
+				margin-left: auto;
+			}
+		}
+	}
+
+	.minors {
+		margin-top: $margin-xs;
+
+		.minor {
+			display: flex;
+
+			.name {
+				font-weight: 500;
+			}
+
+			.status {
+				margin-left: auto;
+			}
+		}
+	}
+
+	.certificates {
+		margin-top: $margin-xs;
+
+		.certificate {
+			display: flex;
+
+			.name {
+				font-weight: 500;
+			}
+
+			.status {
+				margin-left: auto;
+			}
+		}
+	}
+}

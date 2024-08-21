@@ -14,6 +14,27 @@ interface Info {
 
 interface ContentItem {
 	home: HomeContent;
+	education: EducationContent;
 }
 
 type HomeContent = string[];
+
+export interface EducationContent {
+	degree: {
+		degree: string;
+		school: string;
+		status: string;
+		date: string;
+		gpa: string;
+	};
+	minors: {
+		name: string;
+		status: string;
+		date: string;
+	}[];
+	certificates: {
+		name: string;
+		status: string;
+		date: string;
+	}[];
+}

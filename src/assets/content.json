@@ -23,6 +23,49 @@
 			"Throughout my college experience, I've consistently taken on leadership roles in group projects, honing my ability to collaborate effectively and guide teams to success. This practical experience, combined with my technical skills, has prepared me for real-world challenges in the tech industry.",
 			"As I approach graduation, I'm eager to apply my skills and knowledge in a professional setting. I'm looking for opportunities to contribute to innovative projects, learn from experienced developers, and continue my growth in the ever-evolving field of web development.",
 			"My goal is to build on the legacy of innovation in web development, inspired by the groundbreaking work of previous generations, including my father's contributions to the early web. I'm excited to be part of the next wave of advancements in this dynamic field."
-		]
+		],
+		"education": {
+			"degree": {
+				"degree": "Bachelor's in Software Engineering",
+				"school": "Brigham Young University - Idaho",
+				"status": "Expected",
+				"date": "Fall, 2024",
+				"gpa": "3.9"
+			},
+			"minors": [
+				{
+					"name": "Minor in Web Development",
+					"status": "Expected",
+					"date": "Fall, 2024"
+				},
+				{
+					"name": "Minor in Web Design",
+					"status": "Expected",
+					"date": "Fall, 2024"
+				}
+			],
+			"certificates": [
+				{
+					"name": "Certificate of Computer Programming",
+					"status": "Completed",
+					"date": "Spring, 2024"
+				},
+				{
+					"name": "Certificate of Web Development",
+					"status": "Completed",
+					"date": "Spring, 2024"
+				},
+				{
+					"name": "Certificate of Web Frontend",
+					"status": "Completed",
+					"date": "Spring, 2024"
+				},
+				{
+					"name": "Certificate of Data Science",
+					"status": "Completed",
+					"date": "Spring, 2024"
+				}
+			]
+		}
 	}
 }
