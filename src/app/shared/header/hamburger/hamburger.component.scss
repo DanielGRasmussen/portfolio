@@ -1,4 +1,5 @@
 @import "../../../../styles/variables";
+@import "../../../../styles/typography";
 
 $animation-curve: cubic-bezier(1, 0, 0, 1);
 $line-width: 3.5ch;
@@ -88,4 +89,39 @@ $line-spacing: 0.4rem;
 	transition: transform 0.3s ease-out, background-color $background-transition;
 
 	z-index: 15;
+
+	app-theme-toggle {
+		height: $header-height;
+		display: flex;
+		align-items: center;
+
+		margin-left: $margin-md;
+	}
+
+	nav ul {
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+		text-align: right;
+
+		a {
+			display: block;
+			width: 100%;
+			margin: 0 0 $margin-xs 0;
+			padding: 0 $margin-lg 0 0;
+
+			box-sizing: border-box;
+
+
+			color: $text-color;
+			text-decoration: none;
+			@include heading-3;
+
+			transition: color $text-transition;
+			&:hover {
+				color: $primary-color;
+			}
+		}
+	}
 }

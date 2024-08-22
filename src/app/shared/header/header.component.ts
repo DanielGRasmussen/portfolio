@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 	activeIndex: number = 0;
 	isHidden: boolean = false;
 	useHamburger: boolean = false;
+	hamburgerWidth: number = 0;
 	private previousScrollPosition: number = 0;
 	private firstLoad: boolean = true;
 
@@ -130,21 +131,35 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 	// Check for if hamburger button should be used
 	@HostListener("window:resize")
 	onWindowResize(): void {
-		// Get theme toggle left
-		const themeToggle: HTMLElement | null = document.querySelector("app-theme-toggle");
-		if (!themeToggle) return;
+		if (
+			this.useHamburger &&
+			this.hamburgerWidth !== 0 &&
+			window.innerWidth > this.hamburgerWidth
+		) {
+			this.useHamburger = false;
+			return;
+			// While the user may load in on a small screen and 320px -> 321px isn't gonna fix anything, it won't
+			// help to check again as they are still display: none.
+			// This causes flickering on the hamburger button when resizing from a small screen to a large screen.
+		} else if (!this.useHamburger) {
+			// Get theme toggle left
+			const themeToggle: HTMLElement | null = document.querySelector("app-theme-toggle");
+			if (!themeToggle) return;
 
-		const themeToggleLeft: number = themeToggle.getBoundingClientRect().left;
+			const themeToggleLeft: number = themeToggle.getBoundingClientRect().left;
 
-		// Get nav right
-		const nav: HTMLElement | null = document.querySelector("nav");
-		if (!nav) return;
+			// Get nav right
+			const nav: HTMLElement | null = document.querySelector("nav");
+			if (!nav) return;
 
-		const navRight: number = nav.getBoundingClientRect().right;
+			const navRight: number = nav.getBoundingClientRect().right;
 
-		// If the nav is within 10 pixels of the theme toggle, activate hamburger
-		this.useHamburger = navRight > themeToggleLeft - 10;
-		// Due to using display: none, the nav width is 0, so it won't be reappearing if it gets hidden.
-		// See SCSS for more info
+			// If the nav is within 10 pixels of the theme toggle, activate hamburger
+			this.useHamburger = navRight > themeToggleLeft - 10;
+
+			if (this.useHamburger) {
+				this.hamburgerWidth = window.innerWidth;
+			}
+		}
 	}
 }

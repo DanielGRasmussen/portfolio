@@ -111,9 +111,6 @@ header {
 		}
 
 		.main {
-			// Note: This will not make the nav reappear if it is hidden.
-			// Position doesn't work because it causes it to move to space where it has enough area, causing a feedback loop.
-			// Opacity doesn't work because it doesn't remove the element from the flow.
 			display: none;
 		}
 	}
