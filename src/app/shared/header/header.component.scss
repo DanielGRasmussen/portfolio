@@ -35,6 +35,12 @@ header {
 		transition: background-color $text-transition; // Used as text rather than large background
 	}
 
+	.main {
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+
 	nav ul {
 		display: flex;
 		height: 100%;
@@ -91,5 +97,24 @@ header {
 		margin-right: $margin-md;
 
 		height: fit-content;
+	}
+
+	// Hamburger logic
+	app-hamburger {
+		display: none;
+	}
+
+	&.hamburger {
+		app-hamburger {
+			margin: 0 $margin-md 0 auto;
+			display: block;
+		}
+
+		.main {
+			// Note: This will not make the nav reappear if it is hidden.
+			// Position doesn't work because it causes it to move to space where it has enough area, causing a feedback loop.
+			// Opacity doesn't work because it doesn't remove the element from the flow.
+			display: none;
+		}
 	}
 }

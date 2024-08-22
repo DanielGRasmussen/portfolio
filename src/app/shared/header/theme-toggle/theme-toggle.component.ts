@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, HostListener, Input, OnInit } from "@angular/core";
 import { ThemeService } from "../../../theme.service";
 import { Theme } from "../../../models/theme.type";
 import Content from "../../../models/content.interfaces";
@@ -12,6 +12,7 @@ import { ContentService } from "../../../content.service";
 	styleUrl: "./theme-toggle.component.scss",
 })
 export class ThemeToggleComponent implements OnInit {
+	@Input() invertedText: boolean = false;
 	content!: Content;
 
 	constructor(

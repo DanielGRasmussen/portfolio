@@ -5,23 +5,29 @@ import {
 	OnInit,
 	QueryList,
 	ViewChildren,
+	AfterViewInit,
+	ViewChild,
 } from "@angular/core";
 import { ThemeToggleComponent } from "./theme-toggle/theme-toggle.component";
 import { RouterLink, RouterLinkActive, Router } from "@angular/router";
 import { NgForOf } from "@angular/common";
+import { HamburgerComponent } from "./hamburger/hamburger.component";
 
 @Component({
 	selector: "app-header",
 	standalone: true,
-	imports: [ThemeToggleComponent, RouterLink, NgForOf, RouterLinkActive],
+	imports: [ThemeToggleComponent, RouterLink, NgForOf, RouterLinkActive, HamburgerComponent],
 	templateUrl: "./header.component.html",
 	styleUrl: "./header.component.scss",
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 	@ViewChildren("link") linkElements!: QueryList<ElementRef>;
+	@ViewChild("hamburger") hamburger!: HamburgerComponent;
 	activeIndex: number = 0;
 	isHidden: boolean = false;
+	useHamburger: boolean = false;
 	private previousScrollPosition: number = 0;
+	private firstLoad: boolean = true;
 
 	// Creates the links in the header
 	links: { name: string; url: string }[] = [
@@ -37,6 +43,10 @@ export class HeaderComponent implements OnInit {
 	ngOnInit(): void {
 		this.updateActiveIndex();
 		this.router.events.subscribe(this.updateActiveIndex.bind(this));
+	}
+
+	ngAfterViewInit(): void {
+		this.onWindowResize();
 	}
 
 	// Underline logic
@@ -77,16 +87,20 @@ export class HeaderComponent implements OnInit {
 		const activeElement: HTMLElement | null = this.getNativeElement(this.activeIndex);
 		if (!activeElement) return "0";
 
-		return activeElement.offsetHeight - 34 + "px";
+		return activeElement.offsetHeight - 35 + "px";
 	}
 
 	// Sticky logic
 	@HostListener("window:scroll")
-	onWindowScroll(): void {
-		this.handleStickyHeader();
-	}
-
 	handleStickyHeader(): void {
+		if (this.hamburger.isOpen) return;
+
+		if (this.firstLoad) {
+			this.previousScrollPosition = window.scrollY || document.documentElement.scrollTop;
+			this.firstLoad = false;
+			return;
+		}
+
 		const currentScrollPosition: number = window.scrollY || document.documentElement.scrollTop;
 
 		// Get header height
@@ -111,5 +125,26 @@ export class HeaderComponent implements OnInit {
 			this.previousScrollPosition = currentScrollPosition;
 			return;
 		}
+	}
+
+	// Check for if hamburger button should be used
+	@HostListener("window:resize")
+	onWindowResize(): void {
+		// Get theme toggle left
+		const themeToggle: HTMLElement | null = document.querySelector("app-theme-toggle");
+		if (!themeToggle) return;
+
+		const themeToggleLeft: number = themeToggle.getBoundingClientRect().left;
+
+		// Get nav right
+		const nav: HTMLElement | null = document.querySelector("nav");
+		if (!nav) return;
+
+		const navRight: number = nav.getBoundingClientRect().right;
+
+		// If the nav is within 10 pixels of the theme toggle, activate hamburger
+		this.useHamburger = navRight > themeToggleLeft - 10;
+		// Due to using display: none, the nav width is 0, so it won't be reappearing if it gets hidden.
+		// See SCSS for more info
 	}
 }

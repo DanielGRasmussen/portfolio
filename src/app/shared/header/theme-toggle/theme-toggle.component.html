@@ -8,5 +8,5 @@
 			[class.right]="themeService.theme === Theme.LIGHT"
 		/>
 	</label>
-	<span class="label">{{ themeService.theme }}</span>
+	<span class="label" [class.inverted]="invertedText">{{ themeService.theme }}</span>
 </div>

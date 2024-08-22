@@ -8,8 +8,8 @@ $text-color: var(--text-color);
 $text-inverse-color: var(--text-inverse-color);
 
 // Theme transitions
-$background-transition: 0.25s;
-$text-transition: 0.25s;
+$background-transition: 0.2s ease-out;
+$text-transition: 0.2s ease-out;
 
 // Margins
 $margin-xs: 0.25rem;

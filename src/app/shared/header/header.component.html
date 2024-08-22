@@ -1,18 +1,21 @@
-<header [class.hidden]="isHidden">
+<header [class.hidden]="isHidden" [class.hamburger]="useHamburger">
 	<div class="logo"><a href="/" aria-label="Return to home"></a></div>
-	<nav>
-		<ul>
-			<li *ngFor="let link of links; index as i">
-				<a [routerLink]="link.url" routerLinkActive="active" #link>{{ link.name }}</a>
-			</li>
-			<div
-				class="active-link-underline"
-				[style.left]="getUnderlineOffset()"
-				[style.bottom]="getUnderlineBottom()"
-				[style.width]="getUnderlineWidth()"
-			></div>
-		</ul>
-	</nav>
+	<div class="main">
+		<nav>
+			<ul>
+				<li *ngFor="let link of links; index as i">
+					<a [routerLink]="link.url" routerLinkActive="active" #link>{{ link.name }}</a>
+				</li>
+				<div
+					class="active-link-underline"
+					[style.left]="getUnderlineOffset()"
+					[style.bottom]="getUnderlineBottom()"
+					[style.width]="getUnderlineWidth()"
+				></div>
+			</ul>
+		</nav>
 
-	<app-theme-toggle></app-theme-toggle>
+		<app-theme-toggle [invertedText]="true"></app-theme-toggle>
+	</div>
+	<app-hamburger [links]="links" #hamburger></app-hamburger>
 </header>

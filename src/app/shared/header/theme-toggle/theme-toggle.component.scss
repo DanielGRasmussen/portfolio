@@ -72,7 +72,11 @@ div {
 		text-transform: capitalize;
 		user-select: none;
 
-		color: $text-inverse-color;
+		color: $text-color;
 		transition: color $text-transition;
+
+		&.inverted {
+			color: $text-inverse-color;
+		}
 	}
 }

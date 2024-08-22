@@ -1,0 +1,17 @@
+<div class="menu">
+	<div class="hamburger" (click)="toggle()" [class.open]="isOpen" tabindex="0" (keyup)="onKeyUp($event)">
+		<span class="line-1"></span>
+		<span class="line-2"></span>
+		<span class="line-3"></span>
+	</div>
+	<div class="menu-content" [class.open]="isOpen">
+		<app-theme-toggle></app-theme-toggle>
+		<nav>
+			<ul>
+				<li *ngFor="let link of links; index as i">
+					<a [routerLink]="link.url" routerLinkActive="active">{{ link.name }}</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
