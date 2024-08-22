@@ -1,10 +1,8 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .education {
-	max-width: 800px;
-	width: 80%;
-
-	margin: $margin-lg auto $margin-xlg auto;
+	@include main;
 
 	h1, h2, h3 {
 		margin: 0;

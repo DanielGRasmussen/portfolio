@@ -1,5 +1,4 @@
 @import "../../../../styles/variables";
-@import "../../../../styles/typography";
 
 $animation-curve: cubic-bezier(1, 0, 0, 1);
 $line-width: 3.5ch;
@@ -116,7 +115,6 @@ $line-spacing: 0.4rem;
 
 			color: $text-color;
 			text-decoration: none;
-			@include heading-3;
 
 			transition: color $text-transition;
 			&:hover {

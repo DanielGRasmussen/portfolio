@@ -1,5 +1,4 @@
 @import "../../../styles/variables";
-@import "../../../styles/typography";
 
 header {
 	display: flex;
@@ -61,7 +60,6 @@ header {
 				text-decoration: none;
 
 				padding: 0 $margin-lg * 0.45;
-				@include heading-3;
 
 				transition: color $text-transition, opacity 0.2s;
 

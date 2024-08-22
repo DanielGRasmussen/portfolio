@@ -15,6 +15,7 @@ interface Info {
 interface ContentItem {
 	home: HomeContent;
 	education: EducationContent;
+	technologies: TechnologiesContent;
 }
 
 type HomeContent = string[];
@@ -37,4 +38,17 @@ export interface EducationContent {
 		status: string;
 		date: string;
 	}[];
+}
+
+export type TechnologiesContent = Technologies[];
+
+interface Technologies {
+	name: string;
+	items: TechnologyItem[];
+}
+
+interface TechnologyItem {
+	name: string;
+	icon: string;
+	skill: string;
 }

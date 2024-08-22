@@ -1,14 +1,11 @@
 @import "../../../styles/variables";
-@import "../../../styles/typography";
+@import "../../../styles/mixins";
 @import "../../../styles/themes";
 
 .home {
-	max-width: 800px;
-	width: 80%;
-	margin: $margin-lg auto $margin-xlg auto;
+	@include main;
 
 	.name {
-		@include heading-1;
 		font-size: 2.5em;
 		letter-spacing: 0.15ch;
 		text-transform: uppercase;
@@ -49,7 +46,6 @@
 		}
 
 		.cta {
-			@include heading-3;
 			display: block;
 			margin: $margin-md auto 0 auto;
 			padding: $margin-md $margin-xlg;
