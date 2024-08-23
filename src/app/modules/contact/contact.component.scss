@@ -1,0 +1,56 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.contact {
+	@include main;
+
+	h1 {
+		margin: 0;
+	}
+
+	.contact-items {
+		padding: 0;
+		margin: $margin-sm 0 0 0;
+
+		list-style: none;
+
+		li {
+			margin-bottom: $margin-sm * 0.5;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+
+			text-decoration: none;
+			color: $text-color;
+
+			transition: color $text-transition;
+
+			.icon {
+				display: inline-block;
+				width: 2rem;
+				height: 2rem;
+
+				margin-right: $margin-xs;
+
+				mask-size: cover;
+				background-color: $text-color;
+
+				transition: background-color $text-transition; // Used as text rather than large background
+			}
+
+			.text {
+				display: inline-block;
+			}
+		}
+	}
+
+	.info {
+		margin-top: $margin-md;
+
+		p {
+			margin: 0;
+		}
+	}
+}

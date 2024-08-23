@@ -1,0 +1,16 @@
+<div class="contact">
+	<h1>Contact Info</h1>
+	<ul class="contact-items">
+		<li *ngFor="let contact of content.links">
+			<a href="{{ contact.link }}">
+				<span class="icon" [style.mask-image]="contact.icon | url"></span>
+				<span class="text">{{ contact.text }}</span>
+			</a>
+		</li>
+	</ul>
+	<div class="info">
+		<p>Currently based in {{ content.location }}</p>
+		<p>Preferred method of contact: {{ content.contact }}</p>
+		<p>I typically respond in {{ content.response }}</p>
+	</div>
+</div>
