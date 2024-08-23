@@ -1,7 +1,9 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
 import { NgForOf } from "@angular/common";
 import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Links } from "../../../models/content.interfaces";
+import { ContentService } from "../../../content.service";
 
 @Component({
 	selector: "app-hamburger",
@@ -11,8 +13,12 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
 	styleUrl: "./hamburger.component.scss",
 })
 export class HamburgerComponent {
-	@Input() links: { name: string; url: string }[] = [];
+	links: Links;
 	isOpen: boolean = false;
+
+	constructor(private ContentService: ContentService) {
+		this.links = this.ContentService.getContent().links;
+	}
 
 	toggle(): void {
 		this.isOpen = !this.isOpen;

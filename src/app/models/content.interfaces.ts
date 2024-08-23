@@ -1,24 +1,16 @@
 export default interface Content {
-	images: Image;
-	info: Info;
-	content: ContentItem;
-}
-
-interface Image {
-	[key: string]: string;
-}
-
-interface Info {
-	[key: string]: string;
-}
-
-interface ContentItem {
 	home: HomeContent;
 	education: EducationContent;
 	technologies: TechnologiesContent;
+	contact: ContactContent;
+	general: GeneralContent;
+	links: Links;
 }
 
-type HomeContent = string[];
+export interface HomeContent {
+	profile: string;
+	bio: string[];
+}
 
 export interface EducationContent {
 	degree: {
@@ -51,4 +43,26 @@ interface TechnologyItem {
 	name: string;
 	icon: string;
 	skill: string;
+}
+
+export interface ContactContent {
+	location: string;
+	contact: string;
+	response: string;
+	links: {
+		text: string;
+		icon: string;
+		link: string;
+	}[];
+}
+
+export interface GeneralContent {
+	[content: string]: string;
+}
+
+export type Links = Link[];
+
+interface Link {
+	name: string;
+	url: string;
 }

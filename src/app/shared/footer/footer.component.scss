@@ -41,22 +41,6 @@ footer {
 			background-color: $text-inverse-color;
 
 			transition: background-color $text-transition; // Used as text rather than large background
-
-			&.email {
-				mask-image: $email-src;
-			}
-
-			&.github {
-				mask-image: $github-src;
-			}
-
-			&.linkedin {
-				mask-image: $linkedin-src;
-			}
-
-			&.resume {
-				mask-image: $resume-src;
-			}
 		}
 	}
 }

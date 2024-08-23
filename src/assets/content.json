@@ -1,188 +1,212 @@
 {
-	"images": {
-		"logo": "/assets/images/logo.svg",
-		"email": "/assets/images/symbols/email.svg",
-		"linkedin": "/assets/images/logos/linkedin.svg",
-		"github": "/assets/images/logos/github.svg",
-		"resume": "/assets/images/symbols/resume.svg",
+	"home": {
 		"profile": "/assets/images/profile.webp",
-		"light-mode": "/assets/images/symbols/light-mode.svg",
-		"dark-mode": "/assets/images/symbols/dark-mode.svg"
-	},
-	"info": {
-		"email": "danielrasmussen42@gmail.com",
-		"linkedin": "https://www.linkedin.com/in/daniel-rasmussen-3a7b87218/",
-		"github": "https://github.com/DanielGRasmussen",
-		"resume": "https://docs.google.com/document/d/1qkK0cz-x5w44Z_t_0smG5c8Cz_pw2QgAbaclgERY-2w"
-	},
-	"content": {
-		"home": [
+		"bio":  [
 			"I'm a passionate software engineering student with a focus on web development, set to graduate at 19 with a unique educational journey behind me. My path has been shaped by challenges and opportunities, driving me to excel academically and develop strong leadership skills.",
 			"When confronted with the challenges posed by the COVID-19 pandemic during high school, I adapted quickly, transitioning to online college courses through BYU-Idaho's concurrent enrollment program. Despite personal hardships, including family health issues and relocation, I maintained a near-perfect GPA of 3.9.",
 			"My academic journey has cultivated a deep interest in software engineering, particularly web development—a field that runs in my family. I'm pursuing a major in Software Engineering, complemented by minors in Web Development and Web Design, along with four certificates.",
 			"Throughout my college experience, I've consistently taken on leadership roles in group projects, honing my ability to collaborate effectively and guide teams to success. This practical experience, combined with my technical skills, has prepared me for real-world challenges in the tech industry.",
 			"As I approach graduation, I'm eager to apply my skills and knowledge in a professional setting. I'm looking for opportunities to contribute to innovative projects, learn from experienced developers, and continue my growth in the ever-evolving field of web development.",
 			"My goal is to build on the legacy of innovation in web development, inspired by the groundbreaking work of previous generations, including my father's contributions to the early web. I'm excited to be part of the next wave of advancements in this dynamic field."
-		],
-		"education": {
-			"degree": {
-				"degree": "Bachelor's in Software Engineering",
-				"school": "Brigham Young University - Idaho",
+		]
+	},
+	"education": {
+		"degree": {
+			"degree": "Bachelor's in Software Engineering",
+			"school": "Brigham Young University - Idaho",
+			"status": "Expected",
+			"date": "Fall, 2024",
+			"gpa": "3.9"
+		},
+		"minors": [
+			{
+				"name": "Minor in Web Development",
 				"status": "Expected",
-				"date": "Fall, 2024",
-				"gpa": "3.9"
+				"date": "Fall, 2024"
 			},
-			"minors": [
+			{
+				"name": "Minor in Web Design",
+				"status": "Expected",
+				"date": "Fall, 2024"
+			}
+		],
+		"certificates": [
+			{
+				"name": "Certificate of Computer Programming",
+				"status": "Completed",
+				"date": "Spring, 2024"
+			},
+			{
+				"name": "Certificate of Web Development",
+				"status": "Completed",
+				"date": "Spring, 2024"
+			},
+			{
+				"name": "Certificate of Web Frontend",
+				"status": "Completed",
+				"date": "Spring, 2024"
+			},
+			{
+				"name": "Certificate of Data Science",
+				"status": "Completed",
+				"date": "Spring, 2024"
+			}
+		]
+	},
+	"technologies": [
+		{
+			"name": "languages",
+			"items": [
 				{
-					"name": "Minor in Web Development",
-					"status": "Expected",
-					"date": "Fall, 2024"
+					"name": "HTML",
+					"icon": "/assets/images/logos/html.svg",
+					"skill": "advanced"
 				},
 				{
-					"name": "Minor in Web Design",
-					"status": "Expected",
-					"date": "Fall, 2024"
-				}
-			],
-			"certificates": [
-				{
-					"name": "Certificate of Computer Programming",
-					"status": "Completed",
-					"date": "Spring, 2024"
+					"name": "CSS",
+					"icon": "/assets/images/logos/css.svg",
+					"skill": "advanced"
 				},
 				{
-					"name": "Certificate of Web Development",
-					"status": "Completed",
-					"date": "Spring, 2024"
+					"name": "SCSS",
+					"icon": "/assets/images/logos/scss.svg",
+					"skill": "intermediate"
 				},
 				{
-					"name": "Certificate of Web Frontend",
-					"status": "Completed",
-					"date": "Spring, 2024"
+					"name": "JavaScript",
+					"icon": "/assets/images/logos/javascript.svg",
+					"skill": "advanced"
 				},
 				{
-					"name": "Certificate of Data Science",
-					"status": "Completed",
-					"date": "Spring, 2024"
+					"name": "TypeScript",
+					"icon": "/assets/images/logos/typescript.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "Python",
+					"icon": "/assets/images/logos/python.svg",
+					"skill": "advanced"
 				}
 			]
 		},
-		"technologies": [
+		{
+			"name": "frontend",
+			"items": [
+				{
+					"name": "Angular",
+					"icon": "/assets/images/logos/angular.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "React",
+					"icon": "/assets/images/logos/react.svg",
+					"skill": "intermediate"
+				}
+			]
+		},
+		{
+			"name": "backend",
+			"items": [
+				{
+					"name": "Node.js",
+					"icon": "/assets/images/logos/nodejs.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "Express",
+					"icon": "/assets/images/logos/express.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "MongoDB",
+					"icon": "/assets/images/logos/mongodb.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "MySQL",
+					"icon": "/assets/images/logos/mysql.svg",
+					"skill": "intermediate"
+				}
+			]
+		},
+		{
+			"name": "tools",
+			"items": [
+				{
+					"name": "Git",
+					"icon": "/assets/images/logos/git.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "GitHub",
+					"icon": "/assets/images/logos/github.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "npm",
+					"icon": "/assets/images/logos/npm.svg",
+					"skill": "advanced"
+				},
+				{
+					"name": "Adobe InDesign",
+					"icon": "/assets/images/logos/adobe-indesign.svg",
+					"skill": "advanced"
+				},
+				{
+					"name": "Adobe Illustrator",
+					"icon": "/assets/images/logos/adobe-illustrator.svg",
+					"skill": "advanced"
+				},
+				{
+					"name": "Adobe Photoshop",
+					"icon": "/assets/images/logos/adobe-photoshop.svg",
+					"skill": "intermediate"
+				},
+				{
+					"name": "Adobe Xd",
+					"icon": "/assets/images/logos/adobe-xd.svg",
+					"skill": "beginner"
+				}
+			]
+		}
+	],
+	"contact": {
+		"location": "Snowflake, Arizona",
+		"contact": "email",
+		"response": "1-2 business days",
+		"links": [
 			{
-				"name": "languages",
-				"items": [
-					{
-						"name": "HTML",
-						"icon": "/assets/images/logos/html.svg",
-						"skill": "advanced"
-					},
-					{
-						"name": "CSS",
-						"icon": "/assets/images/logos/css.svg",
-						"skill": "advanced"
-					},
-					{
-						"name": "SCSS",
-						"icon": "/assets/images/logos/scss.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "JavaScript",
-						"icon": "/assets/images/logos/javascript.svg",
-						"skill": "advanced"
-					},
-					{
-						"name": "TypeScript",
-						"icon": "/assets/images/logos/typescript.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "Python",
-						"icon": "/assets/images/logos/python.svg",
-						"skill": "advanced"
-					}
-				]
+				"text": "danielrasmussen42@gmail.com",
+				"icon": "/assets/images/symbols/email.svg",
+				"link": "mailto:danielrasmussen42@gmail.com"
 			},
 			{
-				"name": "frontend",
-				"items": [
-					{
-						"name": "Angular",
-						"icon": "/assets/images/logos/angular.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "React",
-						"icon": "/assets/images/logos/react.svg",
-						"skill": "intermediate"
-					}
-				]
+				"text": "LinkedIn",
+				"icon": "/assets/images/logos/linkedin.svg",
+				"link": "https://www.linkedin.com/in/daniel-rasmussen-3a7b87218/"
 			},
 			{
-				"name": "backend",
-				"items": [
-					{
-						"name": "Node.js",
-						"icon": "/assets/images/logos/nodejs.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "Express",
-						"icon": "/assets/images/logos/express.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "MongoDB",
-						"icon": "/assets/images/logos/mongodb.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "MySQL",
-						"icon": "/assets/images/logos/mysql.svg",
-						"skill": "intermediate"
-					}
-				]
+				"text": "GitHub",
+				"icon": "/assets/images/logos/github.svg",
+				"link": "https://github.com/DanielGRasmussen"
 			},
 			{
-				"name": "tools",
-				"items": [
-					{
-						"name": "Git",
-						"icon": "/assets/images/logos/git.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "GitHub",
-						"icon": "/assets/images/logos/github.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "npm",
-						"icon": "/assets/images/logos/npm.svg",
-						"skill": "advanced"
-					},
-					{
-						"name": "Adobe InDesign",
-						"icon": "/assets/images/logos/adobe-indesign.svg",
-						"skill": "advanced"
-					},
-					{
-						"name": "Adobe Illustrator",
-						"icon": "/assets/images/logos/adobe-illustrator.svg",
-						"skill": "advanced"
-					},
-					{
-						"name": "Adobe Photoshop",
-						"icon": "/assets/images/logos/adobe-photoshop.svg",
-						"skill": "intermediate"
-					},
-					{
-						"name": "Adobe Xd",
-						"icon": "/assets/images/logos/adobe-xd.svg",
-						"skill": "beginner"
-					}
-				]
+				"text": "Resume",
+				"icon": "/assets/images/symbols/resume.svg",
+				"link": "https://docs.google.com/document/d/1qkK0cz-x5w44Z_t_0smG5c8Cz_pw2QgAbaclgERY-2w"
 			}
 		]
-	}
+	},
+	"general": {
+		"logo": "/assets/images/logo.svg",
+		"light-mode": "/assets/images/symbols/light-mode.svg",
+		"dark-mode": "/assets/images/symbols/dark-mode.svg"
+	},
+	"links": [
+		{ "name": "Home", "url": "/home" },
+		{ "name": "Projects", "url": "/projects" },
+		{ "name": "Education", "url": "/education" },
+		{ "name": "Technologies", "url": "/technologies" },
+		{ "name": "Contact Info", "url": "/contact" }
+	]
 }

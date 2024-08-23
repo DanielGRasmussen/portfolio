@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import Content from "../../models/content.interfaces";
+import { Component } from "@angular/core";
+import { HomeContent } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
 import { NgForOf } from "@angular/common";
 import { RouterLink } from "@angular/router";
@@ -11,12 +11,10 @@ import { RouterLink } from "@angular/router";
 	templateUrl: "./home.component.html",
 	styleUrl: "./home.component.scss",
 })
-export class HomeComponent implements OnInit {
-	content!: Content;
+export class HomeComponent {
+	content!: HomeContent;
 
-	constructor(private contentService: ContentService) {}
-
-	ngOnInit(): void {
-		this.content = this.contentService.getContent();
+	constructor(private ContentService: ContentService) {
+		this.content = this.ContentService.getContent().home;
 	}
 }

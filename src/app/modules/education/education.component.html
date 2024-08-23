@@ -2,22 +2,22 @@
 	<h1>Education</h1>
 	<div class="degree">
 		<div>
-			<h3>{{ education.degree.degree }}</h3>
-			<p class="status">{{ education.degree.status }}: {{ education.degree.date }}</p>
+			<h3>{{ content.degree.degree }}</h3>
+			<p class="status">{{ content.degree.status }}: {{ content.degree.date }}</p>
 		</div>
-		<p class="university title">{{ education.degree.school }}</p>
-		<p class="gpa">GPA: {{ education.degree.gpa }}</p>
+		<p class="university title">{{ content.degree.school }}</p>
+		<p class="gpa">GPA: {{ content.degree.gpa }}</p>
 	</div>
 	<div class="minors">
 		<h2>Minors</h2>
-		<div class="minor" *ngFor="let minor of education.minors">
+		<div class="minor" *ngFor="let minor of content.minors">
 			<p class="name title">{{ minor.name }}</p>
 			<p class="status">{{ minor.status }}: {{ minor.date }}</p>
 		</div>
 	</div>
 	<div class="certificates">
 		<h2>Certificates</h2>
-		<div class="certificate" *ngFor="let certificate of education.certificates">
+		<div class="certificate" *ngFor="let certificate of content.certificates">
 			<p class="title">{{ certificate.name }}</p>
 			<p class="status">{{ certificate.status }}: {{ certificate.date }}</p>
 		</div>

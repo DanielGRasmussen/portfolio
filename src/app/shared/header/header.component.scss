@@ -27,7 +27,6 @@ header {
 		width: $header-height;
 
 		// This allows the logo to have it's color set by the background-color property
-		mask-image: $logo-src;
 		mask-size: cover;
 		background-color: $text-inverse-color;
 

@@ -12,17 +12,28 @@ import { ThemeToggleComponent } from "./theme-toggle/theme-toggle.component";
 import { RouterLink, RouterLinkActive, Router } from "@angular/router";
 import { NgForOf } from "@angular/common";
 import { HamburgerComponent } from "./hamburger/hamburger.component";
+import Content, { Links } from "../../models/content.interfaces";
+import { ContentService } from "../../content.service";
+import { UrlPipe } from "../../url.pipe";
 
 @Component({
 	selector: "app-header",
 	standalone: true,
-	imports: [ThemeToggleComponent, RouterLink, NgForOf, RouterLinkActive, HamburgerComponent],
+	imports: [
+		ThemeToggleComponent,
+		RouterLink,
+		NgForOf,
+		RouterLinkActive,
+		HamburgerComponent,
+		UrlPipe,
+	],
 	templateUrl: "./header.component.html",
 	styleUrl: "./header.component.scss",
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
 	@ViewChildren("link") linkElements!: QueryList<ElementRef>;
 	@ViewChild("hamburger") hamburger!: HamburgerComponent;
+	content: Content;
 	activeIndex: number = 0;
 	isHidden: boolean = false;
 	useHamburger: boolean = false;
@@ -31,15 +42,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 	private firstLoad: boolean = true;
 
 	// Creates the links in the header
-	links: { name: string; url: string }[] = [
-		{ name: "Home", url: "/home" },
-		{ name: "Projects", url: "/projects" },
-		{ name: "Education", url: "/education" },
-		{ name: "Technologies", url: "/technologies" },
-		{ name: "Contact Info", url: "/contact" },
-	];
+	links: Links;
 
-	constructor(private router: Router) {}
+	constructor(
+		private router: Router,
+		private ContentService: ContentService
+	) {
+		this.content = this.ContentService.getContent();
+		this.links = this.content.links;
+	}
 
 	ngOnInit(): void {
 		this.updateActiveIndex();

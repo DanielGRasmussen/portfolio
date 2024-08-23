@@ -1,12 +1,11 @@
-<div>
-	<label class="switch">
-		<input class="toggle" type="checkbox" [checked]="themeService.theme === Theme.DARK">
+<div (click)="themeService.toggleTheme()" (keyup)="onKeyUp($event)" tabindex="0">
+	<div class="switch" [class.dark]="themeService.theme === Theme.DARK">
 		<span class="slider"></span>
 		<img
-			src="{{ themeService.theme === Theme.LIGHT ? content.images['light-mode'] : content.images['dark-mode'] }}"
+			src="{{ themeService.theme === Theme.LIGHT ? content.general['light-mode'] : content.general['dark-mode'] }}"
 			alt="Current mode"
 			[class.right]="themeService.theme === Theme.LIGHT"
 		/>
-	</label>
+	</div>
 	<span class="label" [class.inverted]="invertedText">{{ themeService.theme }}</span>
 </div>
