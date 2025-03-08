@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { EducationContent } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
 import { NgForOf } from "@angular/common";
+import { TitleService } from "../../title.service";
 
 @Component({
 	selector: "app-education",
@@ -10,10 +11,17 @@ import { NgForOf } from "@angular/common";
 	templateUrl: "./education.component.html",
 	styleUrl: "./education.component.scss",
 })
-export class EducationComponent {
+export class EducationComponent implements OnInit {
 	content: EducationContent;
 
-	constructor(private ContentService: ContentService) {
+	constructor(
+		private ContentService: ContentService,
+		private TitleService: TitleService
+	) {
 		this.content = this.ContentService.getContent().education;
+	}
+
+	ngOnInit(): void {
+		this.TitleService.setTitle("Education");
 	}
 }

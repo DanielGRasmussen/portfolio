@@ -4,4 +4,15 @@
 	max-width: 800px;
 	width: 80%;
 	margin: $margin-lg auto $margin-xlg auto;
+
+	@include mobile {
+		width: 95%;
+		margin: $margin-md auto $margin-lg auto;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: 768px) {
+		@content;
+	}
 }

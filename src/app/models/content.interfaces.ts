@@ -1,5 +1,6 @@
 export default interface Content {
 	home: HomeContent;
+	projects: ProjectsContent;
 	education: EducationContent;
 	technologies: TechnologiesContent;
 	contact: ContactContent;
@@ -10,6 +11,30 @@ export default interface Content {
 export interface HomeContent {
 	profile: string;
 	bio: string[];
+}
+
+export interface ProjectsContent {
+	items: ProjectItem[];
+}
+
+export interface ProjectItem {
+	id: string;
+	title: string;
+	projectType: string;
+	images: string[];
+	technologies: TechnologiesItem[];
+	descriptions: DescriptionsItem[];
+	link: string;
+}
+
+export interface TechnologiesItem {
+	name: string;
+	icon: string;
+}
+
+export interface DescriptionsItem {
+	name: string;
+	content: string[];
 }
 
 export interface EducationContent {

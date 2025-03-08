@@ -1,1 +1,23 @@
-<p>projects works!</p>
+<div class="wrapper" [class.sidebar]="sidebar">
+	<app-project-filter
+		[sidebar]="sidebar"
+		[types]="types"
+		[technologies]="technologies"
+		(typeChange)="typeChange($event)"
+		(technologyChange)="technologyChange($event)"
+	></app-project-filter>
+	<div class="projects">
+		<a [routerLink]="['/projects', project.id]" *ngFor="let project of visibleProjects">
+			<div class="card">
+				<div class="thumbnail">
+					<img src="{{ project.images[0] }}" alt="{{ project.title }} thumbnail">
+				</div>
+				<div class="content">
+					<h3 class="project-title">{{project.title}}</h3>
+					<app-project-info [project]="project"></app-project-info>
+					<p class="overview">{{ project.descriptions[0].content[0] }}</p>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>

@@ -12,6 +12,10 @@ footer {
 
 	transition: background-color $background-transition, color $text-transition;
 
+	p {
+		margin: 0;
+	}
+
 	.separator {
 		display: block;
 		height: 1em;
@@ -41,6 +45,14 @@ footer {
 			background-color: $text-inverse-color;
 
 			transition: background-color $text-transition; // Used as text rather than large background
+		}
+	}
+
+	@media (max-width: 446px) {
+		flex-direction: column;
+
+		.separator {
+			display: none;
 		}
 	}
 }

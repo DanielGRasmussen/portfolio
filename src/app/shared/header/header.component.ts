@@ -15,6 +15,7 @@ import { HamburgerComponent } from "./hamburger/hamburger.component";
 import Content, { Links } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
 import { UrlPipe } from "../../url.pipe";
+import { LayoutService } from "../../layout.service";
 
 @Component({
 	selector: "app-header",
@@ -46,7 +47,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private router: Router,
-		private ContentService: ContentService
+		private ContentService: ContentService,
+		private LayoutService: LayoutService
 	) {
 		this.content = this.ContentService.getContent();
 		this.links = this.content.links;
@@ -102,6 +104,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 		return activeElement.offsetHeight - 35 + "px";
 	}
 
+	isSubpage(): boolean {
+		return this.router.url.split("/").length > 2;
+	}
+
 	// Sticky logic
 	@HostListener("window:scroll")
 	handleStickyHeader(): void {
@@ -123,6 +129,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 		// If the scroll height is less than the header height, show the header
 		if (currentScrollPosition < headerHeight) {
 			this.isHidden = false;
+			this.LayoutService.setHeaderVisibility(true);
 			this.previousScrollPosition = currentScrollPosition;
 			return;
 		}
@@ -130,10 +137,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 		// If the scroll is going up, show the header
 		if (currentScrollPosition < this.previousScrollPosition - 10) {
 			this.isHidden = false;
+			this.LayoutService.setHeaderVisibility(true);
 			this.previousScrollPosition = currentScrollPosition;
 			return;
 		} else if (currentScrollPosition > this.previousScrollPosition + 10) {
 			this.isHidden = true;
+			this.LayoutService.setHeaderVisibility(false);
 			this.previousScrollPosition = currentScrollPosition;
 			return;
 		}

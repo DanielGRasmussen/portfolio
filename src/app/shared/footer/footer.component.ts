@@ -3,6 +3,7 @@ import { ContentService } from "../../content.service";
 import { ContactContent } from "../../models/content.interfaces";
 import { NgForOf } from "@angular/common";
 import { UrlPipe } from "../../url.pipe";
+import { LayoutService } from "../../layout.service";
 
 @Component({
 	selector: "app-footer",

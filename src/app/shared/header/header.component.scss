@@ -62,8 +62,7 @@ header {
 
 				transition: color $text-transition, opacity 0.2s;
 
-				&.active {
-					text-decoration: none;
+				&.active:not(.clickable) {
 					cursor: default;
 					pointer-events: none;
 				}

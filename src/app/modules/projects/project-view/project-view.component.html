@@ -1,0 +1,56 @@
+<div class="wrapper">
+	<div class="slider-container">
+		<img
+			class="selected"
+			[src]="images[currentIndex]"
+			alt="Slider Image"
+			tabindex="0"
+			(keydown.arrowLeft)="previousImage()"
+			(keydown.arrowRight)="nextImage()"
+		/>
+		<div class="thumbnails">
+			<div
+				class="prev"
+				[class.active]="getActive('previous')"
+				(click)="this.previousImage()"
+				tabindex="0"
+				(keydown.enter)="this.previousImage()"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+					<path d="M50 -100 L250 200 L50 500" fill="none" stroke-width="15"/>
+				</svg>
+			</div>
+			<div
+				*ngFor="let image of images; let i = index"
+				(click)="goToImage(i)"
+				[class.active]="i === currentIndex"
+				class="thumbnail"
+				tabindex="0"
+				(keydown.enter)="goToImage(i)"
+			>
+				<img [src]="image" alt="Thumbnail {{ i + 1 }}" />
+			</div>
+			<div
+				class="next"
+				[class.active]="getActive('next')"
+				(click)="goToImage(currentIndex + 1)"
+				tabindex="0"
+				(keydown.enter)="goToImage(currentIndex + 1)"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+					<path d="M50 -100 L250 200 L50 500" fill="none" stroke-width="15"/>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="title-info">
+		<h1>{{ project.title }}</h1>
+		<app-project-info [project]="project"></app-project-info>
+	</div>
+	<div class="descriptions">
+		<app-accordion
+			*ngFor="let description of project.descriptions"
+			[description]="description">
+		</app-accordion>
+	</div>
+</div>

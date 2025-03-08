@@ -4,7 +4,7 @@
 		<nav>
 			<ul>
 				<li *ngFor="let link of links; index as i">
-					<a [routerLink]="link.url" routerLinkActive="active" class="h3" tabindex="0" #link>{{ link.name }}</a>
+					<a [routerLink]="link.url" routerLinkActive="active" [class.clickable]="isSubpage()" class="h3" tabindex="0" #link>{{ link.name }}</a>
 				</li>
 				<div
 					class="active-link-underline"

@@ -1,0 +1,58 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/mixins.scss";
+
+$icon-width: 2px;
+
+.accordion {
+	height: fit-content;
+	margin-bottom: $margin-md;
+	padding: $margin-sm;
+	border-radius: 20px;
+	background-color: $background-secondary-color;
+	box-shadow: $shadow-lg;
+	transition: background-color $background-transition;
+	cursor: pointer;
+
+	.accordion-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h3 {
+			margin: 0;
+		}
+
+		.icon {
+			span {
+				display: block;
+				width: 30px;
+				height: $icon-width;
+				background-color: $text-color;
+			}
+
+			.vertical {
+				margin-top: -$icon-width;
+				transition: transform 0.15s ease-in;
+			}
+		}
+	}
+
+	.accordion-content {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.15s ease-in;
+
+		p {
+			margin: 12px 0 0 0;
+		}
+	}
+
+	&.open {
+		.accordion-header .icon .vertical {
+			transform: rotate(90deg);
+		}
+		.accordion-content {
+			max-height: 1000px;
+		}
+	}
+}
