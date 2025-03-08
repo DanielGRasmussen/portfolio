@@ -1,0 +1,56 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.main {
+	@include main;
+
+	h1, h2 {
+		margin: 0;
+	}
+
+	.tech-group {
+		margin-top: $margin-md;
+
+		&:first-of-type {
+			margin-top: $margin-lg;
+		}
+
+		h2 {
+			text-transform: capitalize;
+		}
+
+		.technologies {
+			display: flex;
+			gap: $margin-sm;
+			flex-wrap: wrap;
+
+			margin-top: $margin-sm;
+
+			.technology {
+				width: fit-content;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				img {
+					height: 140px;
+				}
+
+				p {
+					width: fit-content;
+					margin: 0;
+					text-align: center;
+				}
+
+				.skill {
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+
+	.name {
+		display: none
+	}
+}

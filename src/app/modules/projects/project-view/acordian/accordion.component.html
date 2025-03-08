@@ -1,0 +1,17 @@
+<div class="accordion"
+	 (click)="toggleAccordion()"
+	 [class.open]="isOpen"
+	 tabindex="0"
+	 (keydown.enter)="toggleAccordion()"
+>
+	<div class="accordion-header">
+		<h3>{{ description.name }}</h3>
+		<div class="icon">
+			<span class="horizontal"></span>
+			<span class="vertical"></span>
+		</div>
+	</div>
+	<div class="accordion-content">
+		<p *ngFor="let para of description.content">{{ para }}</p>
+	</div>
+</div>

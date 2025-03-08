@@ -1,0 +1,62 @@
+// Font families
+$font-primary: "Titillium Web", "Roboto", sans-serif;
+
+// Font weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Font sizes
+$font-size-h1: 44px;
+$font-size-h2: 36px;
+$font-size-h3: 26px;
+$font-size-title: 22px;
+$font-size-body: 20px;
+$font-size-subtext: 18px;
+
+// Line heights
+$line-height-heading: 1.2;
+$line-height-body: 1.5;
+
+// Mixins for typography styles
+@mixin heading-1 {
+	font-family: $font-primary;
+	font-weight: $font-weight-bold;
+	font-size: $font-size-h1;
+	line-height: $line-height-heading;
+}
+
+@mixin heading-2 {
+	font-family: $font-primary;
+	font-weight: $font-weight-medium;
+	font-size: $font-size-h2;
+	line-height: $line-height-heading;
+}
+
+@mixin heading-3 {
+	font-family: $font-primary;
+	font-weight: $font-weight-medium;
+	font-size: $font-size-h3;
+	line-height: $line-height-heading;
+}
+
+@mixin title {
+	font-family: $font-primary;
+	font-weight: $font-weight-regular;
+	font-size: $font-size-title;
+	line-height: $line-height-body;
+}
+
+@mixin body-text {
+	font-family: $font-primary;
+	font-weight: $font-weight-regular;
+	font-size: $font-size-body;
+	line-height: $line-height-body;
+}
+
+@mixin subtext {
+	font-family: $font-primary;
+	font-weight: $font-weight-regular;
+	font-size: $font-size-subtext;
+	line-height: $line-height-body;
+}

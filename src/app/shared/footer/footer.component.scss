@@ -1,0 +1,58 @@
+@import "../../../styles/variables";
+
+footer {
+	display: flex;
+	height: $footer-height;
+
+	justify-content: center;
+	align-items: center;
+
+	background-color: $primary-color;
+	color: $text-inverse-color;
+
+	transition: background-color $background-transition, color $text-transition;
+
+	p {
+		margin: 0;
+	}
+
+	.separator {
+		display: block;
+		height: 1em;
+
+		margin: 0 $margin-sm;
+		border-right: 2px solid $text-inverse-color;
+
+		transition: border-color $text-transition; // Used as text rather than large background
+	}
+
+	.links {
+		display: flex;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-right: $margin-xs;
+		}
+
+		a {
+			display: block;
+			width: 1.25em;
+			height: 1.25em;
+
+			mask-size: cover;
+			background-color: $text-inverse-color;
+
+			transition: background-color $text-transition; // Used as text rather than large background
+		}
+	}
+
+	@media (max-width: 446px) {
+		flex-direction: column;
+
+		.separator {
+			display: none;
+		}
+	}
+}

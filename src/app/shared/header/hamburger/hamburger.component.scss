@@ -1,0 +1,148 @@
+@import "../../../../styles/variables";
+
+$animation-curve: cubic-bezier(1, 0, 0, 1);
+$line-width: 3.5ch;
+$line-height: 0.3rem;
+$line-spacing: 0.4rem;
+
+.hamburger {
+	width: $line-width;
+	height: $line-height * 3 + $line-spacing * 2;
+
+	position: relative;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	z-index: 20;
+
+	cursor: pointer;
+
+	span {
+		display: block;
+		height: $line-height;
+		width: 100%;
+
+		position: absolute;
+		left: 0;
+
+		background-color: $text-inverse-color;
+		border-radius: 9px;
+		opacity: 1;
+
+		transform: rotate(0deg);
+		transform-origin: left center;
+		transition: .25s ease-in-out, background-color $text-transition;
+	}
+
+	.line-1 {
+		top: 0;
+	}
+
+	.line-2 {
+		top: $line-spacing + $line-height;
+	}
+
+	.line-3 {
+		top: $line-spacing * 2 + $line-height * 2;
+	}
+
+	&.open {
+		span {
+			left: 6px;
+			background-color: $text-color;
+		}
+
+		.line-1 {
+			transform: rotate(45deg);
+			top: -3px;
+		}
+
+		.line-2 {
+			width: 0;
+			opacity: 0;
+		}
+
+		.line-3 {
+			transform: rotate(-45deg);
+			top: 25px;
+		}
+	}
+}
+
+.menu-content.open {
+	display: block;
+	transform: translateX(0);
+	box-shadow: $shadow-lg;
+}
+
+.menu-content {
+	width: 80%;
+	max-width: 300px;
+
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+
+	transform: translateX(100%);
+	background-color: $background-secondary-color;
+	transition: transform 0.3s ease-out, background-color $background-transition;
+
+	z-index: 15;
+
+	app-theme-toggle {
+		height: $header-height;
+		display: flex;
+		align-items: center;
+
+		margin-left: $margin-md;
+	}
+
+	nav ul {
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+		text-align: right;
+
+		a {
+			display: block;
+			width: 100%;
+			margin: 0 0 $margin-xs 0;
+			padding: 0 $margin-lg 0 0;
+
+			box-sizing: border-box;
+
+			color: $text-color;
+			text-decoration: none;
+
+			transition: color $text-transition;
+			&.active {
+				color: $primary-color;
+
+				span::after {
+					left: 0;
+					// Reverse the transition speed throughout so it matches the vanishing one.
+					transition: left 0.2s ease-in;
+					background-color: $primary-color;
+				}
+			}
+
+			span {
+				position: relative;
+
+				&::after {
+					content: "";
+					display: inline-block;
+					height: 2px;
+
+					position: absolute;
+					bottom: 5px;
+					left: 100%;
+					right: 0;
+					background-color: $text-color;
+					transition: left 0.2s ease-out, background-color $text-transition;
+				}
+			}
+		}
+	}
+}
