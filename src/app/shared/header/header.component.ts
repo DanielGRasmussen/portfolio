@@ -5,7 +5,6 @@ import {
 	OnInit,
 	QueryList,
 	ViewChildren,
-	AfterViewInit,
 	ViewChild,
 } from "@angular/core";
 import { ThemeToggleComponent } from "./theme-toggle/theme-toggle.component";
@@ -15,6 +14,7 @@ import { HamburgerComponent } from "./hamburger/hamburger.component";
 import Content, { Links } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
 import { UrlPipe } from "../../url.pipe";
+import { LayoutService } from "../../layout.service";
 
 @Component({
 	selector: "app-header",
@@ -30,14 +30,12 @@ import { UrlPipe } from "../../url.pipe";
 	templateUrl: "./header.component.html",
 	styleUrl: "./header.component.scss",
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements OnInit {
 	@ViewChildren("link") linkElements!: QueryList<ElementRef>;
 	@ViewChild("hamburger") hamburger!: HamburgerComponent;
 	content: Content;
 	activeIndex: number = 0;
 	isHidden: boolean = false;
-	useHamburger: boolean = false;
-	hamburgerWidth: number = 0;
 	private previousScrollPosition: number = 0;
 	private firstLoad: boolean = true;
 
@@ -46,7 +44,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private router: Router,
-		private ContentService: ContentService
+		private ContentService: ContentService,
+		private LayoutService: LayoutService
 	) {
 		this.content = this.ContentService.getContent();
 		this.links = this.content.links;
@@ -55,10 +54,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 	ngOnInit(): void {
 		this.updateActiveIndex();
 		this.router.events.subscribe(this.updateActiveIndex.bind(this));
-	}
-
-	ngAfterViewInit(): void {
-		this.onWindowResize();
 	}
 
 	// Underline logic
@@ -102,6 +97,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 		return activeElement.offsetHeight - 35 + "px";
 	}
 
+	isSubpage(): boolean {
+		return this.router.url.split("/").length > 2;
+	}
+
 	// Sticky logic
 	@HostListener("window:scroll")
 	handleStickyHeader(): void {
@@ -123,6 +122,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 		// If the scroll height is less than the header height, show the header
 		if (currentScrollPosition < headerHeight) {
 			this.isHidden = false;
+			this.LayoutService.setHeaderVisibility(true);
 			this.previousScrollPosition = currentScrollPosition;
 			return;
 		}
@@ -130,47 +130,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 		// If the scroll is going up, show the header
 		if (currentScrollPosition < this.previousScrollPosition - 10) {
 			this.isHidden = false;
+			this.LayoutService.setHeaderVisibility(true);
 			this.previousScrollPosition = currentScrollPosition;
 			return;
 		} else if (currentScrollPosition > this.previousScrollPosition + 10) {
 			this.isHidden = true;
+			this.LayoutService.setHeaderVisibility(false);
 			this.previousScrollPosition = currentScrollPosition;
 			return;
-		}
-	}
-
-	// Check for if hamburger button should be used
-	@HostListener("window:resize")
-	onWindowResize(): void {
-		if (
-			this.useHamburger &&
-			this.hamburgerWidth !== 0 &&
-			window.innerWidth > this.hamburgerWidth
-		) {
-			this.useHamburger = false;
-			return;
-			// While the user may load in on a small screen and 320px -> 321px isn't gonna fix anything, it won't
-			// help to check again as they are still display: none.
-			// This causes flickering on the hamburger button when resizing from a small screen to a large screen.
-		} else if (!this.useHamburger) {
-			// Get theme toggle left
-			const themeToggle: HTMLElement | null = document.querySelector("app-theme-toggle");
-			if (!themeToggle) return;
-
-			const themeToggleLeft: number = themeToggle.getBoundingClientRect().left;
-
-			// Get nav right
-			const nav: HTMLElement | null = document.querySelector("nav");
-			if (!nav) return;
-
-			const navRight: number = nav.getBoundingClientRect().right;
-
-			// If the nav is within 10 pixels of the theme toggle, activate hamburger
-			this.useHamburger = navRight > themeToggleLeft - 10;
-
-			if (this.useHamburger) {
-				this.hamburgerWidth = window.innerWidth;
-			}
 		}
 	}
 }

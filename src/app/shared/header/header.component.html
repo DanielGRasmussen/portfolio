@@ -1,10 +1,10 @@
-<header [class.hidden]="isHidden" [class.hamburger]="useHamburger" [style.mask-image]="content.general['logo']">
+<header [class.hidden]="isHidden" [style.mask-image]="content.general['logo']">
 	<div class="logo"><a href="/" [style.mask-image]="content.general['logo'] | url" aria-label="Return to home"></a></div>
 	<div class="main">
 		<nav>
 			<ul>
 				<li *ngFor="let link of links; index as i">
-					<a [routerLink]="link.url" routerLinkActive="active" class="h3" tabindex="0" #link>{{ link.name }}</a>
+					<a [routerLink]="link.url" routerLinkActive="active" [class.clickable]="isSubpage()" class="h3" tabindex="0" #link>{{ link.name }}</a>
 				</li>
 				<div
 					class="active-link-underline"

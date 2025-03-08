@@ -1,0 +1,150 @@
+@import "../../../../styles/variables";
+
+.wrapper {
+	overflow: hidden;
+
+	background-color: $background-color;
+	transition: background-color $background-transition;
+
+	&.sidebar {
+		display: flex;
+		flex-direction: column;
+		gap: $margin-sm;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		width: $project-sidebar-width;
+		padding: $margin-sm;
+		box-sizing: border-box;
+		overflow-y: auto;
+
+		transition: top 0.3s ease-in-out;
+
+		box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.16);
+
+		&.header-offset {
+			top: $header-height;
+		}
+
+		.filter-toggle {
+			display: none;
+		}
+	}
+
+	// In mobile view make the icons visible
+	&:not(.sidebar) {
+		max-height: 62px;
+		transition: background-color $background-transition, max-height 0.3s ease-in-out;
+		border-radius: 0 0 20px 20px;
+
+		max-width: 400px;
+		margin-left: auto;
+
+		&.open {
+			background-color: $background-secondary-color;
+			max-height: 900px;
+
+			.filter-toggle {
+				.toggle-icons {
+					// Make the X bigger than the filter symbol
+					width: 56px;
+					height: 56px;
+
+					.filter {
+						display: none;
+					}
+					.close {
+						display: block;
+						width: 56px;
+						height: 56px;
+					}
+				}
+				.filter-text {
+					display: none;
+				}
+			}
+			// Show the filters
+			.filters {
+				opacity: 1;
+			}
+		}
+
+		.filter-toggle {
+			display: flex;
+			width: fit-content;
+			height: 56px;
+			margin-left: auto;
+
+			align-items: center;
+			cursor: pointer;
+
+			z-index: 1;
+			position: relative; // Only to make the z-index work
+
+			.toggle-icons {
+				width: 28px;
+				height: 28px;
+
+				svg {
+					display: inline-block;
+					width: 28px;
+					height: 28px;
+
+					fill: $text-color;
+					transition: fill 0.3s $text-transition;
+				}
+				.close {
+					display: none;
+				}
+			}
+		}
+		.filters {
+			// To account for the height of the filter-toggle
+			margin-top: -56px;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+
+			h3 {
+				margin-top: 0;
+			}
+		}
+
+		width: 100%;
+		padding: $margin-sm;
+		box-sizing: border-box;
+	}
+
+	h3 {
+		margin: $margin-sm 0 $margin-xs 0;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			height: fit-content;
+			width: fit-content;
+			margin-bottom: $margin-xs;
+		}
+
+		label {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+		}
+
+		.icon {
+			width: 28px;
+			height: 28px;
+			margin-right: $margin-xs;
+		}
+	}
+
+	input[type="checkbox"] {
+		margin-right: 4px;
+	}
+}

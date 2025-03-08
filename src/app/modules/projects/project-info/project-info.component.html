@@ -1,0 +1,4 @@
+<div class="info">
+	<span class="project-type">{{ project.projectType }}</span>
+	<img class="technology" *ngFor="let technology of project.technologies" src="{{ technology.icon }}" alt="{{ technology.name }}" [title]="technology.name" />
+</div>

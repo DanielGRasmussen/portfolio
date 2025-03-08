@@ -1,4 +1,5 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 header {
 	display: flex;
@@ -62,8 +63,7 @@ header {
 
 				transition: color $text-transition, opacity 0.2s;
 
-				&.active {
-					text-decoration: none;
+				&.active:not(.clickable) {
 					cursor: default;
 					pointer-events: none;
 				}
@@ -101,7 +101,7 @@ header {
 		display: none;
 	}
 
-	&.hamburger {
+	@include mobile() {
 		app-hamburger {
 			margin: 0 $margin-md 0 auto;
 			display: block;

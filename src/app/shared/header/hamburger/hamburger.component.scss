@@ -112,13 +112,36 @@ $line-spacing: 0.4rem;
 
 			box-sizing: border-box;
 
-
 			color: $text-color;
 			text-decoration: none;
 
 			transition: color $text-transition;
-			&:hover {
+			&.active {
 				color: $primary-color;
+
+				span::after {
+					left: 0;
+					// Reverse the transition speed throughout so it matches the vanishing one.
+					transition: left 0.2s ease-in;
+					background-color: $primary-color;
+				}
+			}
+
+			span {
+				position: relative;
+
+				&::after {
+					content: "";
+					display: inline-block;
+					height: 2px;
+
+					position: absolute;
+					bottom: 5px;
+					left: 100%;
+					right: 0;
+					background-color: $text-color;
+					transition: left 0.2s ease-out, background-color $text-transition;
+				}
 			}
 		}
 	}

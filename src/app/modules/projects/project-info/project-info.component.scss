@@ -1,0 +1,22 @@
+@import "../../../../styles/variables";
+
+.info {
+	margin: $margin-xs 0;
+	display: flex;
+	align-items: center;
+
+	.project-type {
+		margin-right: $margin-xs;
+		padding: $margin-xs * 0.5 $margin-sm * 0.5;
+		background-color: $secondary-color;
+		border-radius: 10px;
+
+		transition: background-color $background-transition;
+	}
+
+	.technology {
+		width: 28px;
+		height: 28px;
+		margin-left: $margin-xs;
+	}
+}
