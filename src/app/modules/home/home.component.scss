@@ -1,0 +1,246 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+@import "../../../styles/themes";
+
+.home {
+	@include main;
+
+	.name {
+		font-size: 2.5em;
+		letter-spacing: 0.15ch;
+		text-transform: uppercase;
+		text-align: center;
+
+		margin: 0 0 $margin-md 0;
+		color: $text-color;
+		transition: color $text-transition;
+	}
+
+	.profile {
+		display: block;
+		width: 70%;
+		max-width: 500px;
+		margin: 0 auto;
+		border-radius: 50%;
+
+		box-shadow: $shadow-md;
+	}
+
+	div {
+		margin-top: $margin-md;
+	}
+
+	section {
+		position: relative;
+
+		.nav-anchor {
+			position: absolute;
+			top: -$header-height;
+		}
+	}
+
+	h2 {
+		position: relative;
+		margin: 0;
+
+		&::after {
+			// Underline across the entire width
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			bottom: $margin-xs;
+			left: 0;
+			background-color: $text-color;
+			transition: background-color $text-transition;
+		}
+	}
+
+	p {
+		white-space: pre-line;
+	}
+
+	.navigator {
+		@media (max-width: 1650px) {
+			display: none;
+		}
+		position: fixed;
+		right: 50px;
+		top: 15%;
+		z-index: 1;
+
+		width: 350px;
+		height: fit-content;
+
+		background-color: $background-color;
+		transition: background-color $text-transition;
+		box-shadow: $shadow-md, $shadow-lg;
+		border-radius: 15px;
+		padding: 20px;
+
+		h2::after {
+			display: none;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li a {
+				display: block;
+				width: 100%;
+				padding-left: 15px;
+
+				text-decoration: none;
+				color: $text-color;
+				transition: color $text-transition;
+				position: relative;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					display: inline-block;
+					width: 10px;
+					height: 3px;
+					background-color: $text-color;
+					transition: background-color $text-transition;
+				}
+
+				&.active {
+					color: $primary-color;
+
+					&::before {
+						background-color: $primary-color;
+					}
+				}
+			}
+		}
+	}
+
+	.intro {
+		margin: $margin-md 0 0 0;
+
+		.bio {
+			margin: $margin-sm 0 0 0;
+		}
+
+		p {
+			margin: $margin-xs 0 0 0;
+		}
+
+		p:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	.featured {
+		.featured-content {
+			display: grid;
+			grid-template-columns: 33% 67%;
+			gap: $margin-sm;
+			max-height: 415px;
+			overflow: hidden;
+
+			.description {
+				max-height: 350px;
+				margin: 0;
+
+				position: relative;
+				&::after {
+					content: "";
+					display: block;
+					height: 50px;
+
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+
+					background: linear-gradient(to bottom, transparent, $background-color);
+					transition: background-color $text-transition;
+				}
+			}
+
+			.info {
+				height: fit-content;
+				margin: 0;
+
+				padding-left: 10px;
+				box-sizing: border-box;
+
+				img {
+					max-height: 300px;
+					max-width: 100%;
+					width: auto;
+				}
+
+				h3 {
+					margin: 0 0 0 0;
+
+					// Make it cut off if the title is too long.
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					box-sizing: border-box;
+					padding-right: 15px;
+				}
+			}
+		}
+
+	}
+
+	.cta {
+		display: block;
+		margin: $margin-md auto 0 auto;
+		padding: $margin-sm $margin-md * 1.4;
+
+		background-color: $accent-color;
+		color: $theme-offwhite;
+		box-shadow: $shadow-md;
+
+		text-align: center;
+		border: 0;
+		border-radius: 15px;
+
+		cursor: pointer;
+	}
+
+	.contact {
+		.links {
+			display: flex;
+			margin-top: -$margin-md;
+
+			a {
+				display: flex;
+				align-items: center;
+
+				text-decoration: none;
+				color: $text-color;
+
+				transition: color $text-transition;
+
+				.icon {
+					display: inline-block;
+					width: 2rem;
+					height: 2rem;
+
+					margin-right: $margin-xs;
+
+					mask-size: cover;
+					background-color: $text-color;
+
+					transition: background-color $text-transition; // Used as text rather than large background
+				}
+			}
+		}
+
+		p:first-of-type {
+			margin-top: $margin-xs;
+		}
+	}
+}

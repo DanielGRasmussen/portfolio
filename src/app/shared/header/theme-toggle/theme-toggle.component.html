@@ -1,0 +1,11 @@
+<div (click)="themeService.toggleTheme()" (keyup)="onKeyUp($event)" tabindex="0">
+	<div class="switch" [class.dark]="themeService.theme === Theme.DARK">
+		<span class="slider"></span>
+		<img
+			src="{{ themeService.theme === Theme.LIGHT ? content.general['light-mode'] : content.general['dark-mode'] }}"
+			alt="Current mode"
+			[class.right]="themeService.theme === Theme.LIGHT"
+		/>
+	</div>
+	<span class="label" [class.inverted]="invertedText">{{ themeService.theme }}</span>
+</div>

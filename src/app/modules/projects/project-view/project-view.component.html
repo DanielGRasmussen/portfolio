@@ -1,0 +1,28 @@
+<div class="wrapper">
+	<app-image-viewer [images]="images"></app-image-viewer>
+	<div class="title-info">
+		<h1>
+			{{ project.title }}
+			<a href="{{ project.link }}" title="Visit project">
+				<svg viewBox="0 0 191.65 66.467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<defs>
+						<clipPath id="b">
+							<path d="m-127.28-391.22v-60.411h-52.004l-46.808 13.214h-5v-8.9286c0-22.333 18.422-40.719 40.75-40.719h63.062v-11.25h-176.28v108.09z" color="#000000" fill="#999"/>
+						</clipPath>
+					</defs>
+					<g transform="translate(-67.72 -414.1)">
+						<rect id="a" transform="matrix(-1 0 0 -1 -27.857 0)" x="-277.23" y="-470.57" width="109.54" height="46.467" rx="23.234" ry="23.234" clip-path="url(#b)" color="#000000" fill="none" stroke="#000" stroke-width="20"/>
+						<use transform="matrix(-1 0 0 -1 327.09 894.66)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+					</g>
+				</svg>
+			</a>
+		</h1>
+		<app-project-info [project]="project"></app-project-info>
+	</div>
+	<div class="descriptions">
+		<app-accordion
+			*ngFor="let description of project.descriptions"
+			[description]="description">
+		</app-accordion>
+	</div>
+</div>

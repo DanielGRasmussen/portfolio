@@ -1,0 +1,29 @@
+// Colors
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$background-color: var(--background-color);
+$background-secondary-color: var(--background-secondary-color);
+$accent-color: var(--accent-color);
+$text-color: var(--text-color);
+$text-inverse-color: var(--text-inverse-color);
+
+// Theme transitions
+$background-transition: 0.2s ease-out;
+$text-transition: 0.2s ease-out;
+
+// Margins
+$margin-xs: 0.25rem;
+$margin-sm: 1rem;
+$margin-md: 1.5rem;
+$margin-lg: 2rem;
+$margin-xlg: 3rem;
+
+// Box shadows
+$shadow-sm: 0 3px 3px rgb(0 0 0 / 15%);
+$shadow-md: 0 3px 3px rgb(0 0 0 / 30%), 0 9px 9px rgb(0 0 0 / 15%);
+$shadow-lg: 0 4px 4px rgb(0 0 0 / 30%), 0 12px 12px rgb(0 0 0 / 15%);
+
+// Sizes
+$header-height: 70px;
+$footer-height: 66px;
+$project-sidebar-width: 270px;

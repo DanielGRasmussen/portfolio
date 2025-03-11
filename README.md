@@ -12,10 +12,7 @@ educational background in web development and design.
 The portfolio is organized into the following main sections:
 
 - About Me
-- Skills & Technologies
 - Projects
-- Education
-- Contact Info
 
 ## Technologies Used
 
@@ -60,10 +57,8 @@ The portfolio is organized into the following main sections:
 The site is deployed using GitHub Pages. The deployment process is automated through GitHub Actions, utilizing
 angular-cli-ghpages.
 
-**Note on angular-cli-ghpages:** As of the current development phase, angular-cli-ghpages has a known critical security
-vulnerability. However, a pull request addressing this issue has been submitted and is expected to be merged before this
-website is publicly shared. I am actively monitoring the situation and considering alternative deployment methods if a
-fix is not implemented by the time of project completion.
+**Note on angular-cli-ghpages:** angular-cli-ghpages has a known critical security
+vulnerability. I am considering alternative deployment methods.
 
 ## Contact
 

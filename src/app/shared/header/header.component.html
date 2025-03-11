@@ -1,0 +1,21 @@
+<header [class.hidden]="isHidden" [style.mask-image]="content.general['logo']">
+	<div class="logo"><a href="/" [style.mask-image]="content.general['logo'] | url" aria-label="Return to home"></a></div>
+	<div class="main">
+		<nav>
+			<ul>
+				<li *ngFor="let link of links; index as i">
+					<a [routerLink]="link.url" routerLinkActive="active" [class.clickable]="isSubpage()" class="h3" tabindex="0" #link>{{ link.name }}</a>
+				</li>
+				<div
+					class="active-link-underline"
+					[style.left]="getUnderlineOffset()"
+					[style.bottom]="getUnderlineBottom()"
+					[style.width]="getUnderlineWidth()"
+				></div>
+			</ul>
+		</nav>
+
+		<app-theme-toggle [invertedText]="true"></app-theme-toggle>
+	</div>
+	<app-hamburger #hamburger></app-hamburger>
+</header>
