@@ -18,9 +18,9 @@
 				"projectType": "Web Dev",
 				"featured": true,
 				"images": [
-					"/assets/images/showcase/Deadline Dynamo (SP) With.webp",
-					"/assets/images/showcase/Deadline Dynamo (SP) Sidebar.webp",
-					"/assets/images/showcase/Deadline Dynamo (SP) Default.webp"
+					"assets/images/showcase/Deadline Dynamo (SP) With.webp",
+					"/images/showcase/Deadline Dynamo (SP) Sidebar.webp",
+					"images/showcase/Deadline Dynamo (SP) Default.webp"
 				],
 				"technologies": [
 					{
