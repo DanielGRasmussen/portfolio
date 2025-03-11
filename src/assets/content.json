@@ -1,5 +1,5 @@
 {
-	"home": {
+	"intro": {
 		"profile": "/assets/images/profile.webp",
 		"bio":  [
 			"I'm a passionate software engineering student with a focus on web development, set to graduate at 19 with a unique educational journey behind me. My path has been shaped by challenges and opportunities, driving me to excel academically and develop strong leadership skills.",
@@ -10,49 +10,327 @@
 			"My goal is to build on the legacy of innovation in web development, inspired by the groundbreaking work of previous generations, including my father's contributions to the early web. I'm excited to be part of the next wave of advancements in this dynamic field."
 		]
 	},
-	"education": {
-		"degree": {
-			"degree": "Bachelor's in Software Engineering",
-			"school": "Brigham Young University - Idaho",
-			"status": "Expected",
-			"date": "Fall, 2024",
-			"gpa": "3.9"
-		},
-		"minors": [
+	"projects": {
+		"items": [
 			{
-				"name": "Minor in Web Development",
-				"status": "Expected",
-				"date": "Fall, 2024"
+				"id": "deadline-dynamo-sp",
+				"title": "Deadline Dynamo (Senior Project)",
+				"projectType": "Web Dev",
+				"featured": true,
+				"images": [
+					"/assets/images/showcase/Deadline Dynamo (SP) With.webp",
+					"/assets/images/showcase/Deadline Dynamo (SP) Sidebar.webp",
+					"/assets/images/showcase/Deadline Dynamo (SP) Default.webp"
+				],
+				"technologies": [
+					{
+						"name": "TypeScript",
+						"icon": "/assets/images/logos/typescript.svg"
+					},
+					{
+						"name": "SCSS",
+						"icon": "/assets/images/logos/scss.svg"
+					},
+					{
+						"name": "Adobe Illustrator",
+						"icon": "/assets/images/logos/adobe-illustrator.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "A comprehensive redesign of my hackathon project, focusing on improved architecture, code quality, and user experience. This web extension enhances Canvas's assignment management capabilities with better planning tools and time management features." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "The project began with thorough planning, including detailed feature specifications and time estimates. Following the advice to double initial time estimates for coding features proved invaluable - areas where I spent less time balanced out with those requiring additional attention. The planning phase was particularly successful, resulting in accurate time management throughout development. A notable achievement was the seamless UI integration with Canvas's native interface, including thoughtful toggle features that preserve the original site functionality while adding enhanced capabilities." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [ "The project revealed several areas for improvement. The user onboarding experience needs enhancement - while the functionality is straightforward for experienced users, new users may face a steeper learning curve than intended. The assignment duration estimation algorithm also needs refinement. While the original hackathon version had a solid foundation, recreating and improving it proved challenging without access to the original documentation. Additionally, the project would benefit from increased visibility and user feedback through more active promotion." ]
+					},
+					{
+						"name": "What I Learned",
+						"content": [ "User experience design requires careful consideration from multiple perspectives, particularly those of new users. A good solution must be paired with intuitive initial usage. The importance of maintaining detailed documentation became evident, especially for complex algorithms that may need future modification or reimplementation. Moving forward, I'll focus on creating user-friendly products and getting them into the hands of people who need them." ]
+					}
+				],
+				"link": "https://github.com/DanielGRasmussen/DeadlineDynamo"
 			},
 			{
-				"name": "Minor in Web Design",
-				"status": "Expected",
-				"date": "Fall, 2024"
-			}
-		],
-		"certificates": [
-			{
-				"name": "Certificate of Computer Programming",
-				"status": "Completed",
-				"date": "Spring, 2024"
+				"id": "deadline-dynamo-hackathon",
+				"title": "Deadline Dynamo (Hackathon)",
+				"projectType": "Web Dev",
+				"featured": false,
+				"images": [
+					"/assets/images/showcase/Deadline Dynamo (Hackathon) With.webp",
+					"/assets/images/showcase/Deadline Dynamo (Hackathon) Default.webp"
+				],
+				"technologies": [
+					{
+						"name": "JavaScript",
+						"icon": "/assets/images/logos/javascript.svg"
+					},
+					{
+						"name": "CSS",
+						"icon": "/assets/images/logos/css.svg"
+					},
+					{
+						"name": "html",
+						"icon": "/assets/images/logos/html.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "A Canvas learning management system enhancement project focused on improving assignment organization and time management. The web extension allows users to dynamically reorganize assignments and add time estimates, featuring an auto-planning algorithm that generates optimized schedules based on daily availability and estimated task durations." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "We had strong initial planning through multiple preparatory meetings and detailed flowcharting sessions. The project addressed a genuine issue we all had with Canvas, with potential positive impact on student performance through better assignment management and planning capabilities." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [
+							"Time management proved challenging during the hackathon. Despite planning to set aside dedicated time for presentation preparation, technical debugging took precedence, hurting our ability to create a polished demo. Hardware limitations affected development efficiency, highlighting the importance of having reliable development tools.",
+							"As the only team member with substantial JavaScript experience, I faced additional challenges in project execution. While one team member had minimal JavaScript exposure, the two others were new to the technology due to last-minute team changes. This helped me learn the importance of ensuring team technological readiness and capability alignment."
+						]
+					},
+					{
+						"name": "What I Learned",
+						"content": [
+							"Product presentation is crucial for success. A strong technical solution needs equally strong demonstration materials to effectively communicate value. For future projects, allocating fixed time for presentation preparation and testing will be a priority.",
+							"Understanding the audience is vital. For this academic-focused project, providing ready-to-use demo environments with sample data would have helped the judges properly evaluate our project.",
+							"Team preparation could have been enhanced by me taking a more active role in helping teach JavaScript fundamentals to less experienced team members."
+						]
+					}
+				],
+				"link": "https://github.com/DanielGRasmussen/deadline_dynamo"
 			},
 			{
-				"name": "Certificate of Web Development",
-				"status": "Completed",
-				"date": "Spring, 2024"
+				"id": "todo-mern",
+				"title": "To-do List MERN",
+				"projectType": "Web Dev",
+				"featured": false,
+				"images": [
+					"/assets/images/showcase/Todo MERN 1.webp",
+					"/assets/images/showcase/Todo MERN 2.webp"
+				],
+				"technologies": [
+					{
+						"name": "React",
+						"icon": "/assets/images/logos/react.svg"
+					},
+					{
+						"name": "Express.js",
+						"icon": "/assets/images/logos/express.svg"
+					},
+					{
+						"name": "TypeScript",
+						"icon": "/assets/images/logos/typescript.svg"
+					},
+					{
+						"name": "JavaScript",
+						"icon": "/assets/images/logos/javascript.svg"
+					},
+					{
+						"name": "CSS",
+						"icon": "/assets/images/logos/css.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "A fullstack web application for managing todo lists, built using the MERN stack. The project features a backend written in JavaScript with Express and a frontend developed in TypeScript using React, incorporating user authentication through Google OAuth. This project is the reason for most of my current planning phase." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "I successfully implemented Google account integration, to make easy user authentication. The application allows for the creation of advanced tasks. The project showcases proficiency in full-stack development, integrating multiple technologies and creating a comprehensive user experience." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [ "The initial user interface makes challenges in task creation, with an overly complex task entry process. Most task creation features should be under advanced settings. The visual design lacked depth, with a flat background that could benefit from more textural elements. Initial attempts at data encryption were incomplete, allowing me to access all user data, leaving room for improved security measures. The authentication system could be expanded to include more account linking options. The UIs that require information don't tell you what you're missing if it is incomplete." ]
+					},
+					{
+						"name": "What I Learned",
+						"content": [ "User experience is very important in application design. Complex features should be balanced with intuitive interfaces, to make it have high functionality without costing much usability. The project highlighted the importance of thoughtful UI/UX design, demonstrating that advanced features must be balanced with user-friendliness. I also learned a lot about authentication, encryption, and the challenges of securing user data across a full-stack application. It taught me a lot about how to create a React webapp and plan webapps in general." ]
+					}
+				],
+				"link": "https://github.com/DanielGRasmussen/todo-fullstack"
 			},
 			{
-				"name": "Certificate of Web Frontend",
-				"status": "Completed",
-				"date": "Spring, 2024"
+				"id": "portfolio",
+				"title": "Portfolio Website",
+				"projectType": "Web Dev",
+				"featured": false,
+				"images": [
+					"/assets/images/showcase/Portfolio 1.webp",
+					"/assets/images/showcase/Portfolio 2.webp"
+				],
+				"technologies": [
+					{
+						"name": "Angular",
+						"icon": "/assets/images/logos/angular.svg"
+					},
+					{
+						"name": "TypeScript",
+						"icon": "/assets/images/logos/typescript.svg"
+					},
+					{
+						"name": "SCSS",
+						"icon": "/assets/images/logos/scss.svg"
+					},
+					{
+						"name": "Adobe Xd",
+						"icon": "/assets/images/logos/adobe-xd.svg"
+					},
+					{
+						"name": "Adobe Illustrator",
+						"icon": "/assets/images/logos/adobe-illustrator.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "A personal portfolio website built using Angular, designed to showcase my projects, skills, and professional journey." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "The project successfully shows a thorough approach to showing my work. It using of dynamic content loading from JSON files allows for easy updates and maintenance. The implementation of a filter system for projects provides an easy and simple way for visitors to explore my work, and the detailed project views offer in-depth insights into each project. The development environment was well-structured, to make easy coding and deployment." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [ "During the design phase, I failed to make good sizing consistency. The odd sizing made some awkward conversions when implementing presets. The content I prepared for project overviews did not initially account for a minimum length requirement for card-based displays. I also wrestled with the decision between a single-page design and a more comprehensive approach. In the end, I obviously went for a multipage design to try to have more information. I should've gone for a mix between the two." ]
+					},
+					{
+						"name": "What I Learned",
+						"content": [ "This project helped make me better at the design phase, specifically in making consistent sizing and layout guidelines from the outset. The experience helped show me the value of content presentation, balancing between a quick showcase and detailed information. I learned more about the decision-making process of web design, and that I should adapt my ideas to work with the common ideas." ]
+					}
+				],
+				"link": "https://danielgrasmussen.github.io/portfolio/"
 			},
 			{
-				"name": "Certificate of Data Science",
-				"status": "Completed",
-				"date": "Spring, 2024"
+				"id": "business-card",
+				"title": "Business Card",
+				"projectType": "Design",
+				"featured": false,
+				"images": [
+					"/assets/images/showcase/Business Card Mockup.webp",
+					"/assets/images/showcase/Business Card Front.webp",
+					"/assets/images/showcase/Business Card Back.webp"
+				],
+				"technologies": [
+					{
+						"name": "Adobe InDesign",
+						"icon": "/assets/images/logos/adobe-indesign.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "A set of typography-focused business cards designed for the Typography ART 230 course at BYU-Idaho. The project centered on effectively conveying information through typographic design rather than relying on graphics, with a secondary focus on using colors to gain attention or show information." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "I successfully balanced information hierarchy through thoughtful typography choices, creating a clean, professional design that communicates effectively without relying on illustrations or complex graphics. The \"DR\" monogram serves as a strong visual anchor while maintaining the typographic focus of the project. It was also inspired by my grandmother who always engraved her pottery with a similar monogram of her initials. However, her monogram used purely straight lines. Due to the requirements of the project I could not copy that exactly.Looking back, I could have explored more dramatic size contrasts between typographic elements to create even stronger visual hierarchy. While the current design is clean and functional, there's room for more typographic experimentation that could have pushed the boundaries of the assignment further. Rather than adapt my idea for the monogram to fit within the requirements, I should've created my own distinct concept had be an alternative business card option alongside this one." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [ "Looking back, I could have explored more dramatic size contrasts between typographic elements to create even stronger visual hierarchy. While the current design is clean and functional, there's room for more typographic experimentation that could have pushed the boundaries of the assignment further. Rather than adapt my idea for the monogram to fit within the requirements, I should've created my own distinct concept had be an alternative business card option alongside this one." ]
+					},
+					{
+						"name": "What I Learned",
+						"content": [ "This project help show me constraints are creative catalysts rather than obstacles. It was also very helpful at learning how to use typography in creative projects without relying heavily on graphics." ]
+					}
+				],
+				"link": "https://www.behance.net/gallery/199976121/ART-230-Typography-Business-Card"
+			},
+			{
+				"id": "posters",
+				"title": "Digital Posters",
+				"projectType": "Design",
+				"featured": false,
+				"images": [
+					"/assets/images/showcase/Poster 1.webp",
+					"/assets/images/showcase/Poster 2.webp"
+				],
+				"technologies": [
+					{
+						"name": "Adobe InDesign",
+						"icon": "/assets/images/logos/adobe-indesign.svg"
+					},
+					{
+						"name": "Adobe Photoshop",
+						"icon": "/assets/images/logos/adobe-photoshop.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "Two posters for a performance of Othello designed to be visually striking while effectively communicating essential information. The first design uses a black feather as its central visual element, symbolizing Othello's fall from grace and the weightiness of betrayal in the play. The second poster features the title broken by cracks, visually representing how Othello's character and relationships fracture throughout the narrative." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "The symbolic elements in both designs effectively communicate the themes of the play without relying on literal interpretations. The first poster successfully integrates the performance information as part of the design rather than treating it as secondary content. The stark contrast between the white typography and red background creates immediate visual impact, making the posters attention-grabbing even from a distance. The minimalist approach allows the symbolic elements (feather, thorny branches) to carry significant conceptual weight. I also effectively used feedback from classmates for this project." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [ "The background colors between the two posters don't precisely match, weakening the visual cohesion of the series. The information placement is inconsistent between designs - centrally featured in the first but relegated to the margins in the second. This creates a disconnect between what should be companion pieces." ]
+					},
+					{
+						"name": "What I Learned",
+						"content": [ "Creating a series of designs requires careful attention to color consistency and information hierarchy to maintain visual cohesion. Even with different conceptual approaches, core design elements should follow similar rules to create a unified collection. The power of symbolic imagery can often communicate themes more effectively than literal representation, especially for complex narratives like Shakespearean tragedies. Finding the balance between artistic expression and functional communication is essential for effective promotional materials." ]
+					}
+				],
+				"link": "https://www.behance.net/gallery/221148069/ART-235-Shakespeare-Play-Poster-Designs"
+			},
+			{
+				"id": "book-covers",
+				"title": "Book Covers",
+				"projectType": "Design",
+				"featured": false,
+				"images": [
+					"/assets/images/showcase/Book Cover 1.webp",
+					"/assets/images/showcase/Book Cover 2.webp",
+					"/assets/images/showcase/Book Cover 3.webp"
+				],
+				"technologies": [
+					{
+						"name": "Adobe InDesign",
+						"icon": "/assets/images/logos/adobe-indesign.svg"
+					},
+					{
+						"name": "Adobe Photoshop",
+						"icon": "/assets/images/logos/adobe-photoshop.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "Three book covers for George Orwell's 1984. Each cover followed specific requirements - one using only typography, another incorporating handmade elements, and a third in my preferred design style. All covers were created to capture the dystopian surveillance themes central to the novel." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "I successfully created three distinct visual approaches that captured the ideas of the novel through different techniques. The typography-based cover was good at showing the claustrophobic feeling of constant surveillance by using densely packed relevant words and concepts. The handmade cover successfully translated the Party's omnipresent eye symbol into a tangible, textured design. My designer's choice cover achieved visual impact through minimalism, combining the camera and eye to reinforce the theme of surveillance." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [ "While I feel the end results were all well-done for their particular concepts, in retrospect I am unsure about the pairing of handmade materials with a rigid dystopian government symbol. The organic, human nature of handmade elements somewhat contradicts the cold, mechanical control portrayed in the novel. If I were to revisit this project, I might reverse my approach, using the handmade technique for the more personal elements and keeping the government symbols more precise and mechanical." ]
+					},
+					{
+						"name": "What I Learned",
+						"content": [
+							"I realized how important it is that the medium and concept align with each other. The material choices should reinforce rather than contradict the message being conveyed. This insight will help me make better decisions about which techniques to apply to different projects in the future.",
+							"The project reinforced that effective book cover design isn't just about visual appeal but about capturing the essence of the narrative in a way that intrigues potential readers. A successful cover needs to communicate the book's themes while also standing out in a crowded marketplace."
+						]
+					}
+				],
+				"link": "https://www.behance.net/gallery/212084787/ART-235-Classic-Book-Cover-Series-Project-2"
 			}
 		]
 	},
+	"education": [
+		"Bachelor's in Software Engineering (3.9 GPA) | Fall 2025\nBrigham Young University-Idaho\n- Minors: Web Development, Web Design\n- Certificates: Computer Programming, Web Development, Web Frontend, Data Science (All completed Spring 2024)"
+	],
 	"technologies": [
 		{
 			"name": "languages",
@@ -171,9 +449,6 @@
 		}
 	],
 	"contact": {
-		"location": "Snowflake, Arizona",
-		"contact": "email",
-		"response": "1-2 business days",
 		"links": [
 			{
 				"text": "danielrasmussen42@gmail.com",
@@ -195,6 +470,9 @@
 				"icon": "/assets/images/symbols/resume.svg",
 				"link": "https://docs.google.com/document/d/1qkK0cz-x5w44Z_t_0smG5c8Cz_pw2QgAbaclgERY-2w"
 			}
+		],
+		"content": [
+			"I’m always open to discussing new opportunities, collaborations, or interesting projects. Feel free to email me at danielrasmussen42@gmail.com or reach out via LinkedIn or GitHub. I’m based in Snowflake, Arizona, and typically respond within 1–2 business days."
 		]
 	},
 	"general": {
@@ -204,9 +482,6 @@
 	},
 	"links": [
 		{ "name": "Home", "url": "/home" },
-		{ "name": "Projects", "url": "/projects" },
-		{ "name": "Education", "url": "/education" },
-		{ "name": "Technologies", "url": "/technologies" },
-		{ "name": "Contact Info", "url": "/contact" }
+		{ "name": "Projects", "url": "/projects" }
 	]
 }

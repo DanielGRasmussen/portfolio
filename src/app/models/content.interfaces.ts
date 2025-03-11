@@ -1,5 +1,6 @@
 export default interface Content {
-	home: HomeContent;
+	intro: IntroContent;
+	projects: ProjectsContent;
 	education: EducationContent;
 	technologies: TechnologiesContent;
 	contact: ContactContent;
@@ -7,30 +8,37 @@ export default interface Content {
 	links: Links;
 }
 
-export interface HomeContent {
+export interface IntroContent {
 	profile: string;
 	bio: string[];
 }
 
-export interface EducationContent {
-	degree: {
-		degree: string;
-		school: string;
-		status: string;
-		date: string;
-		gpa: string;
-	};
-	minors: {
-		name: string;
-		status: string;
-		date: string;
-	}[];
-	certificates: {
-		name: string;
-		status: string;
-		date: string;
-	}[];
+export interface ProjectsContent {
+	items: ProjectItem[];
 }
+
+export interface ProjectItem {
+	id: string;
+	title: string;
+	projectType: string;
+	featured: boolean;
+	images: string[];
+	technologies: TechnologiesItem[];
+	descriptions: DescriptionsItem[];
+	link: string;
+}
+
+export interface TechnologiesItem {
+	name: string;
+	icon: string;
+}
+
+export interface DescriptionsItem {
+	name: string;
+	content: string[];
+}
+
+export type EducationContent = string[];
 
 export type TechnologiesContent = Technologies[];
 
@@ -46,14 +54,12 @@ interface TechnologyItem {
 }
 
 export interface ContactContent {
-	location: string;
-	contact: string;
-	response: string;
 	links: {
 		text: string;
 		icon: string;
 		link: string;
 	}[];
+	content: string[];
 }
 
 export interface GeneralContent {

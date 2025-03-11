@@ -1,0 +1,93 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+$thumbnail-height: 186px;
+
+.wrapper.sidebar {
+	margin-left: $project-sidebar-width;
+	.projects::before {
+		margin-left: $project-sidebar-width * 0.5;
+	}
+}
+
+.projects {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: $margin-xlg;
+
+	margin: calc($header-height + $margin-md) auto $margin-md auto;
+
+	@include bubble();
+
+	@media (max-width: 1023px) {
+		margin-top: $margin-sm;
+		padding: 0 $margin-xs * 2;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.card {
+		max-width: 460px;
+		height: 436px;
+
+		padding: $margin-sm;
+
+		border-radius: 20px;
+		box-sizing: border-box;
+		overflow: hidden;
+		position: relative;
+
+		background-color: $background-secondary-color;
+		box-shadow: $shadow-lg;
+
+		transition: background-color $background-transition;
+
+		.thumbnail {
+			width: 100%;
+			height: $thumbnail-height;
+			background: gray; // Placeholder
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.content {
+			// Height of thumbnail. The amount the thumbnail goes up into the padding of the card becomes the padding-top of the content.
+			margin-top: calc($thumbnail-height - $margin-sm + $margin-sm);
+
+			.project-title {
+				margin: 0 0 $margin-xs 0;
+			}
+
+			.overview {
+				margin: $margin-xs 0;
+				// Clamp the text to 5 lines
+				display: -webkit-box;
+				-webkit-line-clamp: 5;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+.project-type {
+	margin-right: $margin-xs;
+	padding: $margin-xs * 0.5 $margin-sm * 0.5;
+	background-color: $secondary-color;
+	border-radius: 10px;
+
+	transition: background-color $background-transition;
+}
