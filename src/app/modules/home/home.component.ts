@@ -81,12 +81,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
 		// Check if the scroll position is within the bounds of each section
 		const scrollPosition: number = window.scrollY + introHeight;
 		const activeSection: ElementRef<HTMLElement> | undefined = sections.find(section => {
-			const sectionTop: number = section.nativeElement.offsetTop;
+			const sectionTop: number = section.nativeElement.offsetTop - introHeight;
 			const sectionBottom: number =
 				sectionTop + section.nativeElement.offsetHeight - introHeight;
-			return scrollPosition >= sectionTop && scrollPosition < sectionBottom;
+			return scrollPosition >= sectionTop - 90 && scrollPosition < sectionBottom;
 		});
 
-		this.activeSection = activeSection ? activeSection.nativeElement.id : "intro";
+		// Get the anchor element that has the id of the active section
+		if (activeSection) {
+			const activeAnchor: HTMLAnchorElement | null =
+				activeSection.nativeElement.querySelector("a");
+			if (activeAnchor) {
+				// Set the active section to the id of the anchor element after timeout to avoid ExpressionChangedAfterItHasBeenCheckedError
+				setTimeout(() => {
+					this.activeSection = activeAnchor.id;
+				}, 0);
+			}
+		} else {
+			this.activeSection = "intro";
+		}
 	}
 }
