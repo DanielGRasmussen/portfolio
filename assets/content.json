@@ -1,6 +1,6 @@
 {
 	"intro": {
-		"profile": "/assets/images/profile.webp",
+		"profile": "assets/images/profile.webp",
 		"bio":  [
 			"I'm a passionate software engineering student with a focus on web development, set to graduate at 19 with a unique educational journey behind me. My path has been shaped by challenges and opportunities, driving me to excel academically and develop strong leadership skills.",
 			"When confronted with the challenges posed by the COVID-19 pandemic during high school, I adapted quickly, transitioning to online college courses through BYU-Idaho's concurrent enrollment program. Despite personal hardships, including family health issues and relocation, I maintained a near-perfect GPA of 3.9.",
@@ -19,21 +19,21 @@
 				"featured": true,
 				"images": [
 					"assets/images/showcase/Deadline Dynamo (SP) With.webp",
-					"/images/showcase/Deadline Dynamo (SP) Sidebar.webp",
-					"images/showcase/Deadline Dynamo (SP) Default.webp"
+					"assets/images/showcase/Deadline Dynamo (SP) Sidebar.webp",
+					"assets/images/showcase/Deadline Dynamo (SP) Default.webp"
 				],
 				"technologies": [
 					{
 						"name": "TypeScript",
-						"icon": "/assets/images/logos/typescript.svg"
+						"icon": "assets/images/logos/typescript.svg"
 					},
 					{
 						"name": "SCSS",
-						"icon": "/assets/images/logos/scss.svg"
+						"icon": "assets/images/logos/scss.svg"
 					},
 					{
 						"name": "Adobe Illustrator",
-						"icon": "/assets/images/logos/adobe-illustrator.svg"
+						"icon": "assets/images/logos/adobe-illustrator.svg"
 					}
 				],
 				"descriptions": [
@@ -62,21 +62,21 @@
 				"projectType": "Web Dev",
 				"featured": false,
 				"images": [
-					"/assets/images/showcase/Deadline Dynamo (Hackathon) With.webp",
-					"/assets/images/showcase/Deadline Dynamo (Hackathon) Default.webp"
+					"assets/images/showcase/Deadline Dynamo (Hackathon) With.webp",
+					"assets/images/showcase/Deadline Dynamo (Hackathon) Default.webp"
 				],
 				"technologies": [
 					{
 						"name": "JavaScript",
-						"icon": "/assets/images/logos/javascript.svg"
+						"icon": "assets/images/logos/javascript.svg"
 					},
 					{
 						"name": "CSS",
-						"icon": "/assets/images/logos/css.svg"
+						"icon": "assets/images/logos/css.svg"
 					},
 					{
 						"name": "html",
-						"icon": "/assets/images/logos/html.svg"
+						"icon": "assets/images/logos/html.svg"
 					}
 				],
 				"descriptions": [
@@ -112,29 +112,29 @@
 				"projectType": "Web Dev",
 				"featured": false,
 				"images": [
-					"/assets/images/showcase/Todo MERN 1.webp",
-					"/assets/images/showcase/Todo MERN 2.webp"
+					"assets/images/showcase/Todo MERN 1.webp",
+					"assets/images/showcase/Todo MERN 2.webp"
 				],
 				"technologies": [
 					{
 						"name": "React",
-						"icon": "/assets/images/logos/react.svg"
+						"icon": "assets/images/logos/react.svg"
 					},
 					{
 						"name": "Express.js",
-						"icon": "/assets/images/logos/express.svg"
+						"icon": "assets/images/logos/express.svg"
 					},
 					{
 						"name": "TypeScript",
-						"icon": "/assets/images/logos/typescript.svg"
+						"icon": "assets/images/logos/typescript.svg"
 					},
 					{
 						"name": "JavaScript",
-						"icon": "/assets/images/logos/javascript.svg"
+						"icon": "assets/images/logos/javascript.svg"
 					},
 					{
 						"name": "CSS",
-						"icon": "/assets/images/logos/css.svg"
+						"icon": "assets/images/logos/css.svg"
 					}
 				],
 				"descriptions": [
@@ -163,29 +163,29 @@
 				"projectType": "Web Dev",
 				"featured": false,
 				"images": [
-					"/assets/images/showcase/Portfolio 1.webp",
-					"/assets/images/showcase/Portfolio 2.webp"
+					"assets/images/showcase/Portfolio 1.webp",
+					"assets/images/showcase/Portfolio 2.webp"
 				],
 				"technologies": [
 					{
 						"name": "Angular",
-						"icon": "/assets/images/logos/angular.svg"
+						"icon": "assets/images/logos/angular.svg"
 					},
 					{
 						"name": "TypeScript",
-						"icon": "/assets/images/logos/typescript.svg"
+						"icon": "assets/images/logos/typescript.svg"
 					},
 					{
 						"name": "SCSS",
-						"icon": "/assets/images/logos/scss.svg"
+						"icon": "assets/images/logos/scss.svg"
 					},
 					{
 						"name": "Adobe Xd",
-						"icon": "/assets/images/logos/adobe-xd.svg"
+						"icon": "assets/images/logos/adobe-xd.svg"
 					},
 					{
 						"name": "Adobe Illustrator",
-						"icon": "/assets/images/logos/adobe-illustrator.svg"
+						"icon": "assets/images/logos/adobe-illustrator.svg"
 					}
 				],
 				"descriptions": [
@@ -214,14 +214,14 @@
 				"projectType": "Design",
 				"featured": false,
 				"images": [
-					"/assets/images/showcase/Business Card Mockup.webp",
-					"/assets/images/showcase/Business Card Front.webp",
-					"/assets/images/showcase/Business Card Back.webp"
+					"assets/images/showcase/Business Card Mockup.webp",
+					"assets/images/showcase/Business Card Front.webp",
+					"assets/images/showcase/Business Card Back.webp"
 				],
 				"technologies": [
 					{
 						"name": "Adobe InDesign",
-						"icon": "/assets/images/logos/adobe-indesign.svg"
+						"icon": "assets/images/logos/adobe-indesign.svg"
 					}
 				],
 				"descriptions": [
@@ -250,17 +250,17 @@
 				"projectType": "Design",
 				"featured": false,
 				"images": [
-					"/assets/images/showcase/Poster 1.webp",
-					"/assets/images/showcase/Poster 2.webp"
+					"assets/images/showcase/Poster 1.webp",
+					"assets/images/showcase/Poster 2.webp"
 				],
 				"technologies": [
 					{
 						"name": "Adobe InDesign",
-						"icon": "/assets/images/logos/adobe-indesign.svg"
+						"icon": "assets/images/logos/adobe-indesign.svg"
 					},
 					{
 						"name": "Adobe Photoshop",
-						"icon": "/assets/images/logos/adobe-photoshop.svg"
+						"icon": "assets/images/logos/adobe-photoshop.svg"
 					}
 				],
 				"descriptions": [
@@ -289,18 +289,18 @@
 				"projectType": "Design",
 				"featured": false,
 				"images": [
-					"/assets/images/showcase/Book Cover 1.webp",
-					"/assets/images/showcase/Book Cover 2.webp",
-					"/assets/images/showcase/Book Cover 3.webp"
+					"assets/images/showcase/Book Cover 1.webp",
+					"assets/images/showcase/Book Cover 2.webp",
+					"assets/images/showcase/Book Cover 3.webp"
 				],
 				"technologies": [
 					{
 						"name": "Adobe InDesign",
-						"icon": "/assets/images/logos/adobe-indesign.svg"
+						"icon": "assets/images/logos/adobe-indesign.svg"
 					},
 					{
 						"name": "Adobe Photoshop",
-						"icon": "/assets/images/logos/adobe-photoshop.svg"
+						"icon": "assets/images/logos/adobe-photoshop.svg"
 					}
 				],
 				"descriptions": [
@@ -337,32 +337,32 @@
 			"items": [
 				{
 					"name": "HTML",
-					"icon": "/assets/images/logos/html.svg",
+					"icon": "assets/images/logos/html.svg",
 					"skill": "advanced"
 				},
 				{
 					"name": "CSS",
-					"icon": "/assets/images/logos/css.svg",
+					"icon": "assets/images/logos/css.svg",
 					"skill": "advanced"
 				},
 				{
 					"name": "SCSS",
-					"icon": "/assets/images/logos/scss.svg",
+					"icon": "assets/images/logos/scss.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "JavaScript",
-					"icon": "/assets/images/logos/javascript.svg",
+					"icon": "assets/images/logos/javascript.svg",
 					"skill": "advanced"
 				},
 				{
 					"name": "TypeScript",
-					"icon": "/assets/images/logos/typescript.svg",
+					"icon": "assets/images/logos/typescript.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "Python",
-					"icon": "/assets/images/logos/python.svg",
+					"icon": "assets/images/logos/python.svg",
 					"skill": "advanced"
 				}
 			]
@@ -372,12 +372,12 @@
 			"items": [
 				{
 					"name": "Angular",
-					"icon": "/assets/images/logos/angular.svg",
+					"icon": "assets/images/logos/angular.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "React",
-					"icon": "/assets/images/logos/react.svg",
+					"icon": "assets/images/logos/react.svg",
 					"skill": "intermediate"
 				}
 			]
@@ -387,22 +387,22 @@
 			"items": [
 				{
 					"name": "Node.js",
-					"icon": "/assets/images/logos/nodejs.svg",
+					"icon": "assets/images/logos/nodejs.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "Express",
-					"icon": "/assets/images/logos/express.svg",
+					"icon": "assets/images/logos/express.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "MongoDB",
-					"icon": "/assets/images/logos/mongodb.svg",
+					"icon": "assets/images/logos/mongodb.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "MySQL",
-					"icon": "/assets/images/logos/mysql.svg",
+					"icon": "assets/images/logos/mysql.svg",
 					"skill": "intermediate"
 				}
 			]
@@ -412,37 +412,37 @@
 			"items": [
 				{
 					"name": "Git",
-					"icon": "/assets/images/logos/git.svg",
+					"icon": "assets/images/logos/git.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "GitHub",
-					"icon": "/assets/images/logos/github.svg",
+					"icon": "assets/images/logos/github.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "npm",
-					"icon": "/assets/images/logos/npm.svg",
+					"icon": "assets/images/logos/npm.svg",
 					"skill": "advanced"
 				},
 				{
 					"name": "Adobe InDesign",
-					"icon": "/assets/images/logos/adobe-indesign.svg",
+					"icon": "assets/images/logos/adobe-indesign.svg",
 					"skill": "advanced"
 				},
 				{
 					"name": "Adobe Illustrator",
-					"icon": "/assets/images/logos/adobe-illustrator.svg",
+					"icon": "assets/images/logos/adobe-illustrator.svg",
 					"skill": "advanced"
 				},
 				{
 					"name": "Adobe Photoshop",
-					"icon": "/assets/images/logos/adobe-photoshop.svg",
+					"icon": "assets/images/logos/adobe-photoshop.svg",
 					"skill": "intermediate"
 				},
 				{
 					"name": "Adobe Xd",
-					"icon": "/assets/images/logos/adobe-xd.svg",
+					"icon": "assets/images/logos/adobe-xd.svg",
 					"skill": "beginner"
 				}
 			]
@@ -452,22 +452,22 @@
 		"links": [
 			{
 				"text": "danielrasmussen42@gmail.com",
-				"icon": "/assets/images/symbols/email.svg",
+				"icon": "assets/images/symbols/email.svg",
 				"link": "mailto:danielrasmussen42@gmail.com"
 			},
 			{
 				"text": "LinkedIn",
-				"icon": "/assets/images/logos/linkedin.svg",
+				"icon": "assets/images/logos/linkedin.svg",
 				"link": "https://www.linkedin.com/in/daniel-rasmussen-3a7b87218/"
 			},
 			{
 				"text": "GitHub",
-				"icon": "/assets/images/logos/github.svg",
+				"icon": "assets/images/logos/github.svg",
 				"link": "https://github.com/DanielGRasmussen"
 			},
 			{
 				"text": "Resume",
-				"icon": "/assets/images/symbols/resume.svg",
+				"icon": "assets/images/symbols/resume.svg",
 				"link": "https://docs.google.com/document/d/1qkK0cz-x5w44Z_t_0smG5c8Cz_pw2QgAbaclgERY-2w"
 			}
 		],
@@ -476,9 +476,9 @@
 		]
 	},
 	"general": {
-		"logo": "/assets/images/logo.svg",
-		"light-mode": "/assets/images/symbols/light-mode.svg",
-		"dark-mode": "/assets/images/symbols/dark-mode.svg"
+		"logo": "assets/images/logo.svg",
+		"light-mode": "assets/images/symbols/light-mode.svg",
+		"dark-mode": "assets/images/symbols/dark-mode.svg"
 	},
 	"links": [
 		{ "name": "Home", "url": "/home" },
