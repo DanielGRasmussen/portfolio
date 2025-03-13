@@ -69,6 +69,10 @@ $thumbnail-height: 186px;
 
 			.project-title {
 				margin: 0 0 $margin-xs 0;
+				// Max out at one line
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 
 			.overview {
