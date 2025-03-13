@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
 
 .main {
 	h2 {
@@ -14,6 +14,28 @@
 		justify-content: center;
 
 		margin-top: $margin-lg;
+
+		position: relative;
+		&:not(:last-child)::after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -$margin-lg * 0.5;
+			left: 50%;
+			width: 60%;
+			transform: translateX(-50%);
+			height: 1px;
+
+			background: $text-color;
+			opacity: 0.4;
+			border-radius: 50%;
+		}
+
+		@include mobile() {
+			&:not(:last-child)::after {
+				content: none;
+			}
+		}
 
 		.technologies {
 			display: flex;
@@ -59,9 +81,10 @@
 
 			.technologies {
 				max-width: 100%;
-				align-items: start;
-				justify-content: start;
-				margin-left: 0;
+				align-items: center;
+				justify-content: center;
+				margin-left: auto;
+				margin-right: auto;
 
 				.technology {
 					display: flex;

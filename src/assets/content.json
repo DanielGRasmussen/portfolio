@@ -331,123 +331,126 @@
 	"education": [
 		"Bachelor's in Software Engineering (3.9 GPA) | Fall 2025\nBrigham Young University-Idaho\n- Minors: Web Development, Web Design\n- Certificates: Computer Programming, Web Development, Web Frontend, Data Science (All completed Spring 2024)"
 	],
-	"technologies": [
-		{
-			"name": "languages",
-			"items": [
-				{
-					"name": "HTML",
-					"icon": "assets/images/logos/html.svg",
-					"skill": "advanced"
-				},
-				{
-					"name": "CSS",
-					"icon": "assets/images/logos/css.svg",
-					"skill": "advanced"
-				},
-				{
-					"name": "SCSS",
-					"icon": "assets/images/logos/scss.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "JavaScript",
-					"icon": "assets/images/logos/javascript.svg",
-					"skill": "advanced"
-				},
-				{
-					"name": "TypeScript",
-					"icon": "assets/images/logos/typescript.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "Python",
-					"icon": "assets/images/logos/python.svg",
-					"skill": "advanced"
-				}
-			]
-		},
-		{
-			"name": "frontend",
-			"items": [
-				{
-					"name": "Angular",
-					"icon": "assets/images/logos/angular.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "React",
-					"icon": "assets/images/logos/react.svg",
-					"skill": "intermediate"
-				}
-			]
-		},
-		{
-			"name": "backend",
-			"items": [
-				{
-					"name": "Node.js",
-					"icon": "assets/images/logos/nodejs.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "Express",
-					"icon": "assets/images/logos/express.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "MongoDB",
-					"icon": "assets/images/logos/mongodb.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "MySQL",
-					"icon": "assets/images/logos/mysql.svg",
-					"skill": "intermediate"
-				}
-			]
-		},
-		{
-			"name": "tools",
-			"items": [
-				{
-					"name": "Git",
-					"icon": "assets/images/logos/git.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "GitHub",
-					"icon": "assets/images/logos/github.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "npm",
-					"icon": "assets/images/logos/npm.svg",
-					"skill": "advanced"
-				},
-				{
-					"name": "Adobe InDesign",
-					"icon": "assets/images/logos/adobe-indesign.svg",
-					"skill": "advanced"
-				},
-				{
-					"name": "Adobe Illustrator",
-					"icon": "assets/images/logos/adobe-illustrator.svg",
-					"skill": "advanced"
-				},
-				{
-					"name": "Adobe Photoshop",
-					"icon": "assets/images/logos/adobe-photoshop.svg",
-					"skill": "intermediate"
-				},
-				{
-					"name": "Adobe Xd",
-					"icon": "assets/images/logos/adobe-xd.svg",
-					"skill": "beginner"
-				}
-			]
-		}
-	],
+	"technologies": {
+		"intro": "Here are some of the technologies I have experience with along with my skill level in each:",
+		"tech_groups": [
+			{
+				"name": "languages",
+				"items": [
+					{
+						"name": "HTML",
+						"icon": "/assets/images/logos/html.svg",
+						"skill": "advanced"
+					},
+					{
+						"name": "CSS",
+						"icon": "/assets/images/logos/css.svg",
+						"skill": "advanced"
+					},
+					{
+						"name": "SCSS",
+						"icon": "/assets/images/logos/scss.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "JavaScript",
+						"icon": "/assets/images/logos/javascript.svg",
+						"skill": "advanced"
+					},
+					{
+						"name": "TypeScript",
+						"icon": "/assets/images/logos/typescript.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "Python",
+						"icon": "/assets/images/logos/python.svg",
+						"skill": "advanced"
+					}
+				]
+			},
+			{
+				"name": "frontend",
+				"items": [
+					{
+						"name": "Angular",
+						"icon": "/assets/images/logos/angular.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "React",
+						"icon": "/assets/images/logos/react.svg",
+						"skill": "intermediate"
+					}
+				]
+			},
+			{
+				"name": "backend",
+				"items": [
+					{
+						"name": "Node.js",
+						"icon": "/assets/images/logos/nodejs.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "Express",
+						"icon": "/assets/images/logos/express.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "MongoDB",
+						"icon": "/assets/images/logos/mongodb.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "MySQL",
+						"icon": "/assets/images/logos/mysql.svg",
+						"skill": "intermediate"
+					}
+				]
+			},
+			{
+				"name": "tools",
+				"items": [
+					{
+						"name": "Git",
+						"icon": "/assets/images/logos/git.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "GitHub",
+						"icon": "/assets/images/logos/github.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "npm",
+						"icon": "/assets/images/logos/npm.svg",
+						"skill": "advanced"
+					},
+					{
+						"name": "Adobe InDesign",
+						"icon": "/assets/images/logos/adobe-indesign.svg",
+						"skill": "advanced"
+					},
+					{
+						"name": "Adobe Illustrator",
+						"icon": "/assets/images/logos/adobe-illustrator.svg",
+						"skill": "advanced"
+					},
+					{
+						"name": "Adobe Photoshop",
+						"icon": "/assets/images/logos/adobe-photoshop.svg",
+						"skill": "intermediate"
+					},
+					{
+						"name": "Adobe Xd",
+						"icon": "/assets/images/logos/adobe-xd.svg",
+						"skill": "beginner"
+					}
+				]
+			}
+		]
+	},
 	"contact": {
 		"links": [
 			{

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { TechnologiesContent } from "../../models/content.interfaces";
-import { ContentService } from "../../content.service";
+import { TechnologiesContent } from "../../../models/content.interfaces";
+import { ContentService } from "../../../content.service";
 import { NgForOf } from "@angular/common";
 
 @Component({

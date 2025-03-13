@@ -1,5 +1,5 @@
 <div class="main">
-	<div class="tech-group" *ngFor="let technologyGroup of content">
+	<div class="tech-group" *ngFor="let technologyGroup of content.tech_groups">
 		<h2>{{ technologyGroup.name }}</h2>
 		<div class="technologies">
 			<div class="technology" *ngFor="let technology of technologyGroup.items">

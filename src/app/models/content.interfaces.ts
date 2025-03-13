@@ -40,9 +40,12 @@ export interface DescriptionsItem {
 
 export type EducationContent = string[];
 
-export type TechnologiesContent = Technologies[];
+export interface TechnologiesContent {
+	intro: string;
+	tech_groups: TechnologyGroup[];
+}
 
-interface Technologies {
+interface TechnologyGroup {
 	name: string;
 	items: TechnologyItem[];
 }

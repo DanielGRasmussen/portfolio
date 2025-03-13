@@ -16,7 +16,7 @@ import { TitleService } from "../../title.service";
 import { UrlPipe } from "../../url.pipe";
 import { ProjectInfoComponent } from "../projects/project-info/project-info.component";
 import { debounceTime, fromEvent, startWith } from "rxjs";
-import { TechnologiesComponent } from "../technologies/technologies.component";
+import { TechnologiesComponent } from "./technologies/technologies.component";
 
 @Component({
 	selector: "app-home",
@@ -57,6 +57,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 		setTimeout(() => {
 			this.updateProjectInfoHeight();
 		}, 0);
+		setTimeout(() => {
+			this.updateProjectInfoHeight();
+		}, 50);
 		fromEvent(window, "scroll")
 			.pipe(
 				debounceTime(100),
