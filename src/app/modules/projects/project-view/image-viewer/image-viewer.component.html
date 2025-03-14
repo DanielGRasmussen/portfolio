@@ -1,8 +1,8 @@
 <div class="image-slider">
 	<div
 		class="slider-container"
-		(click)="openOverlay()"
-		(keydown.enter)="openOverlay()"
+		(click)="overlayComponent.openOverlay()"
+		(keydown.enter)="overlayComponent.openOverlay()"
 		tabindex="0"
 		(touchstart)="onTouchStart($event)"
 		(touchmove)="onTouchMove($event)"
@@ -75,29 +75,9 @@
 	</div>
 </div>
 
-<div
-	class="overlay"
-	[class.open]="useOverlay"
-	[class.closing]="closingOverlay"
-	(mousedown)="onOverlayMouseDown($event)"
-	(mouseup)="onOverlayMouseUp($event)"
->
-	<button class="close-button" (click)="closeOverlay()">
-		<span class="close-icon">&times;</span>
-	</button>
-	<img src="{{ images[activeIndex] }}" alt="Overlay Image" />
-	<button
-		class="arrow left-arrow"
-		(click)="previousImage()"
-		[class.disabled]="activeIndex === 0"
-	>
-		<span class="arrow-icon">&#10095;</span>
-	</button>
-	<button
-		class="arrow right-arrow"
-		(click)="nextImage()"
-		[class.disabled]="activeIndex === images.length - 1"
-	>
-		<span class="arrow-icon">&#10095;</span>
-	</button>
-</div>
+<app-overlay
+	[previousImage]="previousImage"
+	[nextImage]="nextImage"
+	[images]="images"
+	[activeIndex]="activeIndex"
+></app-overlay>

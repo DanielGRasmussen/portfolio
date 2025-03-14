@@ -1,10 +1,11 @@
-import { Component, HostListener, Input, OnInit } from "@angular/core";
+import { Component, HostListener, Input, OnInit, ViewChild } from "@angular/core";
 import { NgForOf, NgIf } from "@angular/common";
+import { OverlayComponent } from "./overlay/overlay.component";
 
 @Component({
 	selector: "app-image-viewer",
 	standalone: true,
-	imports: [NgForOf, NgIf],
+	imports: [NgForOf, NgIf, OverlayComponent],
 	templateUrl: "./image-viewer.component.html",
 	styleUrl: "./image-viewer.component.scss",
 })
@@ -16,9 +17,7 @@ export class ImageViewerComponent implements OnInit {
 	touchStartTime: number = 0;
 	touchEndTime: number = 0;
 
-	useOverlay: boolean = false;
-	closingOverlay: boolean = false;
-	overlayClickStarted: boolean = false;
+	@ViewChild(OverlayComponent) overlayComponent!: OverlayComponent;
 
 	ngOnInit() {
 		this.checkIfMobile();
@@ -56,7 +55,6 @@ export class ImageViewerComponent implements OnInit {
 	onTouchStart(event: TouchEvent): void {
 		this.startX = event.touches[0].clientX;
 		this.touchStartTime = new Date().getTime();
-		console.log("Touch start", this.startX);
 	}
 
 	onTouchMove(event: TouchEvent): void {
@@ -82,50 +80,5 @@ export class ImageViewerComponent implements OnInit {
 
 	trackByFn(index: number): number {
 		return index;
-	}
-
-	keybindings(event: KeyboardEvent): void {
-		if (!this.useOverlay) {
-			return;
-		}
-		if (event.key === "ArrowRight") {
-			this.nextImage();
-		} else if (event.key === "ArrowLeft") {
-			this.previousImage();
-		} else if (event.key === "Escape") {
-			this.closeOverlay();
-		}
-		event.stopPropagation();
-		event.preventDefault();
-	}
-
-	onOverlayMouseDown(event: MouseEvent): void {
-		// Check if the event target is the overlay container itself
-		if (event.target === event.currentTarget) {
-			this.overlayClickStarted = true;
-		}
-	}
-
-	onOverlayMouseUp(event: MouseEvent): void {
-		// Check that the mouseup is on the overlay and that the click started on the overlay
-		if (event.target === event.currentTarget && this.overlayClickStarted) {
-			this.closeOverlay();
-		}
-
-		this.overlayClickStarted = false;
-	}
-
-	openOverlay(): void {
-		this.useOverlay = true;
-		// Add overlay keybindings
-		document.addEventListener("keydown", this.keybindings.bind(this));
-	}
-
-	closeOverlay(): void {
-		this.closingOverlay = true;
-		setTimeout(() => {
-			this.useOverlay = false;
-			this.closingOverlay = false;
-		}, 200);
 	}
 }
