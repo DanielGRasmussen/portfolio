@@ -1,64 +1,83 @@
-<div class="slider-container">
-	<img
-		class="selected"
-		[src]="images[currentIndex]"
-		alt="Slider Image"
+<div class="image-slider">
+	<div
+		class="slider-container"
+		(click)="overlayComponent.openOverlay()"
+		(keydown.enter)="overlayComponent.openOverlay()"
 		tabindex="0"
-		(click)="openOverlay()"
-		(keydown.enter)="openOverlay()"
-		(keydown.arrowLeft)="previousImage()"
-		(keydown.arrowRight)="nextImage()"
-	/>
-	<div class="thumbnails">
-		<div
-			class="prev"
-			[class.active]="getActive('previous')"
-			(click)="this.previousImage()"
-			tabindex="0"
-			(keydown.enter)="this.previousImage()"
-		>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-				<path d="M50 -100 L250 200 L50 500" fill="none" stroke-width="15"/>
-			</svg>
+		(touchstart)="onTouchStart($event)"
+		(touchmove)="onTouchMove($event)"
+		(touchend)="onTouchEnd($event)"
+	>
+		<div class="slider-content">
+			<ng-container *ngFor="let image of images; let i = index; trackBy: trackByFn">
+				<img
+					[src]="image"
+					[class.active]="i === activeIndex"
+					alt="Slider image {{i + 1}}"
+				>
+			</ng-container>
 		</div>
+		<button
+			class="arrow left-arrow"
+			[class.disabled]="activeIndex === 0"
+			(click)="previousImage($event)"
+		>
+			<span class="arrow-icon">&#10094;</span>
+		</button>
+		<button
+			class="arrow right-arrow"
+			[class.disabled]="activeIndex === images.length - 1"
+			(click)="nextImage($event)"
+		>
+			<span class="arrow-icon">&#10095;</span>
+		</button>
+	</div>
+
+	<div class="thumbnails-container" *ngIf="!isMobile">
+		<button
+			class="thumbnail-arrow left-arrow"
+			[class.disabled]="activeIndex === 0"
+			(click)="previousImage()"
+		>
+			<span class="arrow-icon">&#10094;</span>
+		</button>
+
+		<div class="thumbnails">
+			<div
+				class="thumbnail"
+				*ngFor="let image of images; let i = index; trackBy: trackByFn"
+				[class.active]="i === activeIndex"
+				(click)="goToImage(i)"
+				(keydown.enter)="goToImage(i)"
+				tabindex="0"
+			>
+				<img [src]="image" alt="Thumbnail {{i + 1}}">
+			</div>
+		</div>
+
+		<button
+			class="thumbnail-arrow right-arrow"
+			[class.disabled]="activeIndex === images.length - 1"
+			(click)="nextImage()"
+		>
+			<span class="arrow-icon">&#10095;</span>
+		</button>
+	</div>
+	<div class="dots-container" *ngIf="isMobile">
 		<div
-			*ngFor="let image of images; let i = index"
+			class="dot"
+			*ngFor="let image of images; let i = index; trackBy: trackByFn"
+			[class.active]="i === activeIndex"
 			(click)="goToImage(i)"
-			[class.active]="i === currentIndex"
-			class="thumbnail"
 			tabindex="0"
 			(keydown.enter)="goToImage(i)"
-		>
-			<img [src]="image" alt="Thumbnail {{ i + 1 }}" />
-		</div>
-		<div
-			class="next"
-			[class.active]="getActive('next')"
-			(click)="goToImage(currentIndex + 1)"
-			tabindex="0"
-			(keydown.enter)="goToImage(currentIndex + 1)"
-		>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-				<path d="M50 -100 L250 200 L50 500" fill="none" stroke-width="15"/>
-			</svg>
-		</div>
+		></div>
 	</div>
 </div>
-<div class="overlay" [class.open]="useOverlay" [class.closing]="closingOverlay" (mousedown)="onOverlayMouseDown($event)" (mouseup)="onOverlayMouseUp($event)">
-	<div class="close" (click)="closeOverlay()" tabindex="0" (keydown.enter)="closeOverlay()">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-			<path d="M10,10 L90,90 M90,10 L10,90" fill="black" stroke-width="15"/>
-		</svg>
-	</div>
-	<img src="{{ images[currentIndex] }}" alt="Overlay Image" />
-	<div class="prev" (click)="previousImage()" tabindex="0" (keydown.enter)="previousImage()" [class.active]="getActive('previous')">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
-			<path d="M50 -100 L250 200 L50 500" fill="none" stroke-width="15"/>
-		</svg>
-	</div>
-	<div class="next" (click)="nextImage()" tabindex="0" (keydown.enter)="nextImage()" [class.active]="getActive('next')">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
-			<path d="M50 -100 L250 200 L50 500" fill="none" stroke-width="15"/>
-		</svg>
-	</div>
-</div>
+
+<app-overlay
+	[previousImage]="previousImage"
+	[nextImage]="nextImage"
+	[images]="images"
+	[activeIndex]="activeIndex"
+></app-overlay>

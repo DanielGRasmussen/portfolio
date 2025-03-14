@@ -138,62 +138,6 @@
 		}
 	}
 
-	.featured {
-		.featured-content {
-			display: grid;
-			grid-template-columns: 33% 67%;
-			gap: $margin-sm;
-			max-height: 415px;
-			overflow: hidden;
-
-			.description {
-				max-height: 350px;
-				margin: 0;
-
-				position: relative;
-				&::after {
-					content: "";
-					display: block;
-					height: 50px;
-
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					right: 0;
-
-					background: linear-gradient(to bottom, transparent, $background-color);
-					transition: background-color $text-transition;
-				}
-			}
-
-			.info {
-				height: fit-content;
-				margin: 0;
-
-				padding-left: 10px;
-				box-sizing: border-box;
-
-				img {
-					max-height: 300px;
-					max-width: 100%;
-					width: auto;
-				}
-
-				h3 {
-					margin: 0 0 0 0;
-
-					// Make it cut off if the title is too long.
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					box-sizing: border-box;
-					padding-right: 15px;
-				}
-			}
-		}
-
-	}
-
 	.cta {
 		display: block;
 		margin: $margin-md auto 0 auto;
