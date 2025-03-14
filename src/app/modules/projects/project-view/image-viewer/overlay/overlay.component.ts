@@ -64,8 +64,6 @@ export class OverlayComponent {
 			this.closingOverlay = false;
 		}, 200);
 
-		console.log("Closing overlay");
-
 		// Remove overlay keybindings
 		document.removeEventListener("keydown", this.listener);
 	}
