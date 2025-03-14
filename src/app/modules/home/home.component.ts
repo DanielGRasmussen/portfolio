@@ -2,10 +2,8 @@ import {
 	AfterViewInit,
 	Component,
 	ElementRef,
-	HostListener,
 	OnInit,
 	QueryList,
-	ViewChild,
 	ViewChildren,
 } from "@angular/core";
 import Content, { ProjectItem } from "../../models/content.interfaces";
@@ -14,9 +12,9 @@ import { NgForOf } from "@angular/common";
 import { RouterLink } from "@angular/router";
 import { TitleService } from "../../title.service";
 import { UrlPipe } from "../../url.pipe";
-import { ProjectInfoComponent } from "../projects/project-info/project-info.component";
 import { debounceTime, fromEvent, startWith } from "rxjs";
 import { TechnologiesComponent } from "./technologies/technologies.component";
+import { FeaturedProjectComponent } from "./featured-project/featured-project.component";
 
 @Component({
 	selector: "app-home",
@@ -26,8 +24,8 @@ import { TechnologiesComponent } from "./technologies/technologies.component";
 		RouterLink,
 		TechnologiesComponent,
 		UrlPipe,
-		ProjectInfoComponent,
 		TechnologiesComponent,
+		FeaturedProjectComponent,
 	],
 	templateUrl: "./home.component.html",
 	styleUrl: "./home.component.scss",
@@ -35,8 +33,6 @@ import { TechnologiesComponent } from "./technologies/technologies.component";
 export class HomeComponent implements OnInit, AfterViewInit {
 	content!: Content;
 	featuredProject: ProjectItem;
-	@ViewChild("featuredProjectInfo") projectInfo!: ElementRef<HTMLDivElement>;
-	@ViewChild("featuredProjectDescription") projectDescription!: ElementRef<HTMLDivElement>;
 
 	@ViewChildren("section") sections!: QueryList<ElementRef<HTMLElement>>;
 	activeSection: string = "intro";
@@ -54,26 +50,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit(): void {
-		setTimeout(() => {
-			this.updateProjectInfoHeight();
-		}, 0);
-		setTimeout(() => {
-			this.updateProjectInfoHeight();
-		}, 50);
 		fromEvent(window, "scroll")
 			.pipe(
 				debounceTime(100),
 				startWith(null) // Initial check
 			)
 			.subscribe(() => this.updateActiveSection());
-	}
-
-	@HostListener("window:resize", ["$event"])
-	updateProjectInfoHeight(): void {
-		if (this.projectInfo && this.projectDescription) {
-			this.projectDescription.nativeElement.style.maxHeight =
-				this.projectInfo.nativeElement.offsetHeight + "px";
-		}
 	}
 
 	updateActiveSection(): void {

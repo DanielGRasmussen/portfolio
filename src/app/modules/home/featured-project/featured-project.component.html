@@ -1,0 +1,10 @@
+<div class="wrapper">
+	<p class="description" #featuredProjectDescription>
+		{{ featuredProject.descriptions[0].content[0] }}
+	</p>
+	<div class="info" #featuredProjectInfo>
+		<img src="{{ featuredProject.images[0] }}" alt="My project">
+		<h3 class="h2">{{ featuredProject.title }}</h3>
+		<app-project-info [project]="featuredProject"></app-project-info>
+	</div>
+</div>
