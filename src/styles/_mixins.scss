@@ -7,7 +7,7 @@
 
 	@include mobile {
 		width: 95%;
-		margin: $margin-md auto $margin-lg auto;
+		margin: calc($margin-md + $header-height) auto $margin-lg auto;
 	}
 
 	@include bubble();

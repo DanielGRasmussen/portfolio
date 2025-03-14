@@ -3,6 +3,10 @@
 .wrapper {
 	@include main;
 	margin-top: $header-height;
+
+	@include mobile {
+		margin-top: $header-height;
+	}
 }
 
 .title-info {
