@@ -35,12 +35,19 @@
 
 	// In mobile view make the icons visible
 	&:not(.sidebar) {
-		max-height: 62px;
+		max-height: 45px;
+		width: 100%;
+		box-sizing: border-box;
+		background-color: transparent;
 		transition: background-color $background-transition, max-height 0.3s ease-in-out;
 		border-radius: 0 0 20px 20px;
+		padding: $margin-sm $margin-sm $margin-sm $margin-sm;
 
 		max-width: 400px;
-		margin-left: auto;
+
+		.filters {
+			padding-top: $margin-md;
+		}
 
 		&.open {
 			background-color: $background-secondary-color;
@@ -74,7 +81,7 @@
 		.filter-toggle {
 			display: flex;
 			width: fit-content;
-			height: 56px;
+			height: 36px;
 			margin-left: auto;
 
 			align-items: center;
@@ -110,10 +117,6 @@
 				margin-top: 0;
 			}
 		}
-
-		width: 100%;
-		padding: $margin-sm;
-		box-sizing: border-box;
 	}
 
 	h3 {

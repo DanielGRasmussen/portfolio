@@ -1,11 +1,15 @@
 @import "../../../../styles/mixins";
 
+.bubble {
+	@include bubble();
+}
+
 .wrapper {
 	@include main;
-	margin-top: $header-height;
+	margin-top: calc($header-height - $bubble-height);
 
 	@include mobile {
-		margin-top: $header-height;
+		margin-top: calc($header-height - $bubble-height);
 	}
 }
 
