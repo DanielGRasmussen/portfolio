@@ -129,6 +129,8 @@ $line-spacing: 0.4rem;
 
 			span {
 				position: relative;
+				height: 35px;
+				display: inline-block;
 
 				&::after {
 					content: "";

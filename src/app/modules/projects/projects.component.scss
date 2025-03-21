@@ -1,12 +1,40 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-$thumbnail-height: 186px;
+.bubble {
+	@include bubble();
+}
 
-.wrapper.sidebar {
-	margin-left: $project-sidebar-width;
-	.projects::before {
-		margin-left: $project-sidebar-width * 0.5;
+$thumbnail-height: var(--thumbnail-height);
+$mobile-filter-offset: 100px;
+
+.wrapper {
+	--thumbnail-height: 176px;
+
+	@include mobile() {
+		--thumbnail-height: 160px;
+	}
+
+	margin-top:  calc($header-height - $bubble-height);
+
+	&.sidebar {
+		margin-left: $project-sidebar-width;
+		.projects::before {
+			margin-left: $project-sidebar-width * 0.5;
+		}
+	}
+
+	&:not(.sidebar) {
+		// No margin so that the filter can be at the top of the page
+		app-project-filter {
+			width: 100%;
+			display: flex;
+			justify-content: right;
+		}
+
+		.projects {
+			margin-top: $margin-md;
+		}
 	}
 }
 
@@ -16,12 +44,11 @@ $thumbnail-height: 186px;
 	justify-content: center;
 	gap: $margin-xlg;
 
-	margin: calc($header-height + $margin-md) auto $margin-md auto;
+	margin: $margin-md auto $margin-md auto;
 
 	@include bubble();
 
 	@media (max-width: 1023px) {
-		margin-top: $margin-sm;
 		padding: 0 $margin-xs * 2;
 	}
 
@@ -31,7 +58,7 @@ $thumbnail-height: 186px;
 	}
 
 	.card {
-		max-width: 460px;
+		max-width: min(95vw, 460px);
 		height: 436px;
 
 		padding: $margin-sm;
@@ -45,6 +72,12 @@ $thumbnail-height: 186px;
 		box-shadow: $shadow-lg;
 
 		transition: background-color $background-transition;
+
+		@include mobile() {
+			padding: $margin-xs;
+			max-height: 365px;
+			max-width: min(95vw, 400px);
+		}
 
 		.thumbnail {
 			width: 100%;
@@ -70,9 +103,9 @@ $thumbnail-height: 186px;
 			.project-title {
 				margin: 0 0 $margin-xs 0;
 				// Max out at one line
+				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				white-space: nowrap;
 			}
 
 			.overview {
@@ -82,6 +115,10 @@ $thumbnail-height: 186px;
 				-webkit-line-clamp: 5;
 				-webkit-box-orient: vertical;
 				overflow: hidden;
+
+				@include mobile() {
+					-webkit-line-clamp: 4;
+				}
 			}
 		}
 	}

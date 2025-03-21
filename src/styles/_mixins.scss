@@ -3,31 +3,36 @@
 @mixin main {
 	max-width: 800px;
 	width: 80%;
-	margin: calc($margin-md + $header-height) auto $margin-xlg auto;
+	margin: calc($header-height + $margin-md - $bubble-height) auto $margin-xlg auto;
 
 	@include mobile {
 		width: 95%;
-		margin: calc($margin-md + $header-height) auto $margin-lg auto;
+		margin-bottom: $margin-lg;
 	}
-
-	@include bubble();
 }
 
 @mixin bubble {
-	&::before {
-		content: "";
-		position: absolute;
-		top: -60%;
-		left: 50%;
-		transform: translateX(-50%);
+	&.bubble {
+		width: 100%;
+		height: $bubble-height;
+		position: relative;
+		overflow: hidden;
 
-		width: 170%;
-		min-width: 800px;
-		height: 111%;
-		background-color: $secondary-color;
-		transition: background-color $background-transition;
-		z-index: -1;
-		border-radius: 50%;
+		&::before {
+			content: "";
+			position: absolute;
+			top: -60%;
+			left: 50%;
+			transform: translateX(-50%);
+
+			width: 170%;
+			min-width: 800px;
+			height: 160%;
+			background-color: $secondary-color;
+			transition: background-color $background-transition;
+			z-index: -1;
+			border-radius: 50%;
+		}
 	}
 }
 
