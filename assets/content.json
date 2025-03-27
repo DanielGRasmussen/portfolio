@@ -339,32 +339,32 @@
 				"items": [
 					{
 						"name": "HTML",
-						"icon": "/assets/images/logos/html.svg",
+						"icon": "assets/images/logos/html.svg",
 						"skill": "advanced"
 					},
 					{
 						"name": "CSS",
-						"icon": "/assets/images/logos/css.svg",
+						"icon": "assets/images/logos/css.svg",
 						"skill": "advanced"
 					},
 					{
 						"name": "SCSS",
-						"icon": "/assets/images/logos/scss.svg",
+						"icon": "assets/images/logos/scss.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "JavaScript",
-						"icon": "/assets/images/logos/javascript.svg",
+						"icon": "assets/images/logos/javascript.svg",
 						"skill": "advanced"
 					},
 					{
 						"name": "TypeScript",
-						"icon": "/assets/images/logos/typescript.svg",
+						"icon": "assets/images/logos/typescript.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "Python",
-						"icon": "/assets/images/logos/python.svg",
+						"icon": "assets/images/logos/python.svg",
 						"skill": "advanced"
 					}
 				]
@@ -374,12 +374,12 @@
 				"items": [
 					{
 						"name": "Angular",
-						"icon": "/assets/images/logos/angular.svg",
+						"icon": "assets/images/logos/angular.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "React",
-						"icon": "/assets/images/logos/react.svg",
+						"icon": "assets/images/logos/react.svg",
 						"skill": "intermediate"
 					}
 				]
@@ -389,22 +389,22 @@
 				"items": [
 					{
 						"name": "Node.js",
-						"icon": "/assets/images/logos/nodejs.svg",
+						"icon": "assets/images/logos/nodejs.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "Express",
-						"icon": "/assets/images/logos/express.svg",
+						"icon": "assets/images/logos/express.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "MongoDB",
-						"icon": "/assets/images/logos/mongodb.svg",
+						"icon": "assets/images/logos/mongodb.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "MySQL",
-						"icon": "/assets/images/logos/mysql.svg",
+						"icon": "assets/images/logos/mysql.svg",
 						"skill": "intermediate"
 					}
 				]
@@ -414,37 +414,37 @@
 				"items": [
 					{
 						"name": "Git",
-						"icon": "/assets/images/logos/git.svg",
+						"icon": "assets/images/logos/git.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "GitHub",
-						"icon": "/assets/images/logos/github.svg",
+						"icon": "assets/images/logos/github.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "npm",
-						"icon": "/assets/images/logos/npm.svg",
+						"icon": "assets/images/logos/npm.svg",
 						"skill": "advanced"
 					},
 					{
 						"name": "Adobe InDesign",
-						"icon": "/assets/images/logos/adobe-indesign.svg",
+						"icon": "assets/images/logos/adobe-indesign.svg",
 						"skill": "advanced"
 					},
 					{
 						"name": "Adobe Illustrator",
-						"icon": "/assets/images/logos/adobe-illustrator.svg",
+						"icon": "assets/images/logos/adobe-illustrator.svg",
 						"skill": "advanced"
 					},
 					{
 						"name": "Adobe Photoshop",
-						"icon": "/assets/images/logos/adobe-photoshop.svg",
+						"icon": "assets/images/logos/adobe-photoshop.svg",
 						"skill": "intermediate"
 					},
 					{
 						"name": "Adobe Xd",
-						"icon": "/assets/images/logos/adobe-xd.svg",
+						"icon": "assets/images/logos/adobe-xd.svg",
 						"skill": "beginner"
 					}
 				]
