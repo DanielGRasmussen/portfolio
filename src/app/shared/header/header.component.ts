@@ -87,7 +87,10 @@ export class HeaderComponent implements OnInit {
 		const activeElement: HTMLElement | null = this.getNativeElement(this.activeIndex);
 		if (!activeElement) return "0";
 
-		return activeElement.offsetHeight - 25 + "px";
+		// Position underline on the bottom of the nav item
+		const parentHeight = activeElement.parentElement?.offsetHeight || 0;
+		const elementBottom = activeElement.offsetTop + activeElement.offsetHeight;
+		return parentHeight - elementBottom + "px";
 	}
 
 	isSubpage(): boolean {
