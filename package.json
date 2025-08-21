@@ -5,8 +5,8 @@
     "start": "ng serve",
     "start:local-access": "ng serve --host 0.0.0.0 --port 4200",
     "build": "ng build",
-    "preview": "npm run build -- --configuration production && http-server ./dist/portfolio/browser -o -c-1",
-    "preview:act": "act push -W .github/workflows/deploy.yml && http-server ./dist/portfolio/browser -o -c-1",
+    "preview": "npm run build -- --configuration production && http-server ./dist/portfolio/browser -o -c-1 --proxy http://localhost:8080?",
+    "preview:act": "act push -W .github/workflows/deploy.yml && http-server ./dist/portfolio/browser -o -c-1 --proxy http://localhost:8080?",
     "test": "ng test",
     "lint": "ng lint --fix",
     "lint:nofix": "ng lint"
