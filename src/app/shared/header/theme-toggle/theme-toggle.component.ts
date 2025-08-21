@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, inject } from "@angular/core";
 import { ThemeService } from "../../../theme.service";
 import { Theme } from "../../../models/theme.type";
 import Content from "../../../models/content.interfaces";
@@ -6,19 +6,16 @@ import { ContentService } from "../../../content.service";
 
 @Component({
 	selector: "app-theme-toggle",
-	standalone: true,
 	imports: [],
 	templateUrl: "./theme-toggle.component.html",
 	styleUrl: "./theme-toggle.component.scss",
 })
 export class ThemeToggleComponent implements OnInit {
+	protected ContentService = inject(ContentService);
+	protected themeService = inject(ThemeService);
+
 	@Input() invertedText: boolean = false;
 	content!: Content;
-
-	constructor(
-		protected ContentService: ContentService,
-		protected themeService: ThemeService
-	) {}
 
 	ngOnInit(): void {
 		this.content = this.ContentService.getContent();

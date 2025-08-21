@@ -1,14 +1,14 @@
-@import "../../../../styles/variables";
-@import "../../../../styles/mixins";
+@use "../../../../styles/variables" as vars;
+@use "../../../../styles/mixins" as mixins;
 
 .wrapper {
 	display: grid;
 	grid-template-columns: 33% 67%;
-	gap: $margin-sm;
+	gap: vars.$margin-sm;
 	max-height: 415px;
 	overflow: hidden;
 
-	@include mobile() {
+	@include mixins.mobile() {
 		display: flex;
 		flex-direction: column;
 		max-height: none;
@@ -29,10 +29,10 @@
 			left: 0;
 			right: 0;
 
-			background: linear-gradient(to bottom, transparent, $background-color);
-			transition: background-color $text-transition;
+			background: linear-gradient(to bottom, transparent, vars.$background-color);
+			transition: background-color vars.$text-transition;
 
-			@include mobile() {
+			@include mixins.mobile() {
 				content: none;
 			}
 		}
@@ -61,7 +61,7 @@
 			padding-right: 15px;
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			display: flex;
 			flex-direction: column;
 			padding: 0;

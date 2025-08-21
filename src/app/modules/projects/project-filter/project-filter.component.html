@@ -1,51 +1,55 @@
 <div
-	class="wrapper"
-	[class.header-offset]="headerVisible"
-	[class.sidebar]="sidebar"
-	[class.open]="open"
-	[ngStyle]="{'bottom': footerOffset + 'px'}"
->
-	<div
-		class="filter-toggle"
-		(click)="toggleOpen()"
-		tabindex="0"
-		(keydown.enter)="toggleOpen()"
-	>
-		<span class="toggle-icons">
-			<svg class="filter" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333333"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg>
-			<svg class="close" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z"/></svg>
-		</span>
-		<span class="filter-text">Filter</span>
-	</div>
-	<div class="filters">
-		<h3>Types</h3>
-		<ul>
-			<li *ngFor="let type of types">
-				<label for="{{ type }}">
-					<input
-						type="checkbox"
-						id="{{ type }}"
-						name="{{ type }}"
-						(change)="onTypeChange($event)"
-					/>
-					<span class="project-type">{{ type }}</span>
-				</label>
-			</li>
-		</ul>
-		<h3>Technologies Used</h3>
-		<ul class="technologies">
-			<li *ngFor="let technology of technologies">
-				<label for="{{ technology.name }}" class="technology">
-					<input
-						type="checkbox"
-						id="{{ technology.name }}"
-						name="{{ technology.name }}"
-						(change)="onTechnologyChange($event)"
-					/>
-					<img src="{{ technology.icon }}" alt="{{ technology.name }}" class="icon">
-					{{ technology.name }}
-				</label>
-			</li>
-		</ul>
-	</div>
-</div>
+  class="wrapper"
+  [class.header-offset]="headerVisible"
+  [class.sidebar]="sidebar"
+  [class.open]="open"
+  [ngStyle]="{'bottom': footerOffset + 'px'}"
+  >
+  <div
+    class="filter-toggle"
+    (click)="toggleOpen()"
+    tabindex="0"
+    (keydown.enter)="toggleOpen()"
+    >
+    <span class="toggle-icons">
+      <svg class="filter" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333333"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg>
+      <svg class="close" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z"/></svg>
+    </span>
+    <span class="filter-text">Filter</span>
+  </div>
+  <div class="filters">
+    <h3>Types</h3>
+    <ul>
+      @for (type of types; track type) {
+        <li>
+          <label for="{{ type }}">
+            <input
+              type="checkbox"
+              id="{{ type }}"
+              name="{{ type }}"
+              (change)="onTypeChange($event)"
+              />
+              <span class="project-type">{{ type }}</span>
+            </label>
+          </li>
+        }
+      </ul>
+      <h3>Technologies Used</h3>
+      <ul class="technologies">
+        @for (technology of technologies; track technology) {
+          <li>
+            <label for="{{ technology.name }}" class="technology">
+              <input
+                type="checkbox"
+                id="{{ technology.name }}"
+                name="{{ technology.name }}"
+                (change)="onTechnologyChange($event)"
+                />
+                <img src="{{ technology.icon }}" alt="{{ technology.name }}" class="icon">
+                {{ technology.name }}
+              </label>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>

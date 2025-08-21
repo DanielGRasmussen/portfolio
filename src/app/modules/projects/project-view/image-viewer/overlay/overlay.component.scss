@@ -1,5 +1,5 @@
-@import "../../../../../../styles/variables";
-@import "../../../../../../styles/themes";
+@use "../../../../../../styles/variables" as vars;
+@use "../../../../../../styles/themes" as themes;
 
 .overlay {
 	position: fixed;
@@ -8,7 +8,7 @@
 	right: 0;
 	bottom: 100%;
 	background-color: rgba(0, 0, 0, 0);
-	transition: background-color $background-transition;
+	transition: background-color vars.$background-transition;
 	z-index: 10;
 
 	display: flex;
@@ -24,14 +24,14 @@
 		height: 60px;
 
 		position: absolute;
-		top: $margin-sm;
-		right: $margin-sm;
+		top: vars.$margin-sm;
+		right: vars.$margin-sm;
 
 		cursor: pointer;
 		background-color: rgba(0, 0, 0, 0.5);
 		border-radius: 100%;
 
-		color: $theme-offwhite;
+		color: themes.$theme-offwhite;
 		font-size: 50px;
 
 		border: none;
@@ -39,7 +39,7 @@
 		// Load-in transition
 		margin-top: -150px;
 		opacity: 0;
-		transition: margin-top $background-transition, opacity $background-transition, color $text-transition;
+		transition: margin-top vars.$background-transition, opacity vars.$background-transition, color vars.$text-transition;
 
 		&:focus {
 			outline: none;
@@ -60,7 +60,7 @@
 		// Load-in transition
 		margin-top: -150px;
 		opacity: 0;
-		transition: margin-top $background-transition, opacity $background-transition;
+		transition: margin-top vars.$background-transition, opacity vars.$background-transition;
 	}
 
 	.arrow {
@@ -79,14 +79,14 @@
 		background-color: rgba(0, 0, 0, 0.5);
 		border-radius: 100%;
 
-		color: $theme-offwhite;
+		color: themes.$theme-offwhite;
 		font-size: 40px;
 		border: none;
 
 		// Load-in transition
 		margin-top: -150px;
 		opacity: 0;
-		transition: margin-top $background-transition, opacity $background-transition, color $text-transition;
+		transition: margin-top vars.$background-transition, opacity vars.$background-transition, color vars.$text-transition;
 
 		&:focus {
 			outline: none;
@@ -94,12 +94,12 @@
 	}
 
 	.left-arrow {
-		left: $margin-sm;
+		left: vars.$margin-sm;
 		transform: translateY(-50%) rotate(180deg);
 	}
 
 	.right-arrow {
-		right: $margin-sm;
+		right: vars.$margin-sm;
 	}
 }
 

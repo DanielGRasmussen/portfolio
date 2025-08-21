@@ -1,22 +1,22 @@
-@import "../../../../styles/variables";
+@use "../../../../styles/variables" as vars;
 
 .info {
-	margin: $margin-xs 0;
+	margin: vars.$margin-xs 0;
 	display: flex;
 	align-items: center;
 
 	.project-type {
-		margin-right: $margin-xs;
-		padding: $margin-xs * 0.5 $margin-sm * 0.5;
-		background-color: $secondary-color;
+		margin-right: vars.$margin-xs;
+		padding: vars.$margin-xs * 0.5 vars.$margin-sm * 0.5;
+		background-color: vars.$secondary-color;
 		border-radius: 10px;
 
-		transition: background-color $background-transition;
+		transition: background-color vars.$background-transition;
 	}
 
 	.technology {
 		width: 28px;
 		height: 28px;
-		margin-left: $margin-xs;
+		margin-left: vars.$margin-xs;
 	}
 }

@@ -1,37 +1,37 @@
-@import "variables";
-@import "mixins";
-@import "themes";
-@import "typography";
+@use "variables" as vars;
+@use "mixins";
+@use "themes";
+@use "typography" as typo;
 @import "../../node_modules/normalize.css/normalize.css";
 
 body {
-	background-color: $background-color;
-	color: $text-color;
+	background-color: vars.$background-color;
+	color: vars.$text-color;
 
-	transition: background-color $background-transition, color $text-transition;
+	transition: background-color vars.$background-transition, color vars.$text-transition;
 
-	@include body-text;
+	@include typo.body-text;
 }
 
 h1,
 .h1 {
-	@include heading-1;
+	@include typo.heading-1;
 }
 
 h2,
 .h2 {
-	@include heading-2;
+	@include typo.heading-2;
 }
 
 h3,
 .h3 {
-	@include heading-3;
+	@include typo.heading-3;
 }
 
 .title {
-	@include title;
+	@include typo.title;
 }
 
 .subtext {
-	@include subtext;
+	@include typo.subtext;
 }

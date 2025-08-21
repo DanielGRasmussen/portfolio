@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
 @Injectable({
 	providedIn: "root",
 })
 export class TitleService {
-	siteName = "Portfolio";
+	private titleService = inject(Title);
 
-	constructor(private titleService: Title) {}
+	siteName = "Portfolio";
 
 	setTitle(pageTitle: string): void {
 		this.titleService.setTitle(`${pageTitle} | ${this.siteName}`);

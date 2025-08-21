@@ -2,7 +2,7 @@
 	"intro": {
 		"profile": "assets/images/profile.webp",
 		"bio":  [
-			"I'm a passionate software engineering student with a focus on web development, set to graduate at 19 with a unique educational journey behind me. My path has been shaped by challenges and opportunities, driving me to excel academically and develop strong leadership skills.",
+			"I'm a passionate software engineering student with a focus on web development, set to graduate at 20 with a unique educational journey behind me. My path has been shaped by challenges and opportunities, driving me to excel academically and develop strong leadership skills.",
 			"When confronted with the challenges posed by the COVID-19 pandemic during high school, I adapted quickly, transitioning to online college courses through BYU-Idaho's concurrent enrollment program. Despite personal hardships, including family health issues and relocation, I maintained a near-perfect GPA of 3.9.",
 			"My academic journey has cultivated a deep interest in software engineering, particularly web development—a field that runs in my family. I'm pursuing a major in Software Engineering, complemented by minors in Web Development and Web Design, along with four certificates.",
 			"Throughout my college experience, I've consistently taken on leadership roles in group projects, honing my ability to collaborate effectively and guide teams to success. This practical experience, combined with my technical skills, has prepared me for real-world challenges in the tech industry.",
@@ -105,6 +105,50 @@
 					}
 				],
 				"link": "https://github.com/DanielGRasmussen/deadline_dynamo"
+			},
+			{
+				"id": "x4-blueprint-builder",
+				"title": "X4 Blueprint Builder",
+				"projectType": "Web Dev",
+				"featured": false,
+				"images": [
+					"assets/images/showcase/X4 Blueprint Builder 1.webp",
+					"assets/images/showcase/X4 Blueprint Builder 2.webp",
+					"assets/images/showcase/X4 Blueprint Builder 3.webp"
+				],
+				"technologies": [
+					{
+						"name": "React",
+						"icon": "assets/images/logos/react.svg"
+					},
+					{
+						"name": "TypeScript",
+						"icon": "assets/images/logos/typescript.svg"
+					},
+					{
+						"name": "SCSS",
+						"icon": "assets/images/logos/scss.svg"
+					}
+				],
+				"descriptions": [
+					{
+						"name": "Overview",
+						"content": [ "A React-based web application for reordering and modifying X4 Foundations station blueprints. The tool allows players to upload blueprint XML files or create a blueprint from scratch, reorganize module build priorities through an intuitive drag-and-drop interface, apply coordinate modifications, and export the modified blueprints. Features include module categorization, duplicate detection, partial module selection for phased construction, and real-time visualization of module types and priorities." ]
+					},
+					{
+						"name": "What I Did Right",
+						"content": [ "The application successfully addresses a real need in the X4 Foundations community by providing an intuitive interface for complex blueprint manipulation. In X4 Foundations there is no way to modify the order that modules are listed and built, meaning that you will frequently have blueprints where the build order is very inefficient. Such as a module requiring food being built before the food creation module. The drag-and-drop functionality creates a seamless user experience for reordering build priorities. The module categorization system, inspired by existing community tools, helps users quickly identify and organize different station components. It also allows the user to change categories should they disagree with the default classification. The tool features other manipulation options that are non-existent in the base game." ]
+					},
+					{
+						"name": "What I Did Wrong",
+						"content": [ "The initial version had a poorly designed user interface that was far too clunky and felt ugly to use. It doesn't care for patches requirements meaning that if a user uninstalls a DLC or shares a blueprint from it then there are potential issues with it not telling the user of its requirements. If an unknown macro (internal name for a module) is shown then there isn't any attempt to try and turn it into a readable name for the user, it is simply displayed as-is. The project could benefit from being able to save multiple blueprints on the website rather than locally. It doesn't actually tell users where blueprints are stored by default. Additionally, the lack of undo/redo functionality means users must be careful with their modifications." ]
+					},
+					{
+						"name": "What I Learned",
+						"content": [ "Honestly, this project helped me realize just how much I had been underestimating React. I had thought that it was much more inconvenient to do many things that turned out to be extremely simple (like swapping pages without reloading.) I also learned about the changes in the recent versions of SCSS which helped me to update my portfolio to use the most recent version." ]
+					}
+				],
+				"link": "https://danielgrasmussen.github.io/x4-blueprint-builder/builder"
 			},
 			{
 				"id": "todo-mern",

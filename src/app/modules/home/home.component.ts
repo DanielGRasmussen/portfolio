@@ -5,10 +5,11 @@ import {
 	OnInit,
 	QueryList,
 	ViewChildren,
+	inject,
 } from "@angular/core";
 import Content, { ProjectItem } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
-import { NgForOf } from "@angular/common";
+
 import { RouterLink } from "@angular/router";
 import { TitleService } from "../../title.service";
 import { UrlPipe } from "../../url.pipe";
@@ -18,9 +19,7 @@ import { FeaturedProjectComponent } from "./featured-project/featured-project.co
 
 @Component({
 	selector: "app-home",
-	standalone: true,
 	imports: [
-		NgForOf,
 		RouterLink,
 		TechnologiesComponent,
 		UrlPipe,
@@ -31,16 +30,16 @@ import { FeaturedProjectComponent } from "./featured-project/featured-project.co
 	styleUrl: "./home.component.scss",
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+	private ContentService = inject(ContentService);
+	private TitleService = inject(TitleService);
+
 	content!: Content;
 	featuredProject: ProjectItem;
 
 	@ViewChildren("section") sections!: QueryList<ElementRef<HTMLElement>>;
 	activeSection: string = "intro";
 
-	constructor(
-		private ContentService: ContentService,
-		private TitleService: TitleService
-	) {
+	constructor() {
 		this.content = this.ContentService.getContent();
 		this.featuredProject = this.content.projects.items.find(project => project.featured)!;
 	}

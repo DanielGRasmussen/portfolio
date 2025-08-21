@@ -1,9 +1,11 @@
 <footer class="title">
-	<p>© {{ year }} - Daniel Rasmussen</p>
-	<span class="separator"></span>
-	<ul class="links">
-		<li *ngFor="let link of content.links">
-			<a [href]="link.link" target="_blank" [style.mask-image]="link.icon | url" [attr.aria-label]="link.text"></a>
-		</li>
-	</ul>
+  <p>© {{ year }} - Daniel Rasmussen</p>
+  <span class="separator"></span>
+  <ul class="links">
+    @for (link of content.links; track link) {
+      <li>
+        <a [href]="link.link" target="_blank" [style.mask-image]="link.icon | url" [attr.aria-label]="link.text"></a>
+      </li>
+    }
+  </ul>
 </footer>

@@ -7,8 +7,9 @@ import {
 	AfterViewInit,
 	OnDestroy,
 	ChangeDetectorRef,
+	inject,
 } from "@angular/core";
-import { NgForOf, NgStyle } from "@angular/common";
+import { NgStyle } from "@angular/common";
 import { TechnologiesItem } from "../../../models/content.interfaces";
 import { Subscription } from "rxjs";
 import { TitleService } from "../../../title.service";
@@ -16,12 +17,15 @@ import { LayoutService } from "../../../layout.service";
 
 @Component({
 	selector: "app-project-filter",
-	standalone: true,
-	imports: [NgForOf, NgStyle],
+	imports: [NgStyle],
 	templateUrl: "./project-filter.component.html",
 	styleUrl: "./project-filter.component.scss",
 })
 export class ProjectFilterComponent implements OnInit, AfterViewInit, OnDestroy {
+	private TitleService = inject(TitleService);
+	private LayoutService = inject(LayoutService);
+	private cdr = inject(ChangeDetectorRef);
+
 	@Input() sidebar: boolean = false;
 	@Input() types: string[] = [];
 	@Input() technologies: TechnologiesItem[] = [];
@@ -38,12 +42,6 @@ export class ProjectFilterComponent implements OnInit, AfterViewInit, OnDestroy 
 
 	selectedTypes: string[] = [];
 	selectedTechnologies: TechnologiesItem[] = [];
-
-	constructor(
-		private TitleService: TitleService,
-		private LayoutService: LayoutService,
-		private cdr: ChangeDetectorRef
-	) {}
 
 	ngOnInit(): void {
 		this.TitleService.setTitle("Projects");

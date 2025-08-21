@@ -1,11 +1,10 @@
 import { Component, HostListener, Input, OnInit, ViewChild } from "@angular/core";
-import { NgForOf, NgIf } from "@angular/common";
+
 import { OverlayComponent } from "./overlay/overlay.component";
 
 @Component({
 	selector: "app-image-viewer",
-	standalone: true,
-	imports: [NgForOf, NgIf, OverlayComponent],
+	imports: [OverlayComponent],
 	templateUrl: "./image-viewer.component.html",
 	styleUrl: "./image-viewer.component.scss",
 })

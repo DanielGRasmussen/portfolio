@@ -1,16 +1,16 @@
-@import "../../../../../styles/variables.scss";
-@import "../../../../../styles/mixins.scss";
+@use "../../../../../styles/variables" as vars;
+@use "../../../../../styles/mixins" as mixins;
 
 $icon-width: 2px;
 
 .accordion {
 	height: fit-content;
-	margin-bottom: $margin-md;
-	padding: $margin-sm;
+	margin-bottom: vars.$margin-md;
+	padding: vars.$margin-sm;
 	border-radius: 20px;
-	background-color: $background-secondary-color;
-	box-shadow: $shadow-lg;
-	transition: background-color $background-transition;
+	background-color: vars.$background-secondary-color;
+	box-shadow: vars.$shadow-lg;
+	transition: background-color vars.$background-transition;
 	cursor: pointer;
 
 	.accordion-header {
@@ -27,7 +27,7 @@ $icon-width: 2px;
 				display: block;
 				width: 30px;
 				height: $icon-width;
-				background-color: $text-color;
+				background-color: vars.$text-color;
 			}
 
 			.vertical {

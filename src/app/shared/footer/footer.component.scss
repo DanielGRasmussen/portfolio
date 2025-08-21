@@ -1,16 +1,16 @@
-@import "../../../styles/variables";
+@use "../../../styles/variables" as vars;
 
 footer {
 	display: flex;
-	height: $footer-height;
+	height: vars.$footer-height;
 
 	justify-content: center;
 	align-items: center;
 
-	background-color: $primary-color;
-	color: $text-inverse-color;
+	background-color: vars.$primary-color;
+	color: vars.$text-inverse-color;
 
-	transition: background-color $background-transition, color $text-transition;
+	transition: background-color vars.$background-transition, color vars.$text-transition;
 
 	p {
 		margin: 0;
@@ -20,10 +20,10 @@ footer {
 		display: block;
 		height: 1em;
 
-		margin: 0 $margin-sm;
-		border-right: 2px solid $text-inverse-color;
+		margin: 0 vars.$margin-sm;
+		border-right: 2px solid vars.$text-inverse-color;
 
-		transition: border-color $text-transition; // Used as text rather than large background
+		transition: border-color vars.$text-transition; // Used as text rather than large background
 	}
 
 	.links {
@@ -33,7 +33,7 @@ footer {
 		margin: 0;
 
 		li {
-			margin-right: $margin-xs;
+			margin-right: vars.$margin-xs;
 		}
 
 		a {
@@ -42,9 +42,9 @@ footer {
 			height: 1.25em;
 
 			mask-size: cover;
-			background-color: $text-inverse-color;
+			background-color: vars.$text-inverse-color;
 
-			transition: background-color $text-transition; // Used as text rather than large background
+			transition: background-color vars.$text-transition; // Used as text rather than large background
 		}
 	}
 

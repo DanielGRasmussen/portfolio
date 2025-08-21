@@ -6,10 +6,11 @@ import {
 	QueryList,
 	ViewChildren,
 	ViewChild,
+	inject,
 } from "@angular/core";
 import { ThemeToggleComponent } from "./theme-toggle/theme-toggle.component";
 import { RouterLink, RouterLinkActive, Router } from "@angular/router";
-import { NgForOf } from "@angular/common";
+
 import { HamburgerComponent } from "./hamburger/hamburger.component";
 import Content, { Links } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
@@ -18,19 +19,15 @@ import { LayoutService } from "../../layout.service";
 
 @Component({
 	selector: "app-header",
-	standalone: true,
-	imports: [
-		ThemeToggleComponent,
-		RouterLink,
-		NgForOf,
-		RouterLinkActive,
-		HamburgerComponent,
-		UrlPipe,
-	],
+	imports: [ThemeToggleComponent, RouterLink, RouterLinkActive, HamburgerComponent, UrlPipe],
 	templateUrl: "./header.component.html",
 	styleUrl: "./header.component.scss",
 })
 export class HeaderComponent implements OnInit {
+	private router = inject(Router);
+	private ContentService = inject(ContentService);
+	private LayoutService = inject(LayoutService);
+
 	@ViewChildren("link") linkElements!: QueryList<ElementRef>;
 	@ViewChild("hamburger") hamburger!: HamburgerComponent;
 	content: Content;
@@ -42,11 +39,7 @@ export class HeaderComponent implements OnInit {
 	// Creates the links in the header
 	links: Links;
 
-	constructor(
-		private router: Router,
-		private ContentService: ContentService,
-		private LayoutService: LayoutService
-	) {
+	constructor() {
 		this.content = this.ContentService.getContent();
 		this.links = this.content.links;
 	}
@@ -94,7 +87,7 @@ export class HeaderComponent implements OnInit {
 		const activeElement: HTMLElement | null = this.getNativeElement(this.activeIndex);
 		if (!activeElement) return "0";
 
-		return activeElement.offsetHeight - 35 + "px";
+		return activeElement.offsetHeight - 25 + "px";
 	}
 
 	isSubpage(): boolean {
