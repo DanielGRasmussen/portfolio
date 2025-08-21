@@ -5,7 +5,6 @@ import { ContentService } from "../../../content.service";
 
 @Component({
 	selector: "app-featured-project",
-	standalone: true,
 	imports: [ProjectInfoComponent],
 	templateUrl: "./featured-project.component.html",
 	styleUrl: "./featured-project.component.scss",

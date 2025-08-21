@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from "@angular/core";
 import { ProjectItem, ProjectsContent, TechnologiesItem } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
-import { NgForOf, NgOptimizedImage, NgStyle } from "@angular/common";
 import { RouterLink } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { ProjectInfoComponent } from "./project-info/project-info.component";
@@ -9,14 +8,10 @@ import { ProjectFilterComponent } from "./project-filter/project-filter.componen
 
 @Component({
 	selector: "app-projects",
-	standalone: true,
 	imports: [
-		NgForOf,
 		RouterLink,
-		NgOptimizedImage,
 		FormsModule,
 		ProjectInfoComponent,
-		NgStyle,
 		ProjectFilterComponent,
 	],
 	templateUrl: "./projects.component.html",

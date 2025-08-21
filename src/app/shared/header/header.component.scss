@@ -1,10 +1,10 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as vars;
+@use "../../../styles/mixins" as mixins;
 
 header {
 	display: flex;
 	width: 100%;
-	height: $header-height;
+	height: vars.$header-height;
 	align-items: center;
 	z-index: 10;
 
@@ -12,10 +12,10 @@ header {
 	top: 0;
 	left: 0;
 
-	background-color: $primary-color;
-	box-shadow: $shadow-sm;
+	background-color: vars.$primary-color;
+	box-shadow: vars.$shadow-sm;
 
-	transition: background-color $background-transition, transform 0.3s ease-in-out;
+	transition: background-color vars.$background-transition, transform 0.3s ease-in-out;
 
 	// Sticky header
 	&.hidden {
@@ -24,14 +24,14 @@ header {
 
 	.logo a {
 		display: block;
-		height: $header-height;
-		width: $header-height;
+		height: vars.$header-height;
+		width: vars.$header-height;
 
 		// This allows the logo to have it's color set by the background-color property
 		mask-size: cover;
-		background-color: $text-inverse-color;
+		background-color: vars.$text-inverse-color;
 
-		transition: background-color $text-transition; // Used as text rather than large background
+		transition: background-color vars.$text-transition; // Used as text rather than large background
 	}
 
 	.main {
@@ -47,21 +47,21 @@ header {
 		position: relative;
 
 		padding: 0;
-		margin: 0 0 0 $margin-xlg;
+		margin: 0 0 0 vars.$margin-xlg;
 
 		list-style: none;
 
 		li {
-			margin: 0 $margin-lg * 0.1;
+			margin: 0 vars.$margin-lg * 0.1;
 			transition: transform 0.3s;
 
 			a {
-				color: $text-inverse-color;
+				color: vars.$text-inverse-color;
 				text-decoration: none;
 
-				padding: 0 $margin-lg * 0.45;
+				padding: 0 vars.$margin-lg * 0.45;
 
-				transition: color $text-transition, opacity 0.2s;
+				transition: color vars.$text-transition, opacity 0.2s;
 
 				&.active:not(.clickable) {
 					cursor: default;
@@ -84,14 +84,14 @@ header {
 			position: absolute;
 			width: 100px;
 			height: 2px;
-			background-color: $text-inverse-color;
-			transition: background-color $text-transition, left 0.3s ease-in-out, width 0.3s; // Used as text rather than large background
+			background-color: vars.$text-inverse-color;
+			transition: background-color vars.$text-transition, left 0.3s ease-in-out, width 0.3s; // Used as text rather than large background
 		}
 	}
 
 	app-theme-toggle {
 		margin-left: auto;
-		margin-right: $margin-md;
+		margin-right: vars.$margin-md;
 
 		height: fit-content;
 	}
@@ -101,9 +101,9 @@ header {
 		display: none;
 	}
 
-	@include mobile() {
+	@include mixins.mobile() {
 		app-hamburger {
-			margin: 0 $margin-md 0 auto;
+			margin: 0 vars.$margin-md 0 auto;
 			display: block;
 		}
 

@@ -1,22 +1,22 @@
-@import "../../../../styles/variables";
+@use "../../../../styles/variables" as vars;
 
 .wrapper {
 	overflow: hidden;
 
-	background-color: $background-color;
-	transition: background-color $background-transition;
+	background-color: vars.$background-color;
+	transition: background-color vars.$background-transition;
 
 	&.sidebar {
 		display: flex;
 		flex-direction: column;
-		gap: $margin-sm;
+		gap: vars.$margin-sm;
 
 		position: fixed;
 		top: 0;
 		left: 0;
 
-		width: $project-sidebar-width;
-		padding: $margin-sm;
+		width: vars.$project-sidebar-width;
+		padding: vars.$margin-sm;
 		box-sizing: border-box;
 		overflow-y: auto;
 
@@ -25,7 +25,7 @@
 		box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.16);
 
 		&.header-offset {
-			top: $header-height;
+			top: vars.$header-height;
 		}
 
 		.filter-toggle {
@@ -39,18 +39,18 @@
 		width: 100%;
 		box-sizing: border-box;
 		background-color: transparent;
-		transition: background-color $background-transition, max-height 0.3s ease-in-out;
+		transition: background-color vars.$background-transition, max-height 0.3s ease-in-out;
 		border-radius: 0 0 20px 20px;
-		padding: $margin-sm $margin-sm $margin-sm $margin-sm;
+		padding: vars.$margin-sm vars.$margin-sm vars.$margin-sm vars.$margin-sm;
 
 		max-width: 400px;
 
 		.filters {
-			padding-top: $margin-md;
+			padding-top: vars.$margin-md;
 		}
 
 		&.open {
-			background-color: $background-secondary-color;
+			background-color: vars.$background-secondary-color;
 			max-height: 900px;
 
 			.filter-toggle {
@@ -99,8 +99,8 @@
 					width: 28px;
 					height: 28px;
 
-					fill: $text-color;
-					transition: fill 0.3s $text-transition;
+					fill: vars.$text-color;
+					transition: fill 0.3s vars.$text-transition;
 				}
 				.close {
 					display: none;
@@ -120,7 +120,7 @@
 	}
 
 	h3 {
-		margin: $margin-sm 0 $margin-xs 0;
+		margin: vars.$margin-sm 0 vars.$margin-xs 0;
 	}
 
 	ul {
@@ -131,7 +131,7 @@
 		li {
 			height: fit-content;
 			width: fit-content;
-			margin-bottom: $margin-xs;
+			margin-bottom: vars.$margin-xs;
 		}
 
 		label {
@@ -143,7 +143,7 @@
 		.icon {
 			width: 28px;
 			height: 28px;
-			margin-right: $margin-xs;
+			margin-right: vars.$margin-xs;
 		}
 	}
 

@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 import Content, { ProjectItem } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
-import { NgForOf } from "@angular/common";
+
 import { RouterLink } from "@angular/router";
 import { TitleService } from "../../title.service";
 import { UrlPipe } from "../../url.pipe";
@@ -18,9 +18,7 @@ import { FeaturedProjectComponent } from "./featured-project/featured-project.co
 
 @Component({
 	selector: "app-home",
-	standalone: true,
 	imports: [
-		NgForOf,
 		RouterLink,
 		TechnologiesComponent,
 		UrlPipe,

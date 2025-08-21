@@ -1,5 +1,5 @@
-@import "../../../../styles/variables.scss";
-@import "../../../../styles/themes.scss";
+@use "../../../../styles/variables" as vars;
+@use "../../../../styles/themes" as themes;
 
 $switch-width: 70px;
 $switch-height: 30px;
@@ -13,13 +13,13 @@ div {
 		display: block;
 		width: $switch-width;
 		height: $switch-height;
-		padding: $margin-xs;
+		padding: vars.$margin-xs;
 
 		position: relative;
 
 		border-radius: ($switch-height + $switch-width) * 0.5;
 
-		background-color: $theme-offblack;
+		background-color: themes.$theme-offblack;
 
 		.slider {
 			display: block;
@@ -27,18 +27,18 @@ div {
 			width: $switch-height;
 
 			position: absolute;
-			left: $margin-xs;
+			left: vars.$margin-xs;
 
 			border-radius: 50%;
 			transition: left 0.3s;
 
-			background-color: $theme-offwhite;
+			background-color: themes.$theme-offwhite;
 
 			z-index: 1;
 		}
 
 		&.dark .slider {
-			left: calc($switch-width - $switch-height + $margin-xs);
+			left: calc($switch-width - $switch-height + vars.$margin-xs);
 		}
 	}
 
@@ -48,28 +48,28 @@ div {
 		height: $switch-height;
 
 		position: absolute;
-		top: $margin-xs;
-		left: $margin-xs;
+		top: vars.$margin-xs;
+		left: vars.$margin-xs;
 
 		transition: left 0.3s;
 
 		&.right {
-			left: calc($switch-width - $switch-height + $margin-xs);
+			left: calc($switch-width - $switch-height + vars.$margin-xs);
 		}
 	}
 
 	.label {
 		display: inline-block;
 		width: 4ch;
-		margin-left: $margin-xs;
+		margin-left: vars.$margin-xs;
 		text-transform: capitalize;
 		user-select: none;
 
-		color: $text-color;
-		transition: color $text-transition;
+		color: vars.$text-color;
+		transition: color vars.$text-transition;
 
 		&.inverted {
-			color: $text-inverse-color;
+			color: vars.$text-inverse-color;
 		}
 	}
 }

@@ -9,7 +9,7 @@ import {
 } from "@angular/core";
 import { ThemeToggleComponent } from "./theme-toggle/theme-toggle.component";
 import { RouterLink, RouterLinkActive, Router } from "@angular/router";
-import { NgForOf } from "@angular/common";
+
 import { HamburgerComponent } from "./hamburger/hamburger.component";
 import Content, { Links } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
@@ -18,15 +18,7 @@ import { LayoutService } from "../../layout.service";
 
 @Component({
 	selector: "app-header",
-	standalone: true,
-	imports: [
-		ThemeToggleComponent,
-		RouterLink,
-		NgForOf,
-		RouterLinkActive,
-		HamburgerComponent,
-		UrlPipe,
-	],
+	imports: [ThemeToggleComponent, RouterLink, RouterLinkActive, HamburgerComponent, UrlPipe],
 	templateUrl: "./header.component.html",
 	styleUrl: "./header.component.scss",
 })
@@ -94,7 +86,7 @@ export class HeaderComponent implements OnInit {
 		const activeElement: HTMLElement | null = this.getNativeElement(this.activeIndex);
 		if (!activeElement) return "0";
 
-		return activeElement.offsetHeight - 35 + "px";
+		return activeElement.offsetHeight - 25 + "px";
 	}
 
 	isSubpage(): boolean {

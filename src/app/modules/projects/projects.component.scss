@@ -1,8 +1,8 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as vars;
+@use "../../../styles/mixins" as mixins;
 
 .bubble {
-	@include bubble();
+	@include mixins.bubble();
 }
 
 $thumbnail-height: var(--thumbnail-height);
@@ -11,16 +11,16 @@ $mobile-filter-offset: 100px;
 .wrapper {
 	--thumbnail-height: 176px;
 
-	@include mobile() {
+	margin-top:  calc(vars.$header-height - vars.$bubble-height);
+
+	@include mixins.mobile() {
 		--thumbnail-height: 160px;
 	}
 
-	margin-top:  calc($header-height - $bubble-height);
-
 	&.sidebar {
-		margin-left: $project-sidebar-width;
+		margin-left: vars.$project-sidebar-width;
 		.projects::before {
-			margin-left: $project-sidebar-width * 0.5;
+			margin-left: vars.$project-sidebar-width * 0.5;
 		}
 	}
 
@@ -33,7 +33,7 @@ $mobile-filter-offset: 100px;
 		}
 
 		.projects {
-			margin-top: $margin-md;
+			margin-top: vars.$margin-md;
 		}
 	}
 }
@@ -42,14 +42,14 @@ $mobile-filter-offset: 100px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: $margin-xlg;
+	gap: vars.$margin-xlg;
 
-	margin: $margin-md auto $margin-md auto;
+	margin: vars.$margin-md auto vars.$margin-md auto;
 
-	@include bubble();
+	@include mixins.bubble();
 
 	@media (max-width: 1023px) {
-		padding: 0 $margin-xs * 2;
+		padding: 0 vars.$margin-xs * 2;
 	}
 
 	a {
@@ -61,20 +61,20 @@ $mobile-filter-offset: 100px;
 		max-width: min(95vw, 460px);
 		height: 436px;
 
-		padding: $margin-sm;
+		padding: vars.$margin-sm;
 
 		border-radius: 20px;
 		box-sizing: border-box;
 		overflow: hidden;
 		position: relative;
 
-		background-color: $background-secondary-color;
-		box-shadow: $shadow-lg;
+		background-color: vars.$background-secondary-color;
+		box-shadow: vars.$shadow-lg;
 
-		transition: background-color $background-transition;
+		transition: background-color vars.$background-transition;
 
-		@include mobile() {
-			padding: $margin-xs;
+		@include mixins.mobile() {
+			padding: vars.$margin-xs;
 			max-height: 365px;
 			max-width: min(95vw, 400px);
 		}
@@ -98,10 +98,10 @@ $mobile-filter-offset: 100px;
 
 		.content {
 			// Height of thumbnail. The amount the thumbnail goes up into the padding of the card becomes the padding-top of the content.
-			margin-top: calc($thumbnail-height - $margin-sm + $margin-sm);
+			margin-top: calc($thumbnail-height - vars.$margin-sm + vars.$margin-sm);
 
 			.project-title {
-				margin: 0 0 $margin-xs 0;
+				margin: 0 0 vars.$margin-xs 0;
 				// Max out at one line
 				white-space: nowrap;
 				overflow: hidden;
@@ -109,14 +109,14 @@ $mobile-filter-offset: 100px;
 			}
 
 			.overview {
-				margin: $margin-xs 0;
+				margin: vars.$margin-xs 0;
 				// Clamp the text to 5 lines
 				display: -webkit-box;
 				-webkit-line-clamp: 5;
 				-webkit-box-orient: vertical;
 				overflow: hidden;
 
-				@include mobile() {
+				@include mixins.mobile() {
 					-webkit-line-clamp: 4;
 				}
 			}
@@ -125,10 +125,10 @@ $mobile-filter-offset: 100px;
 }
 
 .project-type {
-	margin-right: $margin-xs;
-	padding: $margin-xs * 0.5 $margin-sm * 0.5;
-	background-color: $secondary-color;
+	margin-right: vars.$margin-xs;
+	padding: vars.$margin-xs * 0.5 vars.$margin-sm * 0.5;
+	background-color: vars.$secondary-color;
 	border-radius: 10px;
 
-	transition: background-color $background-transition;
+	transition: background-color vars.$background-transition;
 }

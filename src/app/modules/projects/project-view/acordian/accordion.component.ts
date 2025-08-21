@@ -1,11 +1,10 @@
 import { Component, Input, ElementRef, AfterViewInit } from "@angular/core";
-import { NgForOf, NgIf } from "@angular/common";
+
 import { DescriptionsItem } from "../../../../models/content.interfaces";
 
 @Component({
 	selector: "app-accordion",
-	standalone: true,
-	imports: [NgIf, NgForOf],
+	imports: [],
 	templateUrl: "./accordion.component.html",
 	styleUrl: "./accordion.component.scss",
 })

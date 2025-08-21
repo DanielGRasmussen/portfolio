@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import { ProjectItem, ProjectsContent } from "../../../models/content.interfaces";
 import { ContentService } from "../../../content.service";
 import { ActivatedRoute } from "@angular/router";
-import { NgForOf, NgIf } from "@angular/common";
+
 import { ProjectInfoComponent } from "../project-info/project-info.component";
 import { AccordionComponent } from "./acordian/accordion.component";
 import { TitleService } from "../../../title.service";
@@ -10,8 +10,7 @@ import { ImageViewerComponent } from "./image-viewer/image-viewer.component";
 
 @Component({
 	selector: "app-project-view",
-	standalone: true,
-	imports: [NgForOf, ProjectInfoComponent, AccordionComponent, NgIf, ImageViewerComponent],
+	imports: [ProjectInfoComponent, AccordionComponent, ImageViewerComponent],
 	templateUrl: "./project-view.component.html",
 	styleUrl: "./project-view.component.scss",
 })

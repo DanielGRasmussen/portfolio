@@ -1,6 +1,6 @@
-@import "../../../../../styles/variables";
-@import "../../../../../styles/themes";
-@import "../../../../../styles/mixins";
+@use "../../../../../styles/variables" as vars;
+@use "../../../../../styles/themes" as themes;
+@use "../../../../../styles/mixins" as mixins;
 
 .image-slider {
 	max-width: 800px;
@@ -12,8 +12,8 @@
 		position: relative;
 		height: 400px;
 		overflow: hidden;
-		background-color: $background-secondary-color;
-		transition: background-color $background-transition;
+		background-color: vars.$background-secondary-color;
+		transition: background-color vars.$background-transition;
 		border-radius: 5px;
 
 		.slider-content {
@@ -42,7 +42,7 @@
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 1;
-			background-color: $secondary-color;
+			background-color: vars.$secondary-color;
 			border: none;
 			border-radius: 50%;
 			width: 40px;
@@ -51,7 +51,7 @@
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
-			transition: background-color $background-transition, opacity 0.3s ease;
+			transition: background-color vars.$background-transition, opacity 0.3s ease;
 
 			&.left-arrow {
 				left: 10px;
@@ -76,7 +76,7 @@
 			}
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			.arrow {
 				display: none;
 			}
@@ -131,7 +131,7 @@
 		}
 
 		.thumbnail-arrow {
-			background-color: $secondary-color;
+			background-color: vars.$secondary-color;
 			border: none;
 			border-radius: 50%;
 			width: 30px;
@@ -140,7 +140,7 @@
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
-			transition: background-color $background-transition, opacity 0.3s ease;
+			transition: background-color vars.$background-transition, opacity 0.3s ease;
 			margin: 0 5px;
 			flex-shrink: 0;
 

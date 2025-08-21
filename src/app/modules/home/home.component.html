@@ -1,63 +1,71 @@
 <div class="bubble"></div>
 <div class="home">
-	<h1 class="name h1">Daniel Rasmussen</h1>
-	<img src="{{ content.intro.profile }}" alt="Picture of me" class="profile">
-	<div class="navigator">
-		<h2>Navigation</h2>
-		<ul>
-			<li><a href="/home#intro" class="h3" [class.active]="activeSection === 'intro'">Intro</a></li>
-			<li><a href="/home#featured" class="h3" [class.active]="activeSection === 'featured'">Featured Project</a></li>
-			<li><a href="/home#education" class="h3" [class.active]="activeSection === 'education'">Education</a></li>
-			<li><a href="/home#technologies" class="h3" [class.active]="activeSection === 'technologies'">Technologies</a></li>
-			<li><a href="/home#contact" class="h3" [class.active]="activeSection === 'contact'">Contact</a></li>
-		</ul>
-	</div>
-	<section class="intro" #section>
-		<a class="nav-anchor" id="intro"> </a>
-		<h2 class="h1">Intro</h2>
-		<div class="bio">
-			<p *ngFor="let paragraph of content.intro.bio">
-				{{ paragraph }}
-			</p>
-		</div>
-	</section>
-	<section class="featured" #section>
-		<a class="nav-anchor" id="featured"> </a>
-		<h2 class="h1">Featured Project</h2>
-		<div class="featured-content">
-			<app-featured-project></app-featured-project>
-		</div>
-	</section>
-	<button class="cta h3" [routerLink]="['/projects', featuredProject.id]">View Project</button>
-	<section class="education" #section>
-		<a class="nav-anchor" id="education"> </a>
-		<h2 class="h1">Education</h2>
-		<div class="education-content">
-			<p class="education-item" *ngFor="let item of content.education">
-				{{ item }}
-			</p>
-		</div>
-	</section>
-	<section class="technologies" #section>
-		<a class="nav-anchor" id="technologies"> </a>
-		<h2 class="h1">Technologies</h2>
-		<div class="education-content">
-			<p>{{ content.technologies.intro }}</p>
-			<app-technologies></app-technologies>
-		</div>
-	</section>
-	<section class="contact" #section>
-		<a class="nav-anchor" id="contact"> </a>
-		<h2 class="h1">Contact Me</h2>
-		<div class="education-content">
-			<div class="links">
-				<a *ngFor="let contact of content.contact.links" href="{{ contact.link }}">
-					<span class="icon" [style.mask-image]="contact.icon | url"></span>
-				</a>
-			</div>
-			<p *ngFor="let paragraph of content.contact.content">
-				{{ paragraph }}
-			</p>
-		</div>
-	</section>
+  <h1 class="name h1">Daniel Rasmussen</h1>
+  <img src="{{ content.intro.profile }}" alt="Picture of me" class="profile">
+  <div class="navigator">
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="/home#intro" class="h3" [class.active]="activeSection === 'intro'">Intro</a></li>
+      <li><a href="/home#featured" class="h3" [class.active]="activeSection === 'featured'">Featured Project</a></li>
+      <li><a href="/home#education" class="h3" [class.active]="activeSection === 'education'">Education</a></li>
+      <li><a href="/home#technologies" class="h3" [class.active]="activeSection === 'technologies'">Technologies</a></li>
+      <li><a href="/home#contact" class="h3" [class.active]="activeSection === 'contact'">Contact</a></li>
+    </ul>
+  </div>
+  <section class="intro" #section>
+    <a class="nav-anchor" id="intro"> </a>
+    <h2 class="h1">Intro</h2>
+    <div class="bio">
+      @for (paragraph of content.intro.bio; track paragraph) {
+        <p>
+          {{ paragraph }}
+        </p>
+      }
+    </div>
+  </section>
+  <section class="featured" #section>
+    <a class="nav-anchor" id="featured"> </a>
+    <h2 class="h1">Featured Project</h2>
+    <div class="featured-content">
+      <app-featured-project></app-featured-project>
+    </div>
+  </section>
+  <button class="cta h3" [routerLink]="['/projects', featuredProject.id]">View Project</button>
+  <section class="education" #section>
+    <a class="nav-anchor" id="education"> </a>
+    <h2 class="h1">Education</h2>
+    <div class="education-content">
+      @for (item of content.education; track item) {
+        <p class="education-item">
+          {{ item }}
+        </p>
+      }
+    </div>
+  </section>
+  <section class="technologies" #section>
+    <a class="nav-anchor" id="technologies"> </a>
+    <h2 class="h1">Technologies</h2>
+    <div class="education-content">
+      <p>{{ content.technologies.intro }}</p>
+      <app-technologies></app-technologies>
+    </div>
+  </section>
+  <section class="contact" #section>
+    <a class="nav-anchor" id="contact"> </a>
+    <h2 class="h1">Contact Me</h2>
+    <div class="education-content">
+      <div class="links">
+        @for (contact of content.contact.links; track contact) {
+          <a href="{{ contact.link }}">
+            <span class="icon" [style.mask-image]="contact.icon | url"></span>
+          </a>
+        }
+      </div>
+      @for (paragraph of content.contact.content; track paragraph) {
+        <p>
+          {{ paragraph }}
+        </p>
+      }
+    </div>
+  </section>
 </div>

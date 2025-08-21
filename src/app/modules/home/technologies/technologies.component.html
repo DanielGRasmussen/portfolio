@@ -1,12 +1,16 @@
 <div class="main">
-	<div class="tech-group" *ngFor="let technologyGroup of content.tech_groups">
-		<h2>{{ technologyGroup.name }}</h2>
-		<div class="technologies">
-			<div class="technology" *ngFor="let technology of technologyGroup.items">
-				<p class="h3 name">{{ technology.name }}</p>
-				<img src="{{ technology.icon }}" alt="{{ technology.name }}'s icon">
-				<p class="title skill">{{ technology.skill }}</p>
-			</div>
-		</div>
-	</div>
+  @for (technologyGroup of content.tech_groups; track technologyGroup) {
+    <div class="tech-group">
+      <h2>{{ technologyGroup.name }}</h2>
+      <div class="technologies">
+        @for (technology of technologyGroup.items; track technology) {
+          <div class="technology">
+            <p class="h3 name">{{ technology.name }}</p>
+            <img src="{{ technology.icon }}" alt="{{ technology.name }}'s icon">
+            <p class="title skill">{{ technology.skill }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  }
 </div>

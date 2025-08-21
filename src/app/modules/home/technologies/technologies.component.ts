@@ -1,12 +1,10 @@
 import { Component } from "@angular/core";
 import { TechnologiesContent } from "../../../models/content.interfaces";
 import { ContentService } from "../../../content.service";
-import { NgForOf } from "@angular/common";
 
 @Component({
 	selector: "app-technologies",
-	standalone: true,
-	imports: [NgForOf],
+	imports: [],
 	templateUrl: "./technologies.component.html",
 	styleUrl: "./technologies.component.scss",
 })

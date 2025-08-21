@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
-import { NgForOf } from "@angular/common";
+
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from "@angular/router";
 import { Links } from "../../../models/content.interfaces";
 import { ContentService } from "../../../content.service";
@@ -8,8 +8,7 @@ import { filter } from "rxjs";
 
 @Component({
 	selector: "app-hamburger",
-	standalone: true,
-	imports: [ThemeToggleComponent, NgForOf, RouterLinkActive, RouterLink],
+	imports: [ThemeToggleComponent, RouterLinkActive, RouterLink],
 	templateUrl: "./hamburger.component.html",
 	styleUrl: "./hamburger.component.scss",
 })

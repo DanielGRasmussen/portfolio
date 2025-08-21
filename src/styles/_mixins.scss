@@ -1,20 +1,20 @@
-@import "variables";
+@use "variables" as vars;
 
 @mixin main {
 	max-width: 800px;
 	width: 80%;
-	margin: calc($header-height + $margin-md - $bubble-height) auto $margin-xlg auto;
+	margin: calc(vars.$header-height + vars.$margin-md - vars.$bubble-height) auto vars.$margin-xlg auto;
 
 	@include mobile {
 		width: 95%;
-		margin-bottom: $margin-lg;
+		margin-bottom: vars.$margin-lg;
 	}
 }
 
 @mixin bubble {
 	&.bubble {
 		width: 100%;
-		height: $bubble-height;
+		height: vars.$bubble-height;
 		position: relative;
 		overflow: hidden;
 
@@ -28,8 +28,8 @@
 			width: 170%;
 			min-width: 800px;
 			height: 160%;
-			background-color: $secondary-color;
-			transition: background-color $background-transition;
+			background-color: vars.$secondary-color;
+			transition: background-color vars.$background-transition;
 			z-index: -1;
 			border-radius: 50%;
 		}

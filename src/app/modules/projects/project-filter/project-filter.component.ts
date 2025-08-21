@@ -8,7 +8,7 @@ import {
 	OnDestroy,
 	ChangeDetectorRef,
 } from "@angular/core";
-import { NgForOf, NgStyle } from "@angular/common";
+import { NgStyle } from "@angular/common";
 import { TechnologiesItem } from "../../../models/content.interfaces";
 import { Subscription } from "rxjs";
 import { TitleService } from "../../../title.service";
@@ -16,8 +16,7 @@ import { LayoutService } from "../../../layout.service";
 
 @Component({
 	selector: "app-project-filter",
-	standalone: true,
-	imports: [NgForOf, NgStyle],
+	imports: [NgStyle],
 	templateUrl: "./project-filter.component.html",
 	styleUrl: "./project-filter.component.scss",
 })
