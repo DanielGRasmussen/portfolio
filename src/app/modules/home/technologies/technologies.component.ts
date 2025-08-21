@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { TechnologiesContent } from "../../../models/content.interfaces";
 import { ContentService } from "../../../content.service";
 
@@ -9,9 +9,11 @@ import { ContentService } from "../../../content.service";
 	styleUrl: "./technologies.component.scss",
 })
 export class TechnologiesComponent {
+	protected ContentService = inject(ContentService);
+
 	content!: TechnologiesContent;
 
-	constructor(protected ContentService: ContentService) {
+	constructor() {
 		this.content = this.ContentService.getContent().technologies;
 	}
 }

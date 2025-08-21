@@ -15,15 +15,15 @@ import { ImageViewerComponent } from "./image-viewer/image-viewer.component";
 	styleUrl: "./project-view.component.scss",
 })
 export class ProjectViewComponent implements OnInit {
+	private ContentService = inject(ContentService);
+	private TitleService = inject(TitleService);
+
 	project!: ProjectItem;
 	route: ActivatedRoute = inject(ActivatedRoute);
 	id: string;
 	images: string[] = [];
 
-	constructor(
-		private ContentService: ContentService,
-		private TitleService: TitleService
-	) {
+	constructor() {
 		const id: string | null = this.route.snapshot.paramMap.get("id");
 		if (!id) {
 			// Handle error

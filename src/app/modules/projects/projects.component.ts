@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit, inject } from "@angular/core";
 import { ProjectItem, ProjectsContent, TechnologiesItem } from "../../models/content.interfaces";
 import { ContentService } from "../../content.service";
 import { RouterLink } from "@angular/router";
@@ -8,16 +8,13 @@ import { ProjectFilterComponent } from "./project-filter/project-filter.componen
 
 @Component({
 	selector: "app-projects",
-	imports: [
-		RouterLink,
-		FormsModule,
-		ProjectInfoComponent,
-		ProjectFilterComponent,
-	],
+	imports: [RouterLink, FormsModule, ProjectInfoComponent, ProjectFilterComponent],
 	templateUrl: "./projects.component.html",
 	styleUrl: "./projects.component.scss",
 })
 export class ProjectsComponent implements OnInit {
+	private ContentService = inject(ContentService);
+
 	content: ProjectsContent;
 	sidebar: boolean = false; // If we should use a sidebar (<1024px)
 	types: string[] = [];
@@ -28,7 +25,7 @@ export class ProjectsComponent implements OnInit {
 
 	visibleProjects: ProjectItem[] = [];
 
-	constructor(private ContentService: ContentService) {
+	constructor() {
 		this.content = this.ContentService.getContent().projects;
 
 		this.content.items.forEach(project => {

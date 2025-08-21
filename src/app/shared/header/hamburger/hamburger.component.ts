@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { ThemeToggleComponent } from "../theme-toggle/theme-toggle.component";
 
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from "@angular/router";
@@ -13,13 +13,13 @@ import { filter } from "rxjs";
 	styleUrl: "./hamburger.component.scss",
 })
 export class HamburgerComponent {
+	private ContentService = inject(ContentService);
+	private router = inject(Router);
+
 	links: Links;
 	isOpen: boolean = false;
 
-	constructor(
-		private ContentService: ContentService,
-		private router: Router
-	) {
+	constructor() {
 		this.links = this.ContentService.getContent().links;
 
 		this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {

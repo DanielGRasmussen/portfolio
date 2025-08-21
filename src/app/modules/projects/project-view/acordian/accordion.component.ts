@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, AfterViewInit } from "@angular/core";
+import { Component, Input, ElementRef, AfterViewInit, inject } from "@angular/core";
 
 import { DescriptionsItem } from "../../../../models/content.interfaces";
 
@@ -9,11 +9,11 @@ import { DescriptionsItem } from "../../../../models/content.interfaces";
 	styleUrl: "./accordion.component.scss",
 })
 export class AccordionComponent implements AfterViewInit {
+	private elementRef = inject(ElementRef);
+
 	@Input() description!: DescriptionsItem;
 	isOpen: boolean = false;
 	private contentHeight: number = 0;
-
-	constructor(private elementRef: ElementRef) {}
 
 	ngAfterViewInit(): void {
 		// Calculate the height of the content when the component is initialized

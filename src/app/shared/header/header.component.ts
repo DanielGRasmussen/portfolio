@@ -6,6 +6,7 @@ import {
 	QueryList,
 	ViewChildren,
 	ViewChild,
+	inject,
 } from "@angular/core";
 import { ThemeToggleComponent } from "./theme-toggle/theme-toggle.component";
 import { RouterLink, RouterLinkActive, Router } from "@angular/router";
@@ -23,6 +24,10 @@ import { LayoutService } from "../../layout.service";
 	styleUrl: "./header.component.scss",
 })
 export class HeaderComponent implements OnInit {
+	private router = inject(Router);
+	private ContentService = inject(ContentService);
+	private LayoutService = inject(LayoutService);
+
 	@ViewChildren("link") linkElements!: QueryList<ElementRef>;
 	@ViewChild("hamburger") hamburger!: HamburgerComponent;
 	content: Content;
@@ -34,11 +39,7 @@ export class HeaderComponent implements OnInit {
 	// Creates the links in the header
 	links: Links;
 
-	constructor(
-		private router: Router,
-		private ContentService: ContentService,
-		private LayoutService: LayoutService
-	) {
+	constructor() {
 		this.content = this.ContentService.getContent();
 		this.links = this.content.links;
 	}
